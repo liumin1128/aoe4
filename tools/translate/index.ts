@@ -1,5 +1,4 @@
 import { civilizations, units } from "@data/sdk";
-import "./openai";
 
 interface Translation {
   name?: string;

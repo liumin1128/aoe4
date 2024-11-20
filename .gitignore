@@ -2,7 +2,8 @@
 
 # dependencies
 /node_modules
-/tools/translate/node_modules
+/tools/getMessagesEN/node_modules
+/tools/getMessagesCN/node_modules
 /.pnp
 .pnp.*
 .yarn/*

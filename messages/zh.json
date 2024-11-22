@@ -1,0 +1,2837 @@
+{
+  "common": {
+    "civilization": "国家",
+    "special": "独特",
+    "requires": "需要",
+    "hr": "时",
+    "min": "分",
+    "sec": "秒",
+    "cooldown": "冷却",
+    "abilities": "能力和影响",
+    "producedAt": "生产建筑"
+  },
+  "types": {
+    "units": "单位",
+    "buildings": "建筑",
+    "technologies": "科技",
+    "upgrades": "升级",
+    "abilities": "能力和影响",
+    "hero": "英雄",
+    "worker": "工人",
+    "workers": "工人",
+    "infantry": "步兵",
+    "cavalry": "骑兵",
+    "siege": "攻城器",
+    "ship": "舰船",
+    "ships": "舰船",
+    "misc": "杂项",
+    "mercenaries": "雇佣兵",
+    "landmarks": "地标",
+    "economy": "经济",
+    "military": "军事",
+    "defensive": "防御",
+    "religious": "宗教",
+    "technology": "科技",
+    "wonders": "奇迹",
+    "wings": "翅膀",
+    "leveling": "升级",
+    "naval": "海军"
+  },
+  "classes": {
+    "light": "轻型",
+    "ranged": "远程",
+    "infantry": "步兵",
+    "springald": "弩车",
+    "ship": "船只",
+    "siege": "攻城器",
+    "gunpowder": "火药",
+    "cavalry": "骑兵",
+    "camel": "骆驼",
+    "melee": "近战",
+    "archer": "弓箭手",
+    "incendiary": " incendiary",
+    "worker": "工人",
+    "heavy": "重型",
+    "religious": "宗教",
+    "warship": "战船",
+    "and": "和",
+    "elephant": "大象",
+    "mixed": "混合",
+    "force": "部队",
+    "army": "军队",
+    "hero": "英雄",
+    "villager": "村民",
+    "khaganate": "可汗国",
+    "battle": "战斗",
+    "monk": "僧侣"
+  },
+  "units": {
+    "archer": {
+      "name": "弓箭手",
+      "description": "便宜的远程步兵，对无甲目标造成良好伤害。\n+ 高射速\n- 对装甲目标弱\n- 被骑兵克制"
+    },
+    "baghlah": {
+      "name": "巴格拉",
+      "description": "配备侧舷弩炮的舰船。\n+ 对箭船强\n- 灵活性较低"
+    },
+    "battering-ram": {
+      "name": "攻城锤",
+      "description": "耐用的步兵运输工具，对建筑和墙壁有效。\n+ 高远程护甲\n+ 高生命值\n- 受到近战攻击的额外伤害\n- 只能攻击建筑\n- 移动速度慢"
+    },
+    "camel-archer": {
+      "name": "骆驼弓箭手",
+      "description": "高度机动且耐用的远程单位。\n+ 对长矛兵的额外伤害\n- 成本高"
+    },
+    "camel-rider": {
+      "name": "骆驼骑士",
+      "description": "高度机动且耐用的近战单位，对所有骑兵有效。\n+ 对骑兵的额外伤害\n+ 使敌方骑兵造成更少伤害\n- 成本高"
+    },
+    "counterweight-trebuchet": {
+      "name": "反重力投石机",
+      "description": "强大的攻城器，有效摧毁远距离的建筑和墙壁。\n+ 对建筑的额外伤害\n- 必须设置才能发射\n- 对单位不准确"
+    },
+    "crossbowman": {
+      "name": "弩手",
+      "description": "对装甲目标最佳的高伤害远程单位。\n+ 反装甲专家\n- 生命值低\n- 被骑兵克制"
+    },
+    "culverin": {
+      "name": "火炮",
+      "description": "具有对建筑额外伤害的远程移动炮。\n+ 对防御有效\n+ 不需要设置即可发射"
+    },
+    "dhow": {
+      "name": "帆船",
+      "description": "轻型战船，配备弓箭手。\n+ 增加灵活性和速度。\n+ 受益于远程伤害的铁匠科技"
+    },
+    "explosive-dhow": {
+      "name": "爆炸帆船",
+      "description": "装满炸药的小船。被击杀时引爆，伤害区域内的任何单位。\n- 离爆炸中心的伤害进一步减少\n- 除了自我毁灭外没有武器"
+    },
+    "fishing-boat": {
+      "name": "渔船",
+      "description": "小船，从深水鱼或岸边鱼中收集食物。将收集的资源送到码头。\n+ 可以修理\n- 没有战斗能力"
+    },
+    "ghulam": {
+      "name": "古兰",
+      "description": "坚韧的步兵，快速连续进行两次攻击。\n+ 高护甲\n+ 冲锋时更高的攻击伤害\n- 比武器兵的基础攻击伤害低\n- 移动缓慢\n- 被骑士、长矛兵和弩手克制"
+    },
+    "handcannoneer": {
+      "name": "火枪手",
+      "description": "强大的全能远程步兵。\n+ 高伤害\n- 成本高\n- 移动速度慢\n- 被骑兵克制"
+    },
+    "horseman": {
+      "name": "骑兵",
+      "description": "快速的骑兵，适合突袭、侧翼攻击和反制远程单位。\n+ 高移动速度\n- 对近战单位弱\n- 被长矛兵克制"
+    },
+    "imam": {
+      "name": "伊玛目",
+      "description": "没有战斗能力的支援单位。可以拾取遗物、转化敌方单位和占领神圣地点。\n+ 治疗友方单位\n- 移动速度慢"
+    },
+    "lancer": {
+      "name": "长矛骑士",
+      "description": "昂贵的骑兵，具有高伤害和近战护甲。对近战单位有效。\n+ 重型护甲\n+ 在近战中强大\n- 被长矛兵和弩手克制"
+    },
+    "mangonel": {
+      "name": "弩炮",
+      "description": "发射多个弹药，在区域内造成伤害。\n+ 对大量单位有效\n- 必须设置才能发射"
+    },
+    "scout": {
+      "name": "侦察兵",
+      "description": "轻装骑兵，适合探索世界、狩猎野生动物和放牧羊群。\n+ 能够看到隐秘森林\n+ 生命值再生\n+ 高移动速度\n- 在战斗中非常弱"
+    },
+    "spearman": {
+      "name": "长矛兵",
+      "description": "步兵，最佳用于对抗骑兵单位。\n+ 反骑兵专家\n- 对装甲步兵弱\n- 被弓箭手克制"
+    },
+    "springald": {
+      "name": "弩车",
+      "description": "反单位攻城武器。发射穿透多个单位的箭矢。\n+ 不需要设置即可发射\n+ 对近战步兵的额外伤害\n- 对建筑的伤害微不足道"
+    },
+    "trade-ship": {
+      "name": "贸易船",
+      "description": "贸易船在分配到与海岸贸易站或其他玩家的码头的贸易路线时生成黄金和木材。\n- 没有战斗能力"
+    },
+    "trader": {
+      "name": "商人",
+      "description": "商人被指派与贸易站或其他玩家的市场进行交易时会产生黄金。交易目标与市场之间的距离决定了黄金的数量。一旦被指派进行交易，商人会在其家市场和交易目标之间进行多次往返。如果您愿意，可以指派一个新的家市场。"
+    },
+    "transport-ship": {
+      "name": "运输舰",
+      "description": "大型划桨船能够将陆地单位运输过水。\n+ 可以被任何单位驻守\n+ 使用驻守单位的视野范围\n- 无战斗能力"
+    },
+    "villager": {
+      "name": "村民",
+      "description": "收集木材、食物、石头和黄金。建造和修理建筑，并可以修理攻城器和海军单位。\n- 在战斗中较弱"
+    },
+    "xebec": {
+      "name": "小型战舰",
+      "description": "大型帆船战舰，配备侧舷炮。\n+ 反建筑专家\n- 低移动速度"
+    },
+    "atabeg": {
+      "name": "阿塔贝克",
+      "description": "可以驻守在任何军事生产建筑中，为新训练的单位提供+20%的生命值。"
+    },
+    "bedouin-skirmisher": {
+      "name": "贝都因轻步兵",
+      "description": "使用标枪抵御轻装敌人的远程步兵。\n+ 对轻型步兵有加成\n+ 长射程\n- 对骑兵较弱\n\n需要贸易翼 - 市场"
+    },
+    "bedouin-swordsman": {
+      "name": "贝都因剑士",
+      "description": "擅长近战的剑术大师\n+ 对近战单位有加成\n- 对远程单位较弱\n\n需要贸易翼 - 市场"
+    },
+    "camel-lancer": {
+      "name": "骆驼长矛手",
+      "description": "机动性更高的长矛手，冲锋更强，但近战攻击力较弱。对大多数单位有效。\n+ 重型盔甲\n+ 在近战中强大\n- 被长矛兵和弩手克制"
+    },
+    "dervish": {
+      "name": "德尔维什",
+      "description": "骑乘宗教单位。可以拾取遗物，转化敌方单位，并占领圣地。\n+ 使用强大的群体治疗能力在区域内治疗友方单位。\n+ 携带遗物时获得更高的治疗效果。\n+ 高速。"
+    },
+    "desert-raider": {
+      "name": "沙漠突袭者",
+      "description": "多功能骑兵单位，可以在远程和近战攻击之间切换。\n+ 在远程模式下对轻型步兵有效\n+ 在近战模式下对骑兵有效\n- 高成本\n- 对远程单位较弱"
+    },
+    "manjaniq": {
+      "name": "曼贾尼克",
+      "description": "发射多个弹药，对区域内造成伤害。\n+ 对集结单位有效\n+ 可以使用火焰弹药造成毁灭性区域伤害\n - 必须设置好才能发射"
+    },
+    "tower-of-the-sultan": {
+      "name": "苏丹塔",
+      "description": "有效对抗建筑和城墙的大型步兵运输。每驻守一个单位，移动速度增加。\n+ 发射箭矢\n+ 高远程盔甲\n+ 高生命值\n- 空时移动速度慢"
+    },
+    "arbaletrier": {
+      "name": "弩兵",
+      "description": "高伤害远程单位，配备防御性盾牌。最好在其他单位的支持下使用。\n+ 反盔甲专家\n+ 具备近战盔甲\n- 生命值低\n- 被骑兵克制"
+    },
+    "bombard": {
+      "name": "轰炸机",
+      "description": "令人畏惧的攻城炮，优秀对抗建筑或任何顽固目标。\n+ 高伤害\n- 必须设置好才能发射"
+    },
+    "carrack": {
+      "name": "卡拉克",
+      "description": "大型帆船战舰，配备侧舷炮。\n+ 反建筑专家\n- 低移动速度"
+    },
+    "cataphract": {
+      "name": "重骑兵",
+      "description": "昂贵的骑兵，具有高伤害和强大的践踏能力，可以冲过敌人。\n+ 重型盔甲\n+ 践踏造成区域伤害\n- 没有基础冲锋攻击\n- 移动速度较慢\n- 被长矛兵和弩手克制"
+    },
+    "cheirosiphon": {
+      "name": "希腊火炮",
+      "description": "耐用的步兵运输，配备希腊火，对建筑和城墙有效。\n+ 希腊火在地面上持续存在\n+ 高远程盔甲\n+ 高生命值\n- 仅攻击建筑\n- 移动速度慢"
+    },
+    "demolition-ship": {
+      "name": "拆除船",
+      "description": "装满爆炸物的小船。被击杀时会引爆，伤害区域内的任何单位。\n- 距离爆炸中心的伤害会进一步减少\n- 除了自毁外没有其他武器"
+    },
+    "dromon": {
+      "name": "德罗蒙",
+      "description": "配备火焰喷射器的军事舰船，可以升级为使用希腊火。\n+ 对箭船强\n- 武器射程低\n- 被拆除船反制"
+    },
+    "galley": {
+      "name": "舰船",
+      "description": "配备弓箭手的划桨战舰。\n+ 增强机动性\n+ 受益于远程伤害铁匠科技"
+    },
+    "grenadier": {
+      "name": "掷弹兵",
+      "description": "先进的远程步兵，投掷爆炸罐，对小范围内造成伤害。\n+ 造成区域伤害\n- 单体伤害低\n- 移动速度慢"
+    },
+    "horse-archer": {
+      "name": "骑射手",
+      "description": "高度机动的远程骑兵，对较慢的近战单位有效。\n+ 高机动性\n- 对远程单位弱\n\n可以以每3单位360橄榄油的价格购买的雇佣兵。\n\n此雇佣兵只能在靠近列出该单位的中立贸易站建造的雇佣兵房屋中购买。该单位在贸易站可用的机会为20%。"
+    },
+    "huihui-pao": {
+      "name": "回回炮",
+      "description": "具有惊人射程的巨大攻城器，对摧毁建筑和墙壁特别有效。\n+ 射程极长\n- 必须设置才能发射\n\n可以以1000橄榄油的价格购买的雇佣兵。"
+    },
+    "javelin-thrower": {
+      "name": "标枪投掷手",
+      "description": "对其他远程单位有效的远程步兵。\n+ 反远程专家\n+ 增加武器射程\n+ 配备远程护甲\n- 生命值低\n- 被骑兵反制"
+    },
+    "keshik": {
+      "name": "可汗骑兵",
+      "description": "昂贵的骑兵，造成高伤害并具有强大的冲锋攻击。对大多数单位有效。\n+ 重型盔甲\n+ 近战作战强\n+ 每次攻击后恢复生命\n- 生命值低于长枪兵\n- 被长矛兵和弩兵反制\n\n可以以每2单位400橄榄油的价格购买的雇佣兵。\n\n需要东部雇佣兵合同。"
+    },
+    "landsknecht": {
+      "name": "雇佣兵",
+      "description": "勇敢的无盔甲步兵，使用巨大的双手剑，在混合军队中有效。\n+ 近战攻击造成区域伤害\n- 生命值低\n- 被弓箭手反制\n\n可以以每3单位480橄榄油的价格购买的雇佣兵。\n\n需要西部雇佣兵合同。"
+    },
+    "limitanei": {
+      "name": "边境步兵",
+      "description": "最适合对抗骑兵的步兵。可以进入盾墙以减少远程伤害。\n+ 反骑兵专家\n+ 增加生命值\n- 盾墙减少移动速度\n- 对装甲步兵弱\n- 被弓箭手反制"
+    },
+    "longbowman": {
+      "name": "长弓手",
+      "description": "便宜的远程步兵，对无盔甲目标造成良好伤害。\n+ 射程长\n+ 可以建造栅栏以抵御骑兵冲锋\n- 移动速度慢\n- 被骑兵反制\n\n可以以每5单位450橄榄油的价格购买的雇佣兵。\n\n需要西部雇佣兵合同。"
+    },
+    "mangudai": {
+      "name": "蒙古骑兵",
+      "description": "令人困惑的机动远程骑兵，可以在移动时射击。\n+ 高射速\n- 武器射程低\n\n可以以每3单位480橄榄油的价格购买的雇佣兵。\n\n此雇佣兵只能在靠近列出该单位的中立贸易站建造的雇佣兵房屋中购买。该单位在贸易站可用的机会为20%。"
+    },
+    "monk": {
+      "name": "僧侣",
+      "description": "没有战斗能力的支援单位。可以拾取遗物，转化敌方单位，并在城堡时代（III）开始时占领神圣地点。\n+ 治愈友方单位\n- 移动速度慢"
+    },
+    "musofadi-warrior": {
+      "name": "穆索法迪战士",
+      "description": "在伏击攻击和反制重装目标方面有效的步兵。\n+ 可以进入隐身\n+ 反装甲专家\n- 生命值低\n- 被弓箭手反制\n- 资本城镇中心、前哨和侦察兵可以发现隐身\n\n可以以每5单位400橄榄油的价格购买的雇佣兵。\n\n此雇佣兵只能在靠近列出该单位的中立贸易站建造的雇佣兵房屋中购买。该单位在贸易站可用的机会为20%。"
+    },
+    "nest-of-bees": {
+      "name": "蜜蜂巢",
+      "description": "创新的场地武器，能够发射一阵火箭以损害防御阵地和聚集的敌军。\n+ 对大多数目标有良好的范围伤害\n- 最慢的移动速度\n- 被包围时很弱"
+    },
+    "royal-cannon": {
+      "name": "皇家炮",
+      "description": "最强大的攻城炮。对建筑或任何顽固目标极为有效。\n+ 对建筑的额外伤害"
+    },
+    "royal-knight": {
+      "name": "皇家骑士",
+      "description": "冲锋后5秒内获得额外伤害。对大多数单位有效。\n+ 重型盔甲\n+ 在近战中强大\n- 被步兵和弩手克制"
+    },
+    "siege-tower": {
+      "name": "攻城塔",
+      "description": "高大的步兵运输工具，没有战斗能力。允许驻守的步兵直接卸载到石墙上。\n+ 高远程盔甲\n- 不能攻击\n- 移动速度慢"
+    },
+    "sipahi": {
+      "name": "西帕希",
+      "description": "快速骑兵，适合突袭、侧翼攻击和反击远程单位。可以以牺牲近战防御的代价获得攻击速度。\n+ 高移动速度\n+ 对远程单位强大\n- 对近战单位弱\n- 被步兵克制\n\n每3个单位可以购买的雇佣兵，总共需要480橄榄油。\n\n此雇佣兵只能在靠近列出该单位的中立贸易站附近建造的雇佣兵房屋中购买。该单位在贸易站可用的机会为20%。"
+    },
+    "streltsy": {
+      "name": "斯特雷尔齐",
+      "description": "最强大的远程步兵，具备合理的近战能力。静止时攻击速度提高。\n+ 高伤害\n+ 成本低于火枪手\n- 移动速度慢\n\n每3个单位可以购买的雇佣兵，总共需要720橄榄油。\n\n需要西方雇佣兵合同。"
+    },
+    "tower-elephant": {
+      "name": "塔象",
+      "description": "强大的远程骑兵，能够在移动时开火。\n+ 高生命值\n+ 装备强大的弓箭手\n+ 能够攻击石墙\n- 移动速度慢\n\n每个雇佣兵可以购买1000橄榄油。\n\n需要东方雇佣兵合同。"
+    },
+    "varangian-guard": {
+      "name": "瓦兰吉卫队",
+      "description": "坚韧的步兵，伤害良好。可以使用狂暴技能以减少盔甲来增加伤害。\n+ 重型盔甲\n+ 增加运输工具的盔甲\n+ 靠近盟友的奇迹时增加盔甲\n- 移动速度慢\n- 被弩手克制"
+    },
+    "war-elephant": {
+      "name": "战象",
+      "description": "重型骑兵，对骑兵、攻城器、墙壁和建筑有效。\n+ 高生命值和盔甲\n+ 装备先进的步兵\n+ 能够攻击石墙\n- 移动速度慢\n\n每个雇佣兵可以购买750橄榄油。\n\n此雇佣兵只能在靠近列出该单位的中立贸易站附近建造的雇佣兵房屋中购买。该单位在贸易站可用的机会为20%。"
+    },
+    "zhuge-nu": {
+      "name": "诸葛弩",
+      "description": "发射箭矢，对敌方单位造成巨大的伤害潜力。\n+ 高射速\n- 对装甲目标无效\n- 被骑兵克制"
+    },
+    "baochuan": {
+      "name": "宝船",
+      "description": "大型帆船，装备侧舷炮。\n+ 反建筑专家\n- 移动速度慢"
+    },
+    "clocktower-battering-ram": {
+      "name": "时钟塔攻城槌",
+      "description": "耐用的步兵运输工具，对建筑和墙壁有效。\n+ 高远程盔甲\n+ 高生命值\n- 受到近战攻击的额外伤害\n- 只能攻击建筑\n- 移动速度慢"
+    },
+    "clocktower-bombard": {
+      "name": "时钟塔轰炸机",
+      "description": "令人畏惧的攻城炮，对建筑或任何顽固目标极为有效。\n+ 高伤害\n- 必须设置才能开火"
+    },
+    "clocktower-counterweight-trebuchet": {
+      "name": "时钟塔反重力投石机",
+      "description": "强大的攻城器，有效摧毁远距离的建筑和墙壁。\n+ 对建筑的额外伤害\n- 必须设置才能开火\n- 对单位不准确"
+    },
+    "clocktower-nest-of-bees": {
+      "name": "时钟塔蜜蜂巢",
+      "description": "创新的场地武器，能够发射一阵火箭以损害防御阵地和聚集的敌军。\n+ 对大多数目标有良好的范围伤害\n- 最慢的移动速度\n- 被包围时很弱"
+    },
+    "clocktower-springald": {
+      "name": "时钟塔弩车",
+      "description": "反单位攻城器。发射穿透多个单位的箭矢。\n+ 不需要准备即可发射\n+ 对近战步兵造成额外伤害\n- 对建筑造成微不足道的伤害"
+    },
+    "explosive-junk": {
+      "name": "爆炸垃圾船",
+      "description": "装满炸药的小型舰船。被击毁时引爆，造成区域内任何单位的伤害。\n- 离爆炸中心越远，伤害越低\n- 除了自我毁灭外没有其他武器"
+    },
+    "fire-lancer": {
+      "name": "火枪骑兵",
+      "description": "携带爆炸尖枪的骑兵。\n+ 冲锋造成区域伤害\n+ 对建筑和攻城器有效\n+ 良好的远程护甲\n- 近战作战较弱\n- 被长矛兵克制"
+    },
+    "imperial-official": {
+      "name": "帝国官员",
+      "description": "没有战斗能力的经济支持单位。自动从建筑中收集税收（黄金）。\n+ 可以监督建筑以提高其效率\n- 同时只能存在一定数量的官员"
+    },
+    "junk": {
+      "name": "垃圾船",
+      "description": "配备弓箭手的划桨战船。\n+ 提高机动性\n+ 受益于远程伤害铁匠科技"
+    },
+    "palace-guard": {
+      "name": "宫殿卫兵",
+      "description": "坚韧的步兵，伤害良好。移动速度快于重装步兵，但护甲较低。\n+ 装甲\n- 被骑士、枪骑兵和弩兵克制。"
+    },
+    "war-junk": {
+      "name": "战斗垃圾船",
+      "description": "配备侧舷弩炮的舰船。\n+ 对箭船强大\n- 机动性较低"
+    },
+    "ghazi-raider": {
+      "name": "圣战突击者",
+      "description": "快速骑兵，擅长突袭、侧翼攻击和反击远程单位。\n+ 高移动速度\n+ 对装甲单位的有效性提高\n- 被长矛兵克制"
+    },
+    "man-at-arms": {
+      "name": "重装步兵",
+      "description": "坚韧的步兵，伤害良好。\n+ 高护甲\n- 移动缓慢\n- 被骑士、枪骑兵和弩兵克制"
+    },
+    "scholar": {
+      "name": "学者",
+      "description": "没有战斗能力的支持单位。可以驻扎在清真寺或宗教学校中更快地研究科技。可以拾取遗物、转化敌方单位，并在城堡时代（III）开始捕获圣地。\n+ 治愈友方单位\n- 生命值低"
+    },
+    "sultans-elite-tower-elephant": {
+      "name": "苏丹精英塔大象",
+      "description": "强大的远程骑兵，可以在移动时开火。\n+ 高生命值\n+ 装备火枪手\n+ 能够攻击石墙\n- 移动速度慢"
+    },
+    "hulk": {
+      "name": "巨舰",
+      "description": "配备侧舷弩炮的舰船。\n+ 对箭船强大\n- 机动性较低"
+    },
+    "king": {
+      "name": "国王",
+      "description": "强大的国王，一个强大的重型骑兵单位。每1秒治愈附近非战斗单位2点生命值。\n+ 重装甲\n+ 近战作战强大\n- 被长矛兵和弩兵克制"
+    },
+    "knight": {
+      "name": "骑士",
+      "description": "昂贵的骑兵，具有高伤害和近战护甲。对近战单位有效。\n+ 重装甲\n+ 近战作战强大\n- 被长矛兵和弩兵克制"
+    },
+    "ribauldequin": {
+      "name": "五管火炮",
+      "description": "对大量单位有效的火药武器。对建筑造成的伤害很小。\n+ 可以在一次齐射中击中多个目标\n- 射程短\n- 远程护甲低"
+    },
+    "wynguard-army": {
+      "name": "翅膀卫队",
+      "description": "生产包括两名长矛兵、两名弩兵和一台攻城塔的军队。"
+    },
+    "wynguard-footman": {
+      "name": "翅膀步兵",
+      "description": "专门的重装步兵，具有高生命值和穿透护甲。\n- 移动缓慢\n- 被弩兵克制"
+    },
+    "wynguard-footmen": {
+      "name": "翅膀步兵",
+      "description": "生产6名翅膀步兵的军队。"
+    },
+    "wynguard-raiders": {
+      "name": "翅膀突击者",
+      "description": "生产3名骑兵和3名骑士的军队。"
+    },
+    "wynguard-ranger": {
+      "name": "翅膀游侠",
+      "description": "大师级长弓手，具有更高的射程和伤害，对未装甲目标有效。\n+ 长射程\n+ 可以建造栅栏以抵御骑兵冲锋\n- 移动速度慢\n- 被骑兵克制"
+    },
+    "wynguard-rangers": {
+      "name": "翅膀游侠",
+      "description": "生产6名翅膀游侠的军队。"
+    },
+    "cannon": {
+      "name": "大炮",
+      "description": "最强大的攻城炮。对建筑或任何顽固目标非常有效。\n+ 对建筑造成额外伤害"
+    },
+    "galleass": {
+      "name": "加利亚斯",
+      "description": "大型划桨船，配备强大的前置轰炸机。\n+ 长射程\n+ 反建筑专家"
+    },
+    "royal-culverin": {
+      "name": "皇家火炮",
+      "description": "具有对建筑物的额外伤害的远程移动炮。\n+ 对防御有效\n+ 发射时无需设置"
+    },
+    "royal-ribauldequin": {
+      "name": "皇家五管炮",
+      "description": "有效对抗大量单位的五管火药武器。对建筑物造成的伤害很小。\n+ 可以在一次齐射中击中多个目标\n- 射程短\n- 低远程护甲"
+    },
+    "war-cog": {
+      "name": "战争船",
+      "description": "配备侧面弩炮的舰船。\n+ 对箭船强大\n- 机动性较低"
+    },
+    "prelate": {
+      "name": "教士",
+      "description": "没有战斗能力的支援单位。自动激励村民大幅提高他们的采集速度。可以拾取遗物，转化敌方单位，并在城堡时代（III）开始时捕获神圣遗址。\n+ 治愈友方单位\n- 生命值低"
+    },
+    "atakebune": {
+      "name": "战船",
+      "description": "大型帆船，配备火箭。\n+ 反建筑专家\n- 对火焰舰脆弱\n- 移动速度慢"
+    },
+    "buddhist-monk": {
+      "name": "佛教僧侣",
+      "description": "具有降低敌方攻击伤害能力的支援单位。可以拾取遗物，转化敌方单位，并捕获神圣遗址。\n+ 成本降低\n+ 转化增强友方单位伤害\n+ 自动减少敌方攻击伤害\n+ 治愈单位"
+    },
+    "handcannon-ashigaru": {
+      "name": "火绳枪足轻",
+      "description": "强大的全能远程步兵。\n+ 高伤害\n- 高成本\n- 移动速度慢\n- 被骑兵克制"
+    },
+    "katana-bannerman": {
+      "name": "武士旗手",
+      "description": "具有增加近战步兵伤害光环的武士。配备定期阻挡攻击的反射护甲能力。\n+ 死亡时旗帜掉落\n+ 重型护甲\n+ 移动速度增加\n- 被骑士、长枪手和弩手克制"
+    },
+    "mounted-samurai": {
+      "name": "骑乘武士",
+      "description": "昂贵的骑兵，具有高伤害和强大的冲锋攻击。配备定期阻挡攻击的反射护甲能力。\n+ 重型护甲\n+ 反射护甲在战斗外充能\n+ 近战作战强大\n- 被长枪手和弩手克制"
+    },
+    "onna-bugeisha": {
+      "name": "女武士",
+      "description": "轻型近战步兵，攻击速度快，武器射程长。\n+ 攻击速度快\n+ 移动速度快\n+ 武器射程长\n- 对装甲目标弱\n- 被弓箭手和骑士克制"
+    },
+    "onna-musha": {
+      "name": "女武者",
+      "description": "高度机动的远程骑兵，对重型单位有效。\n+ 移动速度快\n+ 武器射程长\n+ 对重型单位的额外伤害\n- 对远程单位弱"
+    },
+    "ozutsu": {
+      "name": "大筒",
+      "description": "配备巨大火药武器的远程步兵，具有良好的武器射程、攻城和溅射伤害。\n+ 反建筑\n+ 区域伤害\n- 移动速度慢\n- 攻击速度慢\n- 被骑兵和弩手克制"
+    },
+    "samurai": {
+      "name": "武士",
+      "description": "重型步兵，具有良好的伤害和防御。配备定期阻挡攻击的反射护甲能力。\n+ 重型护甲\n+ 反射护甲在战斗外充能\n- 移动速度慢\n- 被骑士、长枪手和弩手克制"
+    },
+    "shinobi": {
+      "name": "忍者",
+      "description": "专注于侦察、破坏和暗杀的近战步兵。\n+ 伪装成敌方村民\n+ 对近战的额外伤害\n+ 生命值再生\n- 资本城镇中心、前哨和侦察兵可以发现伪装\n\n被动治愈。"
+    },
+    "shinto-priest": {
+      "name": "神道教士",
+      "description": "具有独特特权的支援单位，可以在建筑物中持有和存放依赖物。可以拾取遗物，转化敌方单位，并捕获神圣遗址。\n+ 依赖物提供独特奖励\n+ 治愈友方单位\n- 移动速度慢"
+    },
+    "uma-bannerman": {
+      "name": "马旗手",
+      "description": "骑乘武士，具有增加骑兵伤害的光环。配备定期阻挡攻击的反射护甲能力。\n+ 死亡时旗帜掉落\n+ 移动速度快\n+ 重型护甲\n- 被长枪手和弩手克制"
+    },
+    "yumi-ashigaru": {
+      "name": "弓箭足轻",
+      "description": "快速且便宜的远程步兵，对未装甲目标造成良好伤害。\n+ 移动速度增加\n+ 比弓箭手便宜\n- 生命值减少\n- 对装甲目标弱\n- 被骑兵反制"
+    },
+    "yumi-bannerman": {
+      "name": "弓箭手旗手",
+      "description": "具有增加远程步兵伤害光环的远程武士。具备定期阻挡攻击的反射护甲能力。\n+ 死亡时掉落旗帜\n+ 快速移动\n- 对装甲目标弱\n- 被骑兵反制"
+    },
+    "jeanne-darc-blast-cannon": {
+      "name": "贞德 - 爆破炮",
+      "description": "精英攻城骑兵领袖，伤害高。对建筑物特别有效。如果贞德被击败，她将在市政中心重新出现。\n+ 重型盔甲\n+ 对建筑物造成良好伤害\n- 仅被数量优势反制"
+    },
+    "jeanne-darc-hunter": {
+      "name": "贞德 - 猎手",
+      "description": "强大的远程步兵，对未装甲目标造成良好伤害，并对长矛兵造成额外伤害。如果贞德被击败，她可以在市政中心复活。\n+ 高射速\n- 被骑兵反制"
+    },
+    "jeanne-darc-knight": {
+      "name": "贞德 - 骑士",
+      "description": "强大的重型骑兵领袖，伤害和生命值高。如果贞德被击败，她可以在市政中心复活。\n+ 重型盔甲\n+ 快速移动\n- 被长矛兵反制"
+    },
+    "jeanne-darc-markswoman": {
+      "name": "贞德 - 女射手",
+      "description": "精英重型攻城骑兵领袖，伤害高。对建筑物特别有效。如果贞德被击败，她将在市政中心重新出现。\n+ 重型盔甲 \n+ 长射程 \n+ 对建筑物造成良好伤害\n- 仅被优越建筑反制"
+    },
+    "jeanne-darc-mounted-archer": {
+      "name": "贞德 - 骑射手",
+      "description": "一名强大的骑兵弓箭手，射程和伤害卓越。如果贞德被击败，她可以在市政中心复活。\n+ 长射程\n+ 良好伤害\n- 被骑兵反制"
+    },
+    "jeanne-darc-peasant": {
+      "name": "贞德 - 农民",
+      "description": "贞德作为村民收集资源和建造建筑。她建造建筑的速度更快，建造建筑时获得的经验比其他任务多。如果贞德被击败，她可以在市政中心复活。\n - 战斗中弱"
+    },
+    "jeanne-darc-woman-at-arms": {
+      "name": "贞德 - 武装女性",
+      "description": "强大的重型步兵领袖，盔甲和生命值良好。如果贞德被击败，她可以在市政中心复活。\n+ 重型盔甲\n- 被骑士、长矛兵和弩兵反制"
+    },
+    "jeannes-champion": {
+      "name": "贞德的冠军",
+      "description": "坚韧的步兵，擅长反制长矛兵。\n+ 高盔甲\n+ 对长矛兵造成额外伤害\n- 移动速度慢\n- 被骑士、长矛兵和弩兵反制\n\n当贞德达到4级时升级为精英。"
+    },
+    "jeannes-rider": {
+      "name": "贞德的骑士",
+      "description": "快速骑兵，擅长突袭、侧翼攻击和反制弩兵。\n+ 高移动速度\n+ 对弩兵造成额外伤害\n- 对近战单位弱\n- 被长矛兵反制\n\n当贞德达到4级时升级为精英。"
+    },
+    "donso": {
+      "name": "多索",
+      "description": "步兵，最佳用于对抗骑兵单位。攻击时定期投掷标枪。\n+ 反骑兵专家\n+ 具备近战盔甲\n- 对装甲步兵弱\n- 被弓箭手和长弓手反制"
+    },
+    "freeborn-warrior": {
+      "name": "自由战士",
+      "description": "快速近战单位，具有高远程盔甲和对远程单位的额外伤害。\n+ 对远程单位强\n- 对装甲近战单位弱"
+    },
+    "hunting-canoe": {
+      "name": "狩猎独木舟",
+      "description": "轻型战船，配备弓箭手。\n+ 增加机动性和速度。\n+ 受益于远程伤害铁匠科技"
+    },
+    "mansa-javelineer": {
+      "name": "曼萨标枪手",
+      "description": "对其他远程单位有效的远程步兵。移动更快并造成毒素伤害。\n+ 反远程专家\n+ 增加武器射程\n+ 具备远程盔甲\n- 生命值低\n- 被骑兵反制"
+    },
+    "mansa-musofadi-warrior": {
+      "name": "曼萨穆索法迪战士",
+      "description": "步兵在伏击攻击和反击重型装甲目标方面有效。具有额外的近战护甲和生命值。\n+ 可以进入隐身\n+ 反装甲专家\n- 生命值低\n- 被弓箭手反制\n- 首都城镇中心、前哨和侦察兵可以发现隐身"
+    },
+    "musofadi-gunner": {
+      "name": "Musofadi Gunner",
+      "description": "强大的远程步兵在伏击攻击方面有效。\n+ 增加移动速度\n+ 可以进入隐身\n+ 高伤害\n- 成本高"
+    },
+    "sofa": {
+      "name": "Sofa",
+      "description": "便宜的重型骑兵，生命值和护甲减少。\n+ 高移动速度\n+ 成本更低\n+ 近战作战强\n- 被长矛兵和弩兵反制"
+    },
+    "war-canoe": {
+      "name": "War Canoe",
+      "description": "装备有侧舷弩炮的舰船。\n+ 对箭船强\n- 机动性较低"
+    },
+    "warrior-scout": {
+      "name": "Warrior Scout",
+      "description": "快速骑兵，在突袭、探索世界、狩猎野生动物和放羊方面有效。\n+ 增加生命值恢复\n+ 增加移动速度\n+ 能够看穿隐身森林\n- 战斗中较弱"
+    },
+    "khaganate-horse-archer": {
+      "name": "Khaganate Elite Horse Archer",
+      "description": "高度机动的远程骑兵，对较慢的近战单位有效。\n+ 高机动性\n- 对远程单位弱\n\n随机从可汗宫同时生成5个。"
+    },
+    "khaganate-knight": {
+      "name": "Khaganate Elite Knight",
+      "description": "昂贵的骑兵，具有高伤害和近战护甲。对近战单位有效。\n+ 重型护甲\n+ 近战作战强\n- 被长矛兵和弩兵反制\n\n随机从可汗宫同时生成3个。"
+    },
+    "khaganate-mangudai": {
+      "name": "Khaganate Elite Mangudai",
+      "description": "能在移动时射击的机动远程骑兵。\n+ 高射速\n- 武器射程低\n\n随机从可汗宫生成。"
+    },
+    "khaganate-nest-of-bees": {
+      "name": "Khaganate Nest of Bees",
+      "description": "创新的野战武器，能够发射一阵火箭以伤害防御阵地和聚集的敌军。\n+ 对大多数目标有良好的范围伤害\n- 移动速度最慢\n- 被包围时较弱\n\n随机从可汗宫生成。"
+    },
+    "khaganate-palace-guard": {
+      "name": "Khaganate Elite Palace Guard",
+      "description": "坚韧的步兵，具有良好的伤害。移动速度比重装步兵快，但护甲减少。\n+ 装甲\n- 被骑士、长矛兵和弩兵反制。\n\n随机从可汗宫同时生成5个。"
+    },
+    "khaganate-warrior-monk": {
+      "name": "Khaganate Warrior Monk",
+      "description": "军事思想的支援单位，在攻击后提高附近单位的作战能力。可以拾取遗物、转化敌单位和占领圣地。\n+ 治愈友军单位\n+ 在大军中高效\n- 伤害低\n\n随机从可汗宫同时生成2个。"
+    },
+    "khan": {
+      "name": "Khan",
+      "description": "能够使用信号箭增强附近军事单位的远程骑兵领袖。如果被杀死，会在城镇中心重新出现。\n+ 侦察和放牧的视野\n+ 每个时代自动提升\n- 每个蒙古玩家只能有一个可汗"
+    },
+    "khans-hunter": {
+      "name": "Khan's Hunter",
+      "description": "能够在移动时射击的支援骑兵弓箭手。具有可汗猎手光环，提升附近远程单位的射程。\n+ 高机动性\n+ 优秀的视野\n- 生命值低"
+    },
+    "light-junk": {
+      "name": "Light Junk",
+      "description": "轻型战争舰艇，配备弓箭手。\n+ 增加机动性和速度。\n+ 受益于远程伤害的铁匠科技"
+    },
+    "shaman": {
+      "name": "Shaman",
+      "description": "没有战斗能力的支援单位。可以拾取遗物、转化敌单位和占领圣地。\n+ 治愈友军单位\n- 移动速度慢"
+    },
+    "traction-trebuchet": {
+      "name": "Traction Trebuchet",
+      "description": "强大的攻城器，有效摧毁远处的建筑和墙壁。\n+ 对建筑物的额外伤害\n+ 高机动性\n- 必须设置才能开火\n- 对单位不准确"
+    },
+    "gilded-archer": {
+      "name": "Gilded Archer",
+      "description": "便宜的远程步兵，对未装甲目标有良好伤害。\n+ 高射速\n- 对装甲目标弱\n- 被骑兵反制"
+    },
+    "gilded-crossbowman": {
+      "name": "Gilded Crossbowman",
+      "description": "具有更高射程和对装甲单位造成极高伤害的弩兵。\n+ 反装甲专家\n+ 长射程\n- 生命值低\n- 被骑兵克制"
+    },
+    "gilded-handcannoneer": {
+      "name": "镀金火枪手",
+      "description": "更强大的全能远程步兵，攻击速度更快。\n+ 高伤害\n+ 攻击速度增加\n- 成本高\n- 移动速度慢\n- 被骑兵克制"
+    },
+    "gilded-horseman": {
+      "name": "镀金骑兵",
+      "description": "快速骑兵，适合突袭、侧翼攻击和反制远程单位。\n+ 高移动速度\n- 对近战单位弱\n- 被长矛兵克制"
+    },
+    "gilded-knight": {
+      "name": "镀金骑士",
+      "description": "昂贵的骑兵，具有强大的冲锋能力。\n+ 重型盔甲\n+ 近战作战强\n- 被长矛兵和弩兵克制"
+    },
+    "gilded-landsknecht": {
+      "name": "镀金雇佣兵",
+      "description": "勇敢的无盔甲步兵，使用巨大的双手剑，在混合军队中有效。\n+ 近战攻击造成范围伤害\n- 生命值低\n- 被弓箭手克制"
+    },
+    "gilded-man-at-arms": {
+      "name": "镀金武装者",
+      "description": "坚韧的步兵，伤害良好。\n+ 高盔甲\n- 移动缓慢\n- 被骑士、枪骑兵和弩兵克制"
+    },
+    "gilded-spearman": {
+      "name": "镀金长矛兵",
+      "description": "最适合对付骑兵的步兵。\n+ 反骑兵专家\n- 对装甲步兵弱\n- 被弓箭手克制"
+    },
+    "gilded-villager": {
+      "name": "镀金村民",
+      "description": "收集木材、食物、石头和黄金。建造和修理建筑物，并可以修理攻城器和海军单位。收集资源速度比普通村民快28%，建造和修理速度快20%。\n- 战斗力弱"
+    },
+    "cavalry-archer": {
+      "name": "骑兵弓箭手",
+      "description": "高度机动的远程骑兵，快速发射两支箭。\n+ 高机动性\n- 对远程单位弱"
+    },
+    "grand-galley": {
+      "name": "大战船",
+      "description": "大型划桨船，可以升级为海军军事学校。\n+ 升级为军事学校后可以由任何单位驻守的大型货舱\n+ 射程非常长\n- 伤害较低"
+    },
+    "great-bombard": {
+      "name": "大轰炸机",
+      "description": "可以部署的最大火炮。对建筑物或目标群体非常有效。\n+ 高伤害\n+ 范围伤害\n+ 长射程\n- 必须设置才能开火"
+    },
+    "janissary": {
+      "name": "禁卫军",
+      "description": "对骑兵有效的强大步兵，可以修理攻城器。\n+ 高伤害\n+ 对骑兵的额外伤害\n- 成本高\n- 移动速度慢\n- 从弓箭手那里受到额外伤害。"
+    },
+    "mehter": {
+      "name": "战鼓手",
+      "description": "增强区域内单位的战鼓，村民和商人除外。\n+ 战鼓军事增强\n+ 高移动速度\n- 没有武器"
+    },
+    "lodya-attack-ship": {
+      "name": "洛迪亚攻击船",
+      "description": "装备有侧舷弩的船只。\n+ 对箭船强\n- 机动性较低"
+    },
+    "lodya-demolition-ship": {
+      "name": "洛迪亚拆除船",
+      "description": "装满炸药的小船。被击毁时会引爆，伤害周围的任何单位。\n+ 洛迪亚可以转换为任何其他类型的船\n- 爆炸中心的伤害进一步减少\n- 除了自我毁灭外没有其他武器"
+    },
+    "lodya-fishing-boat": {
+      "name": "洛迪亚渔船",
+      "description": "小船，从深水鱼或海岸鱼中收集食物。无需码头即可卸下收集的食物，收集速度比普通渔船快。\n- 没有战斗能力\n洛迪亚渔船可以转换为任何其他类型的船。"
+    },
+    "lodya-galley": {
+      "name": "洛迪亚战船",
+      "description": "配备弓箭手的划桨战船。\n+ 增加机动性\n+ 受益于远程伤害铁匠科技"
+    },
+    "lodya-trade-ship": {
+      "name": "洛迪亚贸易船",
+      "description": "贸易船在与沿海贸易站或其他玩家的码头的贸易路线中生成黄金和木材。\n洛迪亚可以转换为任何其他类型的船。"
+    },
+    "lodya-transport-ship": {
+      "name": "洛迪亚运输船",
+      "description": "可以由任何单位驻守并使用他们的视野范围。允许驻守单位在水上运输。\n洛迪亚可以转换为任何其他类型的船。"
+    },
+    "militia": {
+      "name": "民兵",
+      "description": "轻型近战步兵，装备长柄武器。\n+ 移动迅速\n- 被弓箭手克制\n- 不能驻守\n- 随时间损失生命"
+    },
+    "warrior-monk": {
+      "name": "武僧",
+      "description": "军事思维的支援单位，在攻击后提升附近单位的战斗能力。可以拾取遗物，转化敌方单位，并占领圣地。\n+ 治愈友方单位\n+ 在大军中具有高效用\n- 伤害低"
+    },
+    "imperial-guard": {
+      "name": "帝国卫队",
+      "description": "昂贵的骑兵，具有高伤害和近战护甲。对近战单位有效。\n+ 重型护甲\n+ 在近战中强大\n- 被长矛兵和弩手克制\n\n需要在朱熹的图书馆研究的王朝保护者。"
+    },
+    "shaolin-monk": {
+      "name": "少林僧侣",
+      "description": "具有强大战斗能力的僧侣。\n+ 对远程单位强大\n+ 可以自我治疗\n- 不能治疗他人"
+    },
+    "yuan-raider": {
+      "name": "元掠夺者",
+      "description": "极其迅速的轻型骑兵，对经济单位造成额外伤害。\n+ 快速移动\n+ 对村民造成额外伤害\n- 在近战中弱\n- 被长矛兵克制\n\n需要在朱熹的图书馆研究的王朝保护者。"
+    }
+  },
+  "civs": {
+    "abbasid": {
+      "name": "阿巴斯王朝",
+      "description": "阿巴斯王朝通过集中建筑在智慧之屋周围追求繁荣的黄金时代，使他们能够解锁显著的经济优势。智慧之屋还推动时代的进步，并提供先进科技的访问。阿巴斯的骆驼单位擅长对抗敌方骑兵。"
+    },
+    "ayyubids": {
+      "name": "阿尤布王朝",
+      "description": "在大陆交汇处，贸易与科学相遇，帝国冲突之地，阿尤布王朝利用对知识的追求获得优势。智慧之屋是城市化与科学结合的焦点，解锁强大的黄金时代奖励并推进时代。阿尤布王朝专注于多功能单位，以在战场上获得战术优势。"
+    },
+    "byzantines": {
+      "name": "拜占庭",
+      "description": "拜占庭建造了广泛的生命之源的水渠和蓄水池。利用强大的独特能力，雇佣精美橄榄油的雇佣兵。农民们不知疲倦地为帝国制造橄榄油。"
+    },
+    "chinese": {
+      "name": "中国",
+      "description": "中国可以在各个时代之间转变焦点，快速部署许多独特单位和建筑。敌人必须不断适应才能跟上。"
+    },
+    "delhi": {
+      "name": "德里苏丹国",
+      "description": "德里苏丹国通过伟大的学者网络始终领先于敌人。完全实现后，他们可以派出令人畏惧的战象，践踏他们的敌人。"
+    },
+    "english": {
+      "name": "英格兰",
+      "description": "卓越的早期步兵为英格兰提供强大的打击，并由可靠的田地食品生产支持。"
+    },
+    "french": {
+      "name": "法国",
+      "description": "法国部署强大的骑兵单位，并可以在防御位置提升生产。敌人必须准备好承受强大皇家骑士和其他装甲单位的冲击。"
+    },
+    "hre": {
+      "name": "神圣罗马帝国",
+      "description": "神圣罗马帝国的教士增强了经济，而强大的步兵单位则构成其军事核心。敌人必须面对能够迅速从攻击中恢复并进行强有力反击的对手。"
+    },
+    "japanese": {
+      "name": "日本",
+      "description": "统治日本土地的大名增强农业，并雇佣武士来捍卫他们的领土。独特的锻造厂不知疲倦地磨利他们的刀刃，以在战斗中获得优势。凶猛的武士旗手带领他们多样化的步兵和骑兵军队走向胜利。"
+    },
+    "jeannedarc": {
+      "name": "贞德",
+      "description": "法国人民的希望之光，贞德走上战场，激励追随者的勇气。作为一名谦逊的村民开始，贞德在黑暗时代开始了英雄之旅。经历锻造贞德成为强大的领袖，获得可信的伙伴和强大的能力，塑造她注定要创造的帝国。"
+    },
+    "malians": {
+      "name": "马里人",
+      "description": "马里经济蓬勃发展，提供黄金和食品生产的选择。通过为他们的坑矿索取黄金储备，他们利用这种增长生产独特的步兵单位，从隐蔽处发起攻击并向敌人投掷标枪。"
+    },
+    "mongols": {
+      "name": "蒙古人",
+      "description": "作为机动性和骑兵战争的高手，蒙古人可以轻松迁移他们的营地。他们通过在石头露头附近建立营地和袭击敌方建筑获得经济利益。敌人必须在游戏开始的瞬间就应对骑兵的攻击。"
+    },
+    "orderofthedragon": {
+      "name": "龙之秩序",
+      "description": "龙之秩序由精心挑选的富裕精英建立，旨在摧毁敌对帝国。投入大量资源训练仅有的几名杰出战士，龙之秩序成功地组建了一支与众不同的精英军队。"
+    },
+    "ottomans": {
+      "name": "奥斯曼帝国",
+      "description": "奥斯曼军队可以扩展以主导战场，得到军事学校的支持，能够持续生产单位以壮大他们的编队。支持这些编队的梅赫特战鼓向训练有素的部队发出信号，以便他们利用战场优势。"
+    },
+    "rus": {
+      "name": "罗斯",
+      "description": "罗斯从乡村获得巨大利益。他们能够更容易地从狩猎和林业中收集资源，并能够组建强大的作战单位。敌人面临强大的早期游戏防御工事和难以被破坏的多元经济。"
+    },
+    "zhuxi": {
+      "name": "朱熹的遗产",
+      "description": "哲学家朱熹的教义重塑了中国文明。凭借朱熹的遗产，中国拥有先进的管理体系，拥有优秀的帝国官员和先进的科技。充盈的国库有助于建立强大的王朝并研究多种独特的科技。早期招募宫廷卫兵、诸葛弩和手榴弹兵以保护帝国。"
+    }
+  },
+  "technologies": {
+    "adjustable-crossbars": {
+      "name": "可调横杆",
+      "description": "增加弩车的射程 +1，爆炸半径 +100%，并在攻击中增加 +1 投射物。"
+    },
+    "agriculture": {
+      "name": "农业",
+      "description": "提高村民从农场的采集速度 +15%。"
+    },
+    "angled-surfaces": {
+      "name": "倾斜表面",
+      "description": "增加所有非攻城器单位的远程护甲 +1。"
+    },
+    "armored-caravans": {
+      "name": "装甲商队",
+      "description": "给予商人和贸易舰船 +3 护甲。"
+    },
+    "armored-hull": {
+      "name": "装甲船体",
+      "description": "增加所有军事舰船的生命值 +20% 和远程护甲 +1。"
+    },
+    "arrowslits": {
+      "name": "箭孔",
+      "description": "为该建筑增加防御箭孔，并将驻军箭的射程增加 +1。只能添加一个武器安置点。"
+    },
+    "balanced-projectiles": {
+      "name": "平衡弹药",
+      "description": "增加所有箭矢和弩箭的远程伤害 +1。"
+    },
+    "biology": {
+      "name": "生物学",
+      "description": "投资于自然科学使所有骑兵的生命值增加 +30%。"
+    },
+    "bloomery": {
+      "name": "锻炉",
+      "description": "增加所有非攻城器单位的近战伤害 +1。"
+    },
+    "boiling-oil": {
+      "name": "沸油",
+      "description": "塔楼和堡垒对附近单位进行沸油攻击，造成 30 点伤害。"
+    },
+    "boot-camp": {
+      "name": "新兵训练营",
+      "description": "增加所有步兵的生命值 +15%。"
+    },
+    "camel-handling": {
+      "name": "骆驼驯养",
+      "description": "增加骆驼单位的移动速度 +15%。"
+    },
+    "camel-rider-barding": {
+      "name": "骆驼骑士铠甲",
+      "description": "增加骆驼骑士的护甲 +2。"
+    },
+    "camel-rider-shields": {
+      "name": "骆驼骑士盾牌",
+      "description": "给予骆驼骑士盾牌，提升他们的近战护甲 +3。"
+    },
+    "camel-support": {
+      "name": "骆驼支援",
+      "description": "骆驼增加附近步兵的护甲 +2。"
+    },
+    "cannon-emplacement": {
+      "name": "炮台",
+      "description": "为该建筑增加一个防御炮台。"
+    },
+    "chemistry": {
+      "name": "化学",
+      "description": "在炼金术研究方面的进展使所有火药攻城武器的额外伤害增加 +25%。"
+    },
+    "composite-bows": {
+      "name": "复合弓",
+      "description": "增加弓箭手的攻击速度 +33%。"
+    },
+    "court-architects": {
+      "name": "宫廷建筑师",
+      "description": "对最优秀建筑师的赞助使所有建筑的生命值增加 +30%。"
+    },
+    "crosscut-saw": {
+      "name": "横切锯",
+      "description": "提高村民的木材采集速度15%，木材采集者的携带容量增加5。"
+    },
+    "culture-wing": {
+      "name": "文化翅膀",
+      "description": "以下文化科技可用：\n• 知识保存（时代 II）\n• 医疗中心（时代 III）\n• 公共图书馆（时代 IV)"
+    },
+    "cupellation": {
+      "name": "杯炼",
+      "description": "金矿采集者多交15%的资源。"
+    },
+    "damascus-steel": {
+      "name": "大马士革钢",
+      "description": "所有非攻城器单位的近战伤害增加1。"
+    },
+    "decarbonization": {
+      "name": "脱碳化",
+      "description": "所有非攻城器单位的近战伤害增加1。"
+    },
+    "double-broadax": {
+      "name": "双刃斧",
+      "description": "提高村民的木材采集速度15%。"
+    },
+    "drift-nets": {
+      "name": "漂流网",
+      "description": "提高渔船的采集速度10%，携带容量增加20，移动速度增加10%。"
+    },
+    "economic-wing": {
+      "name": "经济翅膀",
+      "description": "建造经济翅膀。\n以下经济科技可用：\n• 肥沃的新月（时代 II）\n• 农业（时代 III）\n• 改进加工（时代 IV）"
+    },
+    "elite-army-tactics": {
+      "name": "精英军队战术",
+      "description": "训练精英步兵提高战斗能力。近战步兵获得20%的伤害和4点近战护甲。"
+    },
+    "explosives": {
+      "name": "爆炸物",
+      "description": "提高火焰舰船的伤害40%。"
+    },
+    "extended-lines": {
+      "name": "扩展线路",
+      "description": "提高渔船的采集速度15%，携带容量增加10。"
+    },
+    "extra-hammocks": {
+      "name": "额外吊床",
+      "description": "增加弓箭舰发射的箭矢数量1。"
+    },
+    "fertile-crescent": {
+      "name": "肥沃的新月",
+      "description": "降低经济建筑和房屋的成本35%。"
+    },
+    "fertilization": {
+      "name": "施肥",
+      "description": "提高村民的食物采集速度10%。不适用于猎取的肉类。"
+    },
+    "fitted-leatherwork": {
+      "name": "合身皮革工艺",
+      "description": "所有非攻城器单位的近战护甲增加1。"
+    },
+    "forestry": {
+      "name": "林业",
+      "description": "村民砍伐树木的速度加倍。"
+    },
+    "fortify-outpost": {
+      "name": "强化前哨",
+      "description": "为该前哨增加1000生命值和5点火焰护甲。"
+    },
+    "fresh-foodstuffs": {
+      "name": "新鲜食品",
+      "description": "降低生产村民的成本35%。"
+    },
+    "geometry": {
+      "name": "几何学",
+      "description": "提高投石机的伤害20%。"
+    },
+    "grand-bazaar": {
+      "name": "大集市",
+      "description": "商人和贸易船也会带回第二种资源。该资源的价值为基本黄金价值的25%，并在市场上设定。"
+    },
+    "greased-axles": {
+      "name": "润滑轴",
+      "description": "提高攻城器的移动速度15%。"
+    },
+    "heated-shot": {
+      "name": "加热弹",
+      "description": "弓箭舰的箭矢点燃敌舰，造成持续伤害。"
+    },
+    "herbal-medicine": {
+      "name": "草药医学",
+      "description": "提高宗教单位的治疗速度60%。"
+    },
+    "horticulture": {
+      "name": "园艺",
+      "description": "提高村民的食物采集速度10%。不适用于猎取的肉类。"
+    },
+    "improved-processing": {
+      "name": "改进加工",
+      "description": "村民多交8%的资源。"
+    },
+    "incendiaries": {
+      "name": "火焰弹",
+      "description": "燃烧舰船获得+20%的爆炸范围。"
+    },
+    "incendiary-arrows": {
+      "name": "燃烧箭",
+      "description": "易燃弹药在攻击建筑时为非火药远程单位提供攻城箭或弩，并将其伤害提高+20%。"
+    },
+    "insulated-helm": {
+      "name": "绝缘头盔",
+      "description": "所有非攻城单位的近战护甲增加+1。"
+    },
+    "iron-undermesh": {
+      "name": "铁网",
+      "description": "所有非攻城单位的远程护甲增加+1。"
+    },
+    "lightweight-beams": {
+      "name": "轻型梁",
+      "description": "增加攻城锤的攻击速度+20%，并将其现场建造时间减少-50%。"
+    },
+    "lumber-preservation": {
+      "name": "木材保护",
+      "description": "村民的木材采集速度提高15%。"
+    },
+    "master-smiths": {
+      "name": "大师铁匠",
+      "description": "所有非攻城单位的近战护甲增加+1。"
+    },
+    "medical-centers": {
+      "name": "医疗中心",
+      "description": "城镇中心和堡垒每秒为附近单位恢复+2生命值。"
+    },
+    "military-academy": {
+      "name": "军事学院",
+      "description": "提高建筑内步兵、骑兵、攻城器和运输单位的生产速度33%。\n不影响宗教单位或其他支援单位。"
+    },
+    "military-wing": {
+      "name": "军事翼",
+      "description": "建造军事翼。完成后，提供2名长矛兵和2名弓箭手（第二时代），2名骆驼骑士（第三时代）或3名火枪手（第四时代）。\n解锁：\n•训练营（第二时代）\n•复合弓（第三时代）\n•骆驼支援（第四时代）"
+    },
+    "naval-arrowslits": {
+      "name": "海军箭窗",
+      "description": "为该码头添加一个只攻击舰船的防御箭窗。"
+    },
+    "phalanx": {
+      "name": "方阵",
+      "description": "增加长矛兵的攻击范围+100%。"
+    },
+    "piety": {
+      "name": "虔诚",
+      "description": "提高宗教单位的生命值+40。"
+    },
+    "platecutter-point": {
+      "name": "切片点",
+      "description": "所有箭矢和弩的远程伤害增加+1。"
+    },
+    "precision-cross-breeding": {
+      "name": "精准杂交",
+      "description": "提高村民的食物采集速度10%。不适用于猎取的肉。"
+    },
+    "preservation-of-knowledge": {
+      "name": "知识的保存",
+      "description": "所有科技和时代进步的成本减少-20%。"
+    },
+    "professional-scouts": {
+      "name": "专业侦察兵",
+      "description": "侦察兵获得携带动物尸体的能力，并对野生动物造成+100%的伤害。\n侦察兵在携带时移动速度降低-35%，无法拾取野猪。"
+    },
+    "proselytization": {
+      "name": "传教",
+      "description": "伊玛目可以在不持有遗物的情况下转换单位，但只能针对单个单位。"
+    },
+    "public-libraries": {
+      "name": "公共图书馆",
+      "description": "村民和商人每次经济升级获得+2生命值。"
+    },
+    "roller-shutter-triggers": {
+      "name": "卷帘触发器",
+      "description": "增加弩车的攻击速度+25%，并提供+10%的远程抗性。"
+    },
+    "serpentine-powder": {
+      "name": "蛇形火药",
+      "description": "使用新火药，火枪手对近战步兵造成+8伤害，并在开火后短暂提高移动速度。"
+    },
+    "shaft-mining": {
+      "name": "竖井采矿",
+      "description": "提高村民的黄金和石材采集速度15%。"
+    },
+    "shipwrights": {
+      "name": "造船工",
+      "description": "所有军事舰船的生命值增加+20%，远程护甲增加+1。"
+    },
+    "siege-works": {
+      "name": "攻城工坊",
+      "description": "新的木工技术提高攻城单位的生命值+20%。"
+    },
+    "silk-bowstrings": {
+      "name": "丝绸弓弦",
+      "description": "用丝绸制作的弓为弓箭手提供+2射程，为骑射手提供+1射程。"
+    },
+    "specialized-pick": {
+      "name": "专业镐",
+      "description": "提高村民收集黄金和石头的速度15%。"
+    },
+    "spice-roads": {
+      "name": "香料之路",
+      "description": "提高贸易商和贸易舰船的黄金收入30%。"
+    },
+    "springald-crews": {
+      "name": "弩车船员",
+      "description": "弩车舰船增加1的射程，并且攻击速度提高20%。"
+    },
+    "springald-emplacement": {
+      "name": "弩车防御工事",
+      "description": "在该建筑上添加一个防御弩车工事。"
+    },
+    "spyglass": {
+      "name": "望远镜",
+      "description": "提高侦察兵的视野半径30%。"
+    },
+    "steeled-arrow": {
+      "name": "钢箭",
+      "description": "提高所有箭矢和弩箭的远程伤害+1。"
+    },
+    "survival-techniques": {
+      "name": "生存技巧",
+      "description": "提高村民猎取肉类的速度15%。"
+    },
+    "swivel-cannon": {
+      "name": "旋转炮",
+      "description": "弩车舰船增加一个额外的炮，可以360度发射。"
+    },
+    "teak-masts": {
+      "name": "柚木桅杆",
+      "description": "提高军事舰船的生命值10%。"
+    },
+    "textiles": {
+      "name": "纺织品",
+      "description": "提高村民的生命值50%。"
+    },
+    "tithe-barns": {
+      "name": "十分之一谷仓",
+      "description": "放置在修道院中的遗物每分钟提供40食物、40木材和10石头的收入。"
+    },
+    "trade-wing": {
+      "name": "贸易翼",
+      "description": "建造贸易翼。作为一个家庭市场，并在完成时提供3、4或5个贸易商（根据时代）。\n解锁：\n•装甲商队（时代II）\n•大集市（时代III）\n•香料之路（时代IV)"
+    },
+    "wedge-rivets": {
+      "name": "楔形铆钉",
+      "description": "提高所有非攻城单位的远程护甲+1。"
+    },
+    "wheelbarrow": {
+      "name": "手推车",
+      "description": "提高村民的携带能力+5，移动速度提高15%。"
+    },
+    "bonus-culture-wing-advancement": {
+      "name": "进步\n（奖励文化翼）",
+      "description": "建造文化翼。\n建造此翼可以在20%更少的时间和1300更少的成本下晋升到下一个时代。"
+    },
+    "bonus-culture-wing-logistics": {
+      "name": "物流\n（奖励文化翼）",
+      "description": "建造文化翼。\n完成后，提供4个德尔维士，改善单位的治疗效果+50%，并永久开启。"
+    },
+    "bonus-economic-wing-growth": {
+      "name": "增长\n（奖励经济翼）",
+      "description": "建造经济翼。\n完成后，提供10个村民，所有村民工作速度提高10%。"
+    },
+    "bonus-economic-wing-industry": {
+      "name": "工业\n（奖励经济翼）",
+      "description": "建造军事翼。\n铁匠的伤害和护甲科技在进入一个时代时变为免费并自动完成。（其他时代的科技仍需正常研究）。"
+    },
+    "bonus-military-wing-master-smiths": {
+      "name": "大师铁匠\n（奖励军事翼）",
+      "description": "建造军事翼。\n铁匠的伤害和护甲科技在进入一个时代时变为免费并自动完成。（其他时代的科技仍需正常研究）。"
+    },
+    "bonus-military-wing-reinforcement": {
+      "name": "增援\n（奖励军事翼）",
+      "description": "建造军事翼。\n完成后，骑兵单位获得建造攻城器的能力。\n智慧之屋立即生产7个沙漠袭击者，然后每2分钟生产一次，直到游戏结束。"
+    },
+    "bonus-trade-wing-advisors": {
+      "name": "顾问\n（奖励贸易翼）",
+      "description": "建造贸易翼。\n完成后，获得7个阿塔贝克，可以驻扎在任何军事生产建筑（除了码头）中，以提高新训练单位的生命值20%。"
+    },
+    "bonus-trade-wing-bazaar": {
+      "name": "集市\n（奖励贸易翼）",
+      "description": "建造贸易翼。\n每三分钟到达一个贸易商队，带来四个随机选择的有利资源和单位交换。\n这些交易的质量根据建造贸易翼时的时代永久设定。使用贸易翼进入更晚的时代可以提供更有利的交易。"
+    },
+    "castle-culture-wing-advancement": {
+      "name": "进步\n（城堡文化翼）",
+      "description": "建造文化翼。\n建造此翼可以在20%更少的时间和400更少的成本下晋升到下一个时代。"
+    },
+    "castle-culture-wing-logistics": {
+      "name": "物流\n（城堡文化翼）",
+      "description": "建造文化翼。\n完成后，提供3个德尔维士，改善单位的治疗效果+25%，并永久开启。"
+    },
+    "castle-economic-wing-growth": {
+      "name": "增长\n（城堡经济翼)",
+      "description": "建造经济翅膀。\n完成后，授予7个村民。果园获得100额外食物。"
+    },
+    "castle-economic-wing-industry": {
+      "name": "工业\n(城堡经济翅膀)",
+      "description": "建造经济翅膀。\n完成后，奖励800木材和400石头。"
+    },
+    "castle-military-wing-master-smiths": {
+      "name": "大师铁匠\n(城堡军事翅膀)",
+      "description": "建造军事翅膀。\n铁匠的伤害和护甲科技在进入一个时代时变为免费并自动完成。(其他时代的科技仍需正常研究)。"
+    },
+    "castle-military-wing-reinforcement": {
+      "name": "增援\n(城堡军事翅膀)",
+      "description": "建造军事翅膀。\n完成后，骑兵单位获得建造攻城器的能力。\n智慧之屋立即生产3个沙漠袭击者，然后每2分钟生产一次，直到游戏结束。"
+    },
+    "castle-trade-wing-advisors": {
+      "name": "顾问\n(城堡贸易翅膀)",
+      "description": "建造贸易翅膀。\n完成后，获得5个阿塔贝克，可以驻扎在任何军事生产建筑（除了码头）中，以提高新训练单位的生命值20%。"
+    },
+    "castle-trade-wing-bazaar": {
+      "name": "集市\n(城堡贸易翅膀)",
+      "description": "建造贸易翅膀。\n每三分钟会有一个贸易车队到达，带来四种资源和单位的随机有利交换。\n这些交易的质量根据建造贸易翅膀时的时代永久设定。使用贸易翅膀进入更晚的时代会提供更有利可图的交易。"
+    },
+    "feudal-culture-wing-advancement": {
+      "name": "进步\n(封建文化翅膀)",
+      "description": "建造文化翅膀。\n建造此翅膀可在20%更少的时间和减少250的成本下晋升到下一个时代。"
+    },
+    "feudal-culture-wing-logistics": {
+      "name": "物流\n(封建文化翅膀)",
+      "description": "建造文化翅膀。\n完成后，授予2个德尔维士，并永久开启他们的治疗光环。"
+    },
+    "feudal-economic-wing-growth": {
+      "name": "增长\n(封建经济翅膀)",
+      "description": "建造经济翅膀。\n完成后，授予3个村民。果园获得50额外食物。"
+    },
+    "feudal-economic-wing-industry": {
+      "name": "工业\n(封建经济翅膀)",
+      "description": "建造经济翅膀。\n完成后，奖励350木材。"
+    },
+    "feudal-military-wing-master-smiths": {
+      "name": "大师铁匠\n(封建军事翅膀)",
+      "description": "建造军事翅膀。\n铁匠的伤害和护甲科技在进入一个时代时变为免费并自动完成。(其他时代的科技仍需正常研究)。"
+    },
+    "feudal-military-wing-reinforcement": {
+      "name": "增援\n(封建军事翅膀)",
+      "description": "建造军事翅膀。\n完成后，骑兵单位获得建造攻城器的能力。\n智慧之屋在15秒后生产1个沙漠袭击者，然后每2分钟生产一次，直到游戏结束。"
+    },
+    "feudal-trade-wing-advisors": {
+      "name": "顾问\n(封建贸易翅膀)",
+      "description": "建造贸易翅膀。\n完成后，获得3个阿塔贝克，可以驻扎在任何军事生产建筑（除了码头）中，以提高新训练单位的生命值20%。"
+    },
+    "feudal-trade-wing-bazaar": {
+      "name": "集市\n(封建贸易翅膀)",
+      "description": "建造贸易翅膀。\n每三分钟会有一个贸易车队到达，带来四种资源和单位的随机有利交换。\n这些交易的质量根据建造贸易翅膀时的时代永久设定。使用贸易翅膀进入更晚的时代会提供更有利可图的交易。"
+    },
+    "imperial-culture-wing-advancement": {
+      "name": "进步\n(帝国文化翅膀)",
+      "description": "建造文化翅膀。\n建造此翅膀可在20%更少的时间和减少1350的成本下晋升到下一个时代。"
+    },
+    "imperial-culture-wing-logistics": {
+      "name": "物流\n(帝国文化翅膀)",
+      "description": "建造文化翅膀。\n完成后，授予4个德尔维士，提高单位的治疗效果+50%，并永久开启。"
+    },
+    "imperial-economic-wing-growth": {
+      "name": "增长\n(帝国经济翅膀)",
+      "description": "建造经济翅膀。\n完成后，授予10个村民，所有村民工作速度提高10%。"
+    },
+    "imperial-economic-wing-industry": {
+      "name": "工业\n(帝国经济翅膀)",
+      "description": "建造经济翅膀。\n完成后，奖励2000木材和900石头。"
+    },
+    "imperial-military-wing-master-smiths": {
+      "name": "大师铁匠\n(帝国军事翅膀)",
+      "description": "构建军事翅膀。\n铁匠的伤害和护甲科技在进入一个时代时自动变为免费并完成。(其他时代的科技仍需正常研究)。"
+    },
+    "imperial-military-wing-reinforcement": {
+      "name": "增援\n(帝国军事翅膀)",
+      "description": "构建军事翅膀。\n完成后，骑兵单位获得构建攻城器的能力。\n智慧之屋立即生产7个沙漠突袭者，然后在游戏的其余时间每2分钟生产一次。"
+    },
+    "imperial-trade-wing-advisors": {
+      "name": "顾问\n(帝国贸易翅膀)",
+      "description": "构建贸易翅膀。\n完成后，获得7个阿塔贝克，可以驻扎在任何军事生产建筑（除了码头）中，以提高新训练单位的生命值20%。"
+    },
+    "imperial-trade-wing-bazaar": {
+      "name": "集市\n(帝国贸易翅膀)",
+      "description": "构建贸易翅膀。\n每三分钟，一辆贸易商队会带来四个随机选择的有利资源和单位交换。\n这些交易的质量根据构建贸易翅膀时的时代永久设定。使用贸易翅膀进入更晚的时代可以提供更丰厚的交易。"
+    },
+    "infantry-support": {
+      "name": "步兵支援",
+      "description": "步兵增加附近骆驼的护甲3。"
+    },
+    "siege-carpentry": {
+      "name": "攻城木工",
+      "description": "完成后，攻城单位获得结构强化能力。\n攻城单位在10秒内获得+20近战护甲和+5火焰护甲。"
+    },
+    "sultans-mamluks": {
+      "name": "苏丹的马穆鲁克",
+      "description": "步兵在击杀单位后获得+25%伤害和+20%移动速度，持续10秒。"
+    },
+    "border-settlements": {
+      "name": "边境定居点",
+      "description": "增加房屋的视野范围7格，并提高其建造速度500%。"
+    },
+    "eastern-mercenary-contract": {
+      "name": "东部雇佣兵合同",
+      "description": "解锁可汗、古拉姆和塔象雇佣兵的生产。\n可汗：封建时代\n古拉姆：老兵合同\n塔象：精英合同"
+    },
+    "elite-mercenaries": {
+      "name": "精英合同",
+      "description": "将老兵雇佣兵升级为精英雇佣兵。"
+    },
+    "expilatores": {
+      "name": "掠夺者",
+      "description": "骑兵对工人的伤害增加+2。被你的骑兵杀死的工人奖励+20金币。"
+    },
+    "ferocious-speed": {
+      "name": "凶猛速度",
+      "description": "瓦兰吉卫队在激活狂暴时移动速度增加+30%。"
+    },
+    "greek-fire-projectiles": {
+      "name": "希腊火弹药",
+      "description": "反重力投石机造成+30%增加的伤害，并用希腊火吞没其目标，造成区域伤害。希腊火不会与其他补丁叠加。"
+    },
+    "heavy-dromon": {
+      "name": "重型德罗蒙",
+      "description": "升级所有德罗蒙，使其在攻击时在表面或地面留下希腊火。操帆冷却时间也减少到20秒。"
+    },
+    "liquid-explosives": {
+      "name": "液体炸药",
+      "description": "燃烧舰船对其爆炸半径内的所有敌人造成全额伤害。"
+    },
+    "mangonel-emplacement": {
+      "name": "弩炮阵地",
+      "description": "在此结构上添加一个防御性弩炮阵地。"
+    },
+    "numeri": {
+      "name": "数字",
+      "description": "被践踏的敌方单位变得脆弱，并在12秒内受到+15%增加的伤害。"
+    },
+    "siege-engineering": {
+      "name": "攻城工程",
+      "description": "近战和远程步兵可以在野外建造攻城塔和攻城锤。"
+    },
+    "silk-road-mercenary-contract": {
+      "name": "丝绸之路雇佣兵合同",
+      "description": "解锁投矛手、骆驼骑士和榴弹炮手雇佣兵的生产。\n投矛手：封建时代\n骆驼骑士：老兵合同\n榴弹炮手：精英合同"
+    },
+    "teardrop-shields": {
+      "name": "水滴盾牌",
+      "description": "增加重骑兵的护甲+1，限制骑兵的移动速度+15%，以及瓦兰吉卫队的攻击速度+15%。"
+    },
+    "trapezites": {
+      "name": "梯形骑士",
+      "description": "侦察兵增强附近单位的火把伤害25%"
+    },
+    "veteran-mercenaries": {
+      "name": "老兵合同",
+      "description": "将坚韧雇佣兵升级为老兵雇佣兵。"
+    },
+    "western-mercenary-contract": {
+      "name": "西部雇佣兵合同",
+      "description": "解锁长弓手、兰茨克内希特和斯特雷尔齐雇佣兵的生产。\n长弓手：封建时代\n兰茨克内希特：老兵合同\n斯特雷尔齐：精英合同"
+    },
+    "additional-barrels": {
+      "name": "额外火箭筒",
+      "description": "蜜蜂巢获得2个额外火箭箭矢。"
+    },
+    "ancient-techniques": {
+      "name": "古代技巧",
+      "description": "提高村民的采集速度，每个朝代增加 +4%."
+    },
+    "battle-hardened": {
+      "name": "战斗磨练",
+      "description": "提高宫廷卫兵的生命值 +30."
+    },
+    "extra-materials": {
+      "name": "额外材料",
+      "description": "塔楼和堡垒每秒修复附近墙壁和大门 +20 生命值."
+    },
+    "handcannon-slits": {
+      "name": "手炮缝隙",
+      "description": "在此结构上添加防御性手炮缝隙，并增加驻军箭矢射程 +1. 只能添加一个武器安置点."
+    },
+    "imperial-examinations": {
+      "name": " imperial-examinations",
+      "description": "提高帝国官员携带的黄金最大数量，从 +40 提高到 +80."
+    },
+    "pyrotechnics": {
+      "name": "烟火技术",
+      "description": "增加手炮的射程 +1.5."
+    },
+    "reload-drills": {
+      "name": "重新装填演习",
+      "description": "提高重炮的攻击速度 +33%."
+    },
+    "thunderclap-bombs": {
+      "name": "雷鸣炸弹",
+      "description": "战船发射一窝蜜蜂攻击."
+    },
+    "all-seeing-eye": {
+      "name": "千里眼",
+      "description": "提高学者的视野范围 +100%."
+    },
+    "armored-beasts": {
+      "name": "装甲野兽",
+      "description": "给予战争大象 +25% 生命值和 +4 远程护甲."
+    },
+    "efficient-production": {
+      "name": "高效生产",
+      "description": "允许学者驻守在军事建筑中，提升生产速度 100%."
+    },
+    "forced-march": {
+      "name": "强制行军",
+      "description": "步兵单位获得强制行军能力。\n激活时，步兵在 10 秒内移动速度提高 +100%，但在造成伤害时会中断."
+    },
+    "hearty-rations": {
+      "name": "丰盛口粮",
+      "description": "提高村民的携带能力 +10."
+    },
+    "honed-blades": {
+      "name": "磨锋刀刃",
+      "description": "重装步兵和长矛兵装备一把 Kilij，增加他们的伤害 +3."
+    },
+    "howdahs": {
+      "name": "马鞍",
+      "description": "升级塔象，使其骑乘精英弩手而不是弓箭手。塔象获得 +30% 生命值和 +4 远程护甲."
+    },
+    "mahouts": {
+      "name": "象夫",
+      "description": "大象移动速度提高 +10%."
+    },
+    "paiks": {
+      "name": "帕伊克",
+      "description": "弓箭手和弩手获得 +0.5 射程."
+    },
+    "reinforced-foundations": {
+      "name": "加固基础",
+      "description": "村民和步兵可以在房屋内驻守以获得保护。房屋获得驻军箭矢和 +50% 生命值."
+    },
+    "salvaged-materials": {
+      "name": "回收材料",
+      "description": "Baghlahs 在击杀敌方单位时恢复 30 生命值."
+    },
+    "sanctity": {
+      "name": "神圣性",
+      "description": "允许学者在城堡时代 (III) 之前占领神圣地点。神圣地点生成 +25% 更多黄金."
+    },
+    "slow-burning-defenses": {
+      "name": "慢燃防御",
+      "description": "提高石墙塔、堡垒和前哨的火焰护甲 +10."
+    },
+    "swiftness": {
+      "name": "迅捷",
+      "description": "提高学者的移动速度 +50%."
+    },
+    "tranquil-venue": {
+      "name": "宁静场所",
+      "description": "清真寺每秒为处于战斗之外的单位恢复 +4 生命值."
+    },
+    "village-fortresses": {
+      "name": "村庄堡垒",
+      "description": "堡垒的功能类似于城镇中心，包括单位生产、人口容量和科技."
+    },
+    "zeal": {
+      "name": "热情",
+      "description": "被学者治疗的单位在 3 秒内获得 +50% 攻击速度."
+    },
+    "admiralty": {
+      "name": "海军法",
+      "description": "增加舰船的攻击范围 +1."
+    },
+    "armor-clad": {
+      "name": "装甲保护",
+      "description": "增加重步兵的远程和近战护甲 +2."
+    },
+    "arrow-volley": {
+      "name": "箭雨",
+      "description": "长弓手获得箭雨，这是一个激活能力，可以将他们的攻击时间减少 +1 秒，持续 6 秒."
+    },
+    "enclosures": {
+      "name": "围栏",
+      "description": "每个村民正在工作的农场围栏每 5 秒产生 +1 金."
+    },
+    "network-of-citadels": {
+      "name": "城堡网络",
+      "description": "将城堡网络的攻击速度加成从 +20% 提高到 +40%."
+    },
+    "shattering-projectiles": {
+      "name": "破碎弹药",
+      "description": "投石机的弹药在撞击时破碎，增加其效果范围."
+    },
+    "upgrade-king-3": {
+      "name": "城堡时代国王",
+      "description": "在达到城堡时代时增加国王的生命值、攻击和护甲."
+    },
+    "upgrade-king-4": {
+      "name": "帝国时代国王",
+      "description": "在达到帝国时代时增加国王的生命值、攻击和护甲."
+    },
+    "cantled-saddles": {
+      "name": "倾斜鞍具",
+      "description": "增加皇家骑士冲锋后的额外伤害从 +3 提高到 +10."
+    },
+    "chivalry": {
+      "name": "骑士精神",
+      "description": "皇家骑士在脱离战斗时每 1 秒恢复 +1 生命值."
+    },
+    "crossbow-stirrups": {
+      "name": "弩马镫",
+      "description": "增加弩手的攻击速度 +25%."
+    },
+    "enlistment-incentives": {
+      "name": "征兵激励",
+      "description": "通过进一步减少单位成本 -5% 来改善法国的影响力."
+    },
+    "gambesons": {
+      "name": "护甲",
+      "description": "增加弩手的近战护甲 +5."
+    },
+    "long-guns": {
+      "name": "长炮",
+      "description": "增加海军火炮的伤害 +15%."
+    },
+    "merchant-guilds": {
+      "name": "商会",
+      "description": "活跃的交易者每 6 秒生成 1 金."
+    },
+    "royal-bloodlines": {
+      "name": "皇家血统",
+      "description": "用最好的种马填满马厩，增加所有骑兵的生命值 +40%."
+    },
+    "awl-pikes": {
+      "name": "尖头长矛",
+      "description": "增加长矛手和骑兵的伤害 +2."
+    },
+    "devoutness": {
+      "name": "虔诚",
+      "description": "受到启发的村民收集资源的速度提高 +10%，建造建筑和防御的速度提高 +25%."
+    },
+    "fire-stations": {
+      "name": "消防站",
+      "description": "军事舰船在脱离战斗时每 2 秒恢复 +1 生命值."
+    },
+    "heavy-maces": {
+      "name": "重锤",
+      "description": "重步兵使用锤子，增加他们对重型目标的额外伤害 +6."
+    },
+    "inspired-warriors": {
+      "name": "受启发的战士",
+      "description": "僧侣提高他们的移动速度 10% 并可以激励军事单位，提高他们的护甲 +1，伤害 +15%."
+    },
+    "reinforced-defenses": {
+      "name": "强化防御",
+      "description": "增加墙壁、塔楼和大门的生命值 +25%."
+    },
+    "slate-and-stone-construction": {
+      "name": "石板和石头建筑",
+      "description": "所有建筑获得 +5 火焰护甲."
+    },
+    "steel-barding": {
+      "name": "钢铁盔甲",
+      "description": "给予骑士 +2 近战和 +2 远程护甲."
+    },
+    "two-handed-weapons": {
+      "name": "双手武器",
+      "description": "重步兵使用双手武器，增加他们的伤害 +2."
+    },
+    "bunrei": {
+      "name": "Bunrei",
+      "description": "增加最大Yorishiro数量+2。在浮动门立即生产2个Yorishiro。"
+    },
+    "copper-plating": {
+      "name": "Copper Plating",
+      "description": "提高舰船的火焰和远程护甲+2。"
+    },
+    "daimyo-manor": {
+      "name": "Daimyo Manor",
+      "description": "增加旗手武士的生产上限+1，并提供一个免费的村民。\n增加城镇中心生命值+1000，增加一个额外的箭槽，并增加一个光环，使村民从农场的收获率提高+20%。"
+    },
+    "daimyo-palace": {
+      "name": "Daimyo Palace",
+      "description": "增加旗手武士的生产上限+2，并提供一个免费的村民。\n增加城镇中心生命值+2000，火焰护甲+2，增加一个额外的箭槽，并增加一个光环，使村民从农场的收获率提高+40%。"
+    },
+    "do-maru-armor": {
+      "name": "Do-maru Armor",
+      "description": "在反射护甲激活时，增加骑马武士的移动速度+10%。"
+    },
+    "five-mountain-ministries": {
+      "name": "Five Mountain Ministries",
+      "description": "佛教寺庙每6秒对附近敌人施放僧兵经。"
+    },
+    "fudasashi": {
+      "name": "Fudasashi",
+      "description": "增加村民的携带能力+3，移动速度+7%，以及从浆果灌木的收集率+25%。"
+    },
+    "gion-festival": {
+      "name": "Gion Festival",
+      "description": "增加所有建筑的视野范围+2格。每3分钟，所有经济单位在3秒内恢复100%的生命值。"
+    },
+    "hizukuri": {
+      "name": "Hizukuri",
+      "description": "增加所有非攻城单位的近战伤害+1。"
+    },
+    "kabura-ya-whistling-arrow": {
+      "name": "Kabura-ya Whistling Arrow",
+      "description": "女武士在看到敌人时发射一支口哨箭，增加移动速度10秒。"
+    },
+    "kobuse-gitae": {
+      "name": "Kobuse-gitae",
+      "description": "增加所有非攻城单位的近战伤害+1。"
+    },
+    "nagae-yari": {
+      "name": "Nagae Yari",
+      "description": "长矛兵配备更强的长矛，增加武器射程+20%和对骑兵的伤害+15%。"
+    },
+    "nehan": {
+      "name": "Nehan",
+      "description": "将佛教转化升级为涅槃转化，冷却时间缩短25%，并在施放时提高附近盟友单位的移动速度+25%。"
+    },
+    "oda-tactics": {
+      "name": "Oda Tactics",
+      "description": "强大的大名的战术提高步兵的近战能力，增加他们的伤害+20%，火把伤害+20%，和近战护甲+4。"
+    },
+    "odachi": {
+      "name": "Odachi",
+      "description": "为武士装备一把大刀，对步兵造成额外+4的伤害。"
+    },
+    "shinto-rituals": {
+      "name": "Shinto Rituals",
+      "description": "增加神道祭司的生命值+40，治疗速度+60%，和移动速度+15%。"
+    },
+    "shogunate-castle": {
+      "name": "Shogunate Castle",
+      "description": "增加旗手武士的生产上限+3，并提供一个免费的村民。\n增加城镇中心生命值+3000，火焰护甲+3，增加一个光环，使村民从农场的收获率提高+60%，并装备火箭发射装置。"
+    },
+    "takezaiku": {
+      "name": "Takezaiku",
+      "description": "增加村民的携带能力+3，移动速度+7%，以及从浆果灌木的收集率+25%。"
+    },
+    "tatara": {
+      "name": "Tatara",
+      "description": "增加所有非攻城单位的近战伤害+1。"
+    },
+    "tawara": {
+      "name": "Tawara",
+      "description": "增加村民的携带能力+3，移动速度+7%，以及从浆果灌木的收集率+25%。"
+    },
+    "upgrade-shinobi-3": {
+      "name": "Castle Age Shinobi",
+      "description": "在达到城堡时代时增加忍者的生命值和伤害。"
+    },
+    "upgrade-shinobi-4": {
+      "name": "Imperial Age Shinobi",
+      "description": "在达到帝国时代时增加忍者的生命值和伤害。"
+    },
+    "yaki-ire": {
+      "name": "Yaki-ire",
+      "description": "增加所有非攻城单位的近战伤害+1。"
+    },
+    "zen": {
+      "name": "Zen",
+      "description": "佛教僧侣每60秒产生25金币。"
+    },
+    "companion-equipment": {
+      "name": "Companion Equipment",
+      "description": "增加贞德的生命值和伤害+25%，并获得+1护甲。增加贞德伙伴的生命值和伤害+20%。"
+    },
+    "level-2-path-of-the-archer": {
+      "name": "弓箭手之路",
+      "description": "等级 2 选项\n\n珍妮选择了弓箭手之路，装备弓箭以远程攻击敌人。\n获得神圣箭矢能力，对单个目标造成高伤害。\n\n需要 500XP"
+    },
+    "level-2-path-of-the-warrior": {
+      "name": "战士之路",
+      "description": "等级 2 选项\n\n珍妮选择了战士之路，装备双手剑以近战攻击敌人。\n获得神圣愤怒能力，在珍妮周围造成范围伤害。\n\n需要 500XP"
+    },
+    "level-3-champion-companions": {
+      "name": "冠军伙伴",
+      "description": "等级 3 选项\n\n珍妮的冠军可以在要塞训练。\n获得“武器，士兵！”能力，召集 3 名冠军到她身边。\n\n需要 500XP"
+    },
+    "level-3-rider-companions": {
+      "name": "骑士伙伴",
+      "description": "等级 3 选项\n\n珍妮的骑士可以在要塞训练。\n获得“骑士，准备！”能力，召集 3 名骑士到她身边。\n\n需要 500XP"
+    },
+    "level-4-field-commander": {
+      "name": "场地指挥官",
+      "description": "等级 4 选项\n\n珍妮的集结号能力现在可以召唤 7 名她选择的伙伴到战场上。\n获得天赋力量终极能力，极大增强单个单位。\n\n需要 500XP"
+    },
+    "level-4-gunpowder-monarch": {
+      "name": "火药君主",
+      "description": "等级 4 选项\n\n珍妮的集结号能力现在可以召唤 3 名她选择的伙伴和一门强大的大炮到战场上。\n获得英勇激励终极能力，极大提高附近盟友的攻击速度。\n\n需要 500XP"
+    },
+    "ordinance-company": {
+      "name": "军械公司",
+      "description": "神圣建筑还将单位的木材和黄金成本降低 25%。"
+    },
+    "banco-repairs": {
+      "name": "银行维修",
+      "description": "建筑物修复速度提高 +50%。"
+    },
+    "canoe-tactics": {
+      "name": "独木舟战术",
+      "description": "弓箭舰船发射额外的 2 支标枪武器。"
+    },
+    "farima-leadership": {
+      "name": "法里马领导力",
+      "description": "沙发使附近步兵的移动速度提高 +15%。"
+    },
+    "imported-armor": {
+      "name": "进口盔甲",
+      "description": "提高沙发的护甲 +2。"
+    },
+    "javelin-emplacement": {
+      "name": "标枪设置",
+      "description": "在此结构上添加防御标枪，并将驻军箭矢射程增加 +1。标枪对远程单位造成额外伤害。只能添加一个武器设置。"
+    },
+    "local-knowledge": {
+      "name": "地方知识",
+      "description": "穆索法迪战士和穆索法迪枪手在隐身后每次攻击获得 +5 治疗，持续 5 秒。"
+    },
+    "mounted-guns": {
+      "name": "装载火炮",
+      "description": "用大炮替换弩车舰船武器，提供更大的射程和伤害。"
+    },
+    "poisoned-arrows": {
+      "name": "毒箭",
+      "description": "弓箭手的箭矢在 6 秒内造成额外 3 点伤害。"
+    },
+    "precision-training": {
+      "name": "精准训练",
+      "description": "提高 Donso 的远程伤害 +6，弓箭手 +2，标枪投掷者 +3。"
+    },
+    "additional-torches": {
+      "name": "额外火把",
+      "description": "提高所有步兵和骑兵的火把伤害 +3。"
+    },
+    "additional-torches-improved": {
+      "name": "额外火把（改进）",
+      "description": "提高所有步兵和骑兵的火把伤害 +5。\n如果已经研究了额外火把，所有步兵和骑兵的火把伤害增加 +2。"
+    },
+    "biology-improved": {
+      "name": "生物学（改进）",
+      "description": "投资自然科学提高所有骑兵的生命值 +40%。\n如果已经研究了生物学，则提高 +10% 代替。"
+    },
+    "crosscut-saw-improved": {
+      "name": "横切锯（改进）",
+      "description": "提高村民的木材采集速度 22.5%，木材采集者的携带能力 +5。\n如果已经研究了横切锯，则提高 7.5% 代替。"
+    },
+    "cupellation-improved": {
+      "name": "熔炼（改进）",
+      "description": "黄金采集者多掉落 22.5% 的资源。\n如果已经研究了熔炼，则提高 7.5% 代替。"
+    },
+    "double-broadax-improved": {
+      "name": "双刃斧（改进）",
+      "description": "提高村民的木材采集速度 22.5%。\n如果已经研究了双刃斧，则提高 7.5% 代替。"
+    },
+    "elite-army-tactics-improved": {
+      "name": "精英军队战术（改进)",
+      "description": "训练精英步兵提高战斗能力。近战步兵获得 +30% 伤害和 +6 近战护甲。\n如果精英军队战术已经被研究，伤害增加 +10% 和近战护甲增加 +2。"
+    },
+    "fertilization-improved": {
+      "name": "施肥（改进）",
+      "description": "提高村民的食物采集速度 15%。不适用于猎取的肉类。\n如果施肥已经被研究，增加 5% 代替。"
+    },
+    "forestry-improved": {
+      "name": "林业（改进）",
+      "description": "村民一次砍倒树木。"
+    },
+    "geometry-improved": {
+      "name": "几何学（改进）",
+      "description": "提高投石机的伤害 +30%。\n如果几何学已经被研究，伤害增加 +10% 代替。"
+    },
+    "greased-axles-improved": {
+      "name": "润滑轴（改进）",
+      "description": "提高攻城器的移动速度 +20%。\n如果润滑轴已经被研究，增加 5% 代替。"
+    },
+    "herbal-medicine-improved": {
+      "name": "草药医学（改进）",
+      "description": "提高宗教单位的治疗速度 +90%。\n如果草药医学已经被研究，增加 30% 代替。"
+    },
+    "horticulture-improved": {
+      "name": "园艺（改进）",
+      "description": "提高村民的食物采集速度 15%。不适用于猎取的肉类。\n如果园艺已经被研究，增加 5% 代替。"
+    },
+    "lightweight-beams-improved": {
+      "name": "轻型梁（改进）",
+      "description": "提高攻城锤的攻击速度 +30% 并减少其现场建造时间 -75%。\n如果轻型梁已经被研究，攻击速度增加 +10% 并减少现场建造时间 -25% 代替。"
+    },
+    "lumber-preservation-improved": {
+      "name": "木材保护（改进）",
+      "description": "提高村民的木材采集速度 22.5%。\n如果木材保护已经被研究，增加 7.5% 代替。"
+    },
+    "military-academy-improved": {
+      "name": "军事学院（改进）",
+      "description": "提高建筑内军事和运输单位的生产速度 53%。\n不影响宗教或其他支援单位。\n如果军事学院已经被研究，生产速度增加 20% 代替。"
+    },
+    "monastic-shrines": {
+      "name": "修道院圣坛",
+      "description": "祈祷帐篷允许在其影响范围内即使没有 Ovoo 也能提高生产。"
+    },
+    "pax-mongolica": {
+      "name": "蒙古和平",
+      "description": "为所有前哨增加 +300 生命值和 +3 火焰护甲。"
+    },
+    "piety-improved": {
+      "name": "虔诚（改进）",
+      "description": "提高所有萨满的生命值 +60。\n如果虔诚已经被研究，增加 +20 代替。"
+    },
+    "piracy": {
+      "name": "海盗行为",
+      "description": "击沉敌舰时获得 +25 木材和 +25 黄金。"
+    },
+    "precision-cross-breeding-improved": {
+      "name": "精准杂交（改进）",
+      "description": "提高村民的食物采集速度 15%。不适用于猎取的肉类。\n如果精准杂交已经被研究，增加 5% 代替。"
+    },
+    "professional-scouts-improved": {
+      "name": "专业侦察（改进）",
+      "description": "侦察员获得携带动物尸体的能力，并对野生动物造成 +200% 伤害。侦察员在携带尸体时移动速度降低 -35% 并且无法拾取野猪。\n如果专业侦察已经被研究，伤害增加 +100% 代替。"
+    },
+    "raid-bounty": {
+      "name": "突袭奖励",
+      "description": "点燃建筑物的突袭收入增加到 +50 食物和黄金。"
+    },
+    "raid-bounty-improved": {
+      "name": "突袭奖励（改进）",
+      "description": "点燃建筑物的突袭收入增加到 +75 食物和黄金。\n如果突袭奖励已经被研究，点燃建筑物的突袭收入增加 +25 食物和黄金。"
+    },
+    "roller-shutter-triggers-improved": {
+      "name": "卷帘门触发器（改进）",
+      "description": "提高弩车的攻击速度 +35% 并提供 +10% 远程抵抗。\n如果卷帘门触发器已经被研究，增加 10% 代替。"
+    },
+    "shaft-mining-improved": {
+      "name": "竖井采矿（改进）",
+      "description": "提高村民的黄金采集速度 22.5%。\n如果酸蒸馏已经被研究，增加 7.5% 代替。"
+    },
+    "siege-engineering-improved": {
+      "name": "攻城工程（改进)",
+      "description": "近战和远程步兵可以在战场上建造攻城塔和冲车。改进的攻城工程允许建造弩车、弩车和投石机。"
+    },
+    "siege-works-improved": {
+      "name": "攻城器工坊（改进）",
+      "description": "新的木工技术使攻城器的生命值增加 +30%。\n如果攻城器工坊已经被研究，生命值增加 +10%."
+    },
+    "siha-bow-limbs": {
+      "name": "西哈弓弦",
+      "description": "增加蒙古骑兵和可汗的远程伤害 +1."
+    },
+    "siha-bow-limbs-improved": {
+      "name": "西哈弓弦（改进）",
+      "description": "增加蒙古骑兵和可汗的远程伤害 +2。\n如果西哈弓弦已经被研究，增加蒙古骑兵和可汗的远程伤害 +1."
+    },
+    "specialized-pick-improved": {
+      "name": "专业镐（改进）",
+      "description": "增加村民采集黄金的速度 22.5%。\n如果专业镐已经被研究，增加 7.5%."
+    },
+    "steppe-lancers": {
+      "name": "草原枪骑兵",
+      "description": "增加可汗每次攻击的生命恢复 +1 生命值和攻击速度 +10%."
+    },
+    "steppe-lancers-improved": {
+      "name": "草原枪骑兵（改进）",
+      "description": "增加可汗每次攻击的生命恢复 +2 生命值和攻击速度 +20%。\n如果草原枪骑兵已经被研究，增加可汗每次攻击的生命恢复 +1 生命值和攻击速度 +10%."
+    },
+    "stone-bounty": {
+      "name": "石材赏金",
+      "description": "为点燃建筑物增加 +50 石材的袭击收入."
+    },
+    "stone-bounty-improved": {
+      "name": "石材赏金（改进）",
+      "description": "为点燃建筑物增加 +75 石材的袭击收入。\n如果石材赏金已经被研究，为点燃建筑物增加 +25 石材的袭击收入."
+    },
+    "stone-commerce": {
+      "name": "石材贸易",
+      "description": "商人提供 +10% 的石材用于交易."
+    },
+    "stone-commerce-improved": {
+      "name": "石材贸易（改进）",
+      "description": "商人提供 +20% 的石材用于交易。\n如果石材贸易已经被研究，提供 +10% 的石材."
+    },
+    "superior-mobility": {
+      "name": "卓越机动性",
+      "description": "打包建筑物移动和打包/解包速度提高 50%."
+    },
+    "superior-mobility-improved": {
+      "name": "卓越机动性（改进）",
+      "description": "打包建筑物移动速度提高 +70% 和打包/解包速度提高 +50%.\n如果卓越机动性已经被研究，速度提高 +20%."
+    },
+    "survival-techniques-improved": {
+      "name": "生存技巧（改进）",
+      "description": "增加村民猎取肉类的采集速度 +20%.\n如果生存技巧已经被研究，增加猎取肉类的采集速度 +5%."
+    },
+    "textiles-improved": {
+      "name": "纺织品（改进）",
+      "description": "增加村民的生命值 +50%.\n如果纺织品已经被研究，增加生命值 +100%."
+    },
+    "tithe-barns-improved": {
+      "name": "十分之一谷仓（改进）",
+      "description": "放置在祈祷帐篷中的遗物每分钟提供 +60 食物、+60 木材和 +15 石材的收入。\n如果十分之一谷仓已经被研究，增加食物和木材的收入 +20，石材 +5."
+    },
+    "wheelbarrow-improved": {
+      "name": "独轮车（改进）",
+      "description": "增加村民的资源携带能力 +9 和移动速度 +15%.\n如果独轮车已经被研究，增加携带能力 +4."
+    },
+    "whistling-arrows": {
+      "name": "呼啸箭",
+      "description": "增加可汗的信号箭持续时间 +5 秒和范围 +2 格."
+    },
+    "whistling-arrows-improved": {
+      "name": "呼啸箭（改进）",
+      "description": "增加可汗的信号箭持续时间 +7 秒和范围 +3 格。\n如果呼啸箭已经被研究，增加可汗的信号箭持续时间 +2 秒和范围 +1 格."
+    },
+    "yam-network": {
+      "name": "驿站网络",
+      "description": "驿站速度光环适用于所有单位，而不仅仅是商人和骑兵单位。对攻城器不适用."
+    },
+    "yam-network-improved": {
+      "name": "驿站网络（改进）",
+      "description": "驿站速度光环适用于所有单位，而不仅仅是商人和骑兵单位。对攻城器不适用。\n改进的驿站网络允许商人在驿站光环内每 2 秒恢复 1 生命值."
+    },
+    "bodkin-bolts": {
+      "name": "尖头箭矢",
+      "description": "镀金弩兵对攻城单位造成 +20 伤害."
+    },
+    "golden-cuirass": {
+      "name": "金色胸甲",
+      "description": "镀金重装步兵在生命值低于 30% 时受到 -20% 的伤害."
+    },
+    "heavy-torches": {
+      "name": "重型火把",
+      "description": "镀金长矛手的火把造成范围伤害。"
+    },
+    "scale-armor": {
+      "name": "鳞甲",
+      "description": "增加镀金弓箭手的远程护甲 +3。"
+    },
+    "war-horses": {
+      "name": "战马",
+      "description": "镀金骑士在冲锋时受到 -25% 的伤害。"
+    },
+    "zornhau": {
+      "name": "愤怒斩",
+      "description": "镀金雇佣兵装备一把可以伤害敌人的长柄武器。当单位被此武器击中时，每秒流失 2 点生命值，持续 10 秒。\n任何治疗效果将移除流血。"
+    },
+    "advanced-academy": {
+      "name": "高级学院",
+      "description": "增加军事生产速度 +25%，并使军事学校具备训练骑枪手和新军的能力。"
+    },
+    "anatolian-hills": {
+      "name": "安纳托利亚山丘",
+      "description": "在地标城镇中心生成 10 只羊，并将村民的采矿速度提高 +15%。"
+    },
+    "field-work": {
+      "name": "田野工作",
+      "description": "在地标城镇中心生成 2 名伊玛目。伊玛目每秒为附近单位恢复 1 点生命值。在城堡时代增加到 2 点生命值，在帝国时代增加到 3 点生命值。"
+    },
+    "great-bombard-emplacement": {
+      "name": "大轰炸机阵地",
+      "description": "在此建筑上增加一个防御性的巨大轰炸机阵地。"
+    },
+    "imperial-fleet": {
+      "name": "帝国舰队",
+      "description": "增加火药舰的生产速度 25% 和移动速度 25%。"
+    },
+    "janissary-company": {
+      "name": "新军公司",
+      "description": "在每个地标城镇中心和军事学校生成 2 名新军。"
+    },
+    "janissary-guns": {
+      "name": "新军火枪",
+      "description": "增加新军火枪的伤害 +5。"
+    },
+    "mehter-drums": {
+      "name": "梅赫特鼓",
+      "description": "在地标城镇中心生成 1 名梅赫特。梅赫特将同一阵型单位的移动速度提高 +15%。"
+    },
+    "military-campus": {
+      "name": "军事校园",
+      "description": "增加可以建造的军事学校数量 +1。"
+    },
+    "siege-crews": {
+      "name": "攻城队伍",
+      "description": "允许所有攻城器由步兵驻守。驻守时，攻击和设置速度提高 +25%。"
+    },
+    "trade-bags": {
+      "name": "贸易袋",
+      "description": "增加黄金商人收集的数量和来自苏丹哈尼贸易网络的收入 +40%。"
+    },
+    "adaptable-hulls": {
+      "name": "可调式船体",
+      "description": "在不同类型的洛迪亚船之间转换速度提高 50%，且不再有成本惩罚。"
+    },
+    "banded-arms": {
+      "name": "带状武器",
+      "description": "增加弩车的射程 +1 格。"
+    },
+    "boyars-fortitude": {
+      "name": "博雅尔的坚韧",
+      "description": "增加罗斯骑兵的生命值 +25。"
+    },
+    "castle-turret": {
+      "name": "城堡炮塔",
+      "description": "增加此木质堡垒发射的箭矢伤害 +2。"
+    },
+    "castle-watch": {
+      "name": "城堡守望",
+      "description": "增加此木质堡垒的视野范围 6 格。"
+    },
+    "divine-light": {
+      "name": "神圣之光",
+      "description": "增加圣者祝福的持续时间 +10 秒。"
+    },
+    "fervor": {
+      "name": "热情",
+      "description": "提高圣者祝福的射程 +5 格，并增加圣者祝福造成的伤害 +1。"
+    },
+    "fine-tuned-guns": {
+      "name": "精调火炮",
+      "description": "增加轰炸机的伤害 +20%。轰炸机对步兵的伤害增加 +50%。"
+    },
+    "knight-poleaxes": {
+      "name": "骑士战斧",
+      "description": "骑士装备一把战斧，增加他们的近战伤害 +4。"
+    },
+    "mounted-training": {
+      "name": "骑乘训练",
+      "description": "增加马弓手的武器射程 +1，并解锁疾驰能力。\n疾驰：激活后以最大速度移动，武器射程 +2 格，持续 8 秒。"
+    },
+    "saints-veneration": {
+      "name": "圣人的崇敬",
+      "description": "增加工人僧侣的生命值 +100。"
+    },
+    "siege-crew-training": {
+      "name": "攻城器 crew 训练",
+      "description": "弩车、投石机和火炮的设置和拆除速度为瞬时。"
+    },
+    "upgrade-miltia-3": {
+      "name": "城堡时代民兵",
+      "description": "在达到城堡时代时增加民兵的生命值、攻击和护甲。"
+    },
+    "upgrade-militia-4": {
+      "name": "帝国时代民兵",
+      "description": "在达到帝国时代时增加民兵的生命值、攻击和护甲。"
+    },
+    "wandering-town": {
+      "name": "流浪城镇",
+      "description": "攻城器的伤害增加 +25%。攻城器每秒恢复 2 点生命值。"
+    },
+    "10000-bolts": {
+      "name": "10000 箭矢",
+      "description": "诸葛弩和弩箭手发射额外的箭矢。弩箭手的额外箭矢的效果为之前箭矢的 40%。"
+    },
+    "advanced-administration": {
+      "name": "高级管理",
+      "description": "帝国官员获得 150 生命值，携带的最大黄金增加 +80。帝国官员的限制增加 +2。"
+    },
+    "bolt-magazines": {
+      "name": "箭矢弹药库",
+      "description": "更先进的弹药库允许诸葛弩发射穿透箭矢，增加 +0.5 的射程，对轻型近战步兵造成 +1 的伤害。"
+    },
+    "cloud-of-terror": {
+      "name": "恐惧之云",
+      "description": "为火炮增加范围伤害。"
+    },
+    "dali-horses": {
+      "name": "大理马",
+      "description": "增加骑兵单位的攻击速度 +20%。"
+    },
+    "dynastic-protectors": {
+      "name": "王朝保护者",
+      "description": "允许生产独特的骑兵单位，帝国卫队和元骑兵。"
+    },
+    "hard-cased-bombs": {
+      "name": "硬壳炸弹",
+      "description": "单位在被手榴弹击中时获得 +15% 的远程和近战伤害，持续 5 秒。"
+    },
+    "imperial-red-seals": {
+      "name": "帝国红印",
+      "description": "帝国官员的限制增加 +2。完成后授予一名帝国官员。"
+    },
+    "military-affairs-bureau": {
+      "name": "军事事务局",
+      "description": "帝国官员现在可以监督堡垒和前哨，减少 35% 的所受伤害。"
+    },
+    "regional-inspection": {
+      "name": "区域检查",
+      "description": "帝国官员的监督从 150% 提高到 300%。"
+    },
+    "roar-of-the-dragon": {
+      "name": "龙的咆哮",
+      "description": "长矛兵和骑兵在冲锋时获得火枪。"
+    },
+    "single-whip-reform": {
+      "name": "单鞭改革",
+      "description": "帝国官员移动速度提高 50%。"
+    }
+  },
+  "buildings": {
+    "archery-range": {
+      "name": "弓箭场",
+      "description": "生产远程步兵单位。"
+    },
+    "barracks": {
+      "name": "兵营",
+      "description": "生产近战步兵单位。"
+    },
+    "blacksmith": {
+      "name": "铁匠铺",
+      "description": "包含改善步兵和骑兵的科技。"
+    },
+    "capital-town-center": {
+      "name": "首都城镇中心",
+      "description": "所有资源可以在此交付。生产村民、侦察兵，并增加你的最大人口。驻守时增加额外攻击。\n首都城镇中心可以探测隐身或伪装的单位。"
+    },
+    "dock": {
+      "name": "码头",
+      "description": "生产海军单位。\n自动修复附近受损的海军单位。\n最多可容纳三艘渔船。"
+    },
+    "farm": {
+      "name": "农场",
+      "description": "可收获的食物来源。使用村民从农场收集食物。\n每个农场只能有一名村民工作。"
+    },
+    "house": {
+      "name": "房屋",
+      "description": "增加你的最大人口。"
+    },
+    "house-of-wisdom": {
+      "name": "智慧之屋",
+      "description": "包含艾尤比德王朝的文明科技。\n艾尤比德通过智慧之屋在时代中前进。建造翅膀以推进到下一个时代并获得额外科技。\n翅膀的奖励根据建造的时代提高。"
+    },
+    "keep": {
+      "name": "堡垒",
+      "description": "重型驻军和可防御的位置。可以通过武器进行升级。在驻守时增加额外攻击。"
+    },
+    "lumber-camp": {
+      "name": "伐木营",
+      "description": "村民可以在此建筑处交付木材。包含改善木材收集的科技。"
+    },
+    "madrasa": {
+      "name": "宗教学校",
+      "description": "包含有利于文明的先进科技。"
+    },
+    "market": {
+      "name": "市场",
+      "description": "允许资源的买卖并生产商人。"
+    },
+    "mill": {
+      "name": "磨坊",
+      "description": "村民可以在此建筑处交付食物。包含改善食物收集的科技。"
+    },
+    "mining-camp": {
+      "name": "采矿营",
+      "description": "村民可以在此建筑处交付石头和黄金。包含改善采矿的科技。"
+    },
+    "mosque": {
+      "name": "清真寺",
+      "description": "生产学者。第一个建造的清真寺提供一个学者。从城堡时代（III）开始，学者可以在此建筑中存放遗物以生成黄金。"
+    },
+    "outpost": {
+      "name": "前哨",
+      "description": "提供广泛的视野并探测隐形或伪装的单位。可以通过武器和防御工事进行升级。在驻守时攻击。"
+    },
+    "palisade-gate": {
+      "name": "木栅门",
+      "description": "轻型防御门。必须建在木栅墙段上。"
+    },
+    "palisade-wall": {
+      "name": "木栅墙",
+      "description": "轻型防御墙，用于快速巩固区域。\n最初成本为21木材，每增加一个部分成本为7木材。"
+    },
+    "prayer-hall-of-uqba": {
+      "name": "乌克巴祈祷厅",
+      "description": "建造并防御一个奇迹以确保胜利。对手文明将意识到其建造并寻求摧毁它。"
+    },
+    "siege-workshop": {
+      "name": "攻城器工坊",
+      "description": "生产攻城器和强大的火药单位。"
+    },
+    "stable": {
+      "name": "马厩",
+      "description": "生产骑兵军事单位。"
+    },
+    "stone-wall": {
+      "name": "石墙",
+      "description": "坚固的墙，无法被火把攻击。\n墙上的单位受到远程攻击的伤害减少25%，受到攻城攻击的伤害减少50%，其射程增加+2。"
+    },
+    "stone-wall-gate": {
+      "name": "石墙门",
+      "description": "重型防御门。必须建在石墙段上。\n步兵可以使用此门进入墙顶。"
+    },
+    "stone-wall-tower": {
+      "name": "石墙塔",
+      "description": "重型防御塔，发射弩车。必须建在石墙段上。\n步兵可以使用此塔进入墙顶。"
+    },
+    "town-center": {
+      "name": "市政中心",
+      "description": "所有资源可以在此处交付。生产村民、侦察兵，并增加你的最大人口。在驻守时增加额外攻击。\n非首都市政中心无法探测隐形或伪装。"
+    },
+    "aqueduct": {
+      "name": "引水道",
+      "description": "石质基础设施，用于连接水源以改善所有连接水源的水位。可以连接到石墙。"
+    },
+    "cathedral-of-divine-wisdom": {
+      "name": "神圣智慧大教堂",
+      "description": "建造并防御一个奇迹以确保胜利。对手文明将意识到其建造并寻求摧毁它。"
+    },
+    "cistern": {
+      "name": "水池",
+      "description": "根据网络等级提高附近村民的收集率+10/14/18/22/26%。生成影响力，提升生产、研究或防御。可以激活阿基托伊防御，暂时武装附近的村民。\n将水池与引水道连接以增强其影响力和村民收集率光环。水池的成本随着水池数量的增加而增加。"
+    },
+    "cistern-of-the-first-hill": {
+      "name": "第一座山的水池",
+      "description": "作为一个水池使用。解锁非攻城军事单位的朝圣者瓶能力，可以激活以每秒增加25的生命恢复，持续6秒。\n瓶子每30秒补充一次，最多可有20个活跃瓶子。"
+    },
+    "foreign-engineering-company": {
+      "name": "外国工程公司",
+      "description": "允许生产蜜蜂巢、回回炮和皇家大炮，使用橄榄油。雇佣兵从其原始文明获得各种独特科技。"
+    },
+    "golden-horn-tower": {
+      "name": "金角塔",
+      "description": "定期免费生产解锁的雇佣兵单位。"
+    },
+    "grand-winery": {
+      "name": "大酒庄",
+      "description": "作为磨坊和修道院。附近的村民从浆果灌木和橄榄林中收集 +60% 橄榄油。驻守的遗物生成橄榄油而不是黄金。"
+    },
+    "imperial-hippodrome": {
+      "name": "帝国马戏团",
+      "description": "作为马厩。包含可以用补给点激活的胜利能力，以增加骑兵近战伤害、移动速度和生命恢复。\n配备 10 个补给点，每 25 秒生成一个。通过击杀敌方单位获得更多点数。"
+    },
+    "mercenary-house": {
+      "name": "雇佣兵之家",
+      "description": "在购买雇佣兵合同后生产雇佣兵单位。可以购买一个合同。\n通过将此建筑放置在贸易站附近，可以解锁另一组生产速度 +50% 的雇佣兵。"
+    },
+    "monastery": {
+      "name": "修道院",
+      "description": "生产宗教单位并容纳宗教科技。从城堡时代 (III) 开始，宗教单位可以拾取遗物并将其放置在此建筑中以生成黄金。"
+    },
+    "olive-grove": {
+      "name": "橄榄林",
+      "description": "可收获的食物来源。使用村民从橄榄林中收集食物。\n每个橄榄林只能有一个村民工作。\n拜占庭村民收集的橄榄油等于收集食物的 20%。"
+    },
+    "palatine-school": {
+      "name": "王公学校",
+      "description": "在训练限制兵、瓦兰吉卫队、重骑兵或切罗斯法时，有 30% 的机会在此地标处也生成一个。"
+    },
+    "university": {
+      "name": "大学",
+      "description": "容纳有利于文明的高级科技。"
+    },
+    "astronomical-clocktower": {
+      "name": "天文钟楼",
+      "description": "作为攻城工坊，生产生命值 +50% 的攻城器。"
+    },
+    "barbican-of-the-sun": {
+      "name": "太阳城堡",
+      "description": "发射远程手炮，并在驻守时添加箭孔。可以通过武器升级，并提供对隐秘森林的视野。\n帝国官员可以在此建筑处交税。"
+    },
+    "enclave-of-the-emperor": {
+      "name": "皇帝的飞地",
+      "description": "建造并防御一个奇迹以确保胜利。对手文明会意识到其建造并寻求摧毁它。"
+    },
+    "granary": {
+      "name": "粮仓",
+      "description": "村民可以在此建筑处交付食物。提高附近村民的农场收集率 +10%（与其他粮仓叠加）。每次交付资源时生成税收。"
+    },
+    "great-wall-gatehouse": {
+      "name": "长城门楼",
+      "description": "必须建在石墙上。\n配备一个蜜蜂巢，并为所有在墙上的单位提供 +25% 的远程伤害。"
+    },
+    "imperial-academy": {
+      "name": "帝国学院",
+      "description": "附近建筑从税收中生成 100% 的黄金。这里生产的帝国官员成本减少 30% 的资源，并可以在此建筑处交税。"
+    },
+    "imperial-palace": {
+      "name": "帝国宫殿",
+      "description": "一个视野半径为 28 的间谍地标和帝国间谍能力。激活以查看敌方工人的位置，持续 15 秒。\n帝国官员可以在此建筑处交税。"
+    },
+    "pagoda": {
+      "name": "宝塔",
+      "description": "宗教单位可以拾取遗物并将其放置在宝塔中，每 60 秒生成 +100 黄金、+62 食物、+62 木材和 +25 石材。"
+    },
+    "spirit-way": {
+      "name": "灵魂之路",
+      "description": "可以在这里研究王朝科技，成本减少 -50% 并且研究速度 +150%。当一个王朝单位被击杀时，附近单位在 10 秒内获得 +20% 攻击速度和 +20 生命值。\n帝国官员可以在此建筑处交税。"
+    },
+    "village": {
+      "name": "村庄",
+      "description": "将最大人口增加 40。"
+    },
+    "compound-of-the-defender": {
+      "name": "防御者的复合体",
+      "description": "步兵单位可以建造石墙、门和塔。减少建筑及其安置的石材成本 20%。\n包含忽略建筑和帝国时代 (IV) 要求的防御科技。"
+    },
+    "dome-of-the-faith": {
+      "name": "信仰之穹",
+      "description": "作为清真寺。以 65 黄金的折扣生产学者。"
+    },
+    "great-palace-of-agra": {
+      "name": "阿格拉大宫殿",
+      "description": "建造并防御一个奇迹以确保胜利。对手文明会意识到其建造并寻求摧毁它。"
+    },
+    "hisar-academy": {
+      "name": "希萨尔学院"
+    },
+    "regnitz-cathedral": {
+      "name": "雷根尼茨大教堂",
+      "description": "作为一个修道院。所有遗物在驻守时生成 +100% 黄金。"
+    },
+    "buddhist-temple": {
+      "name": "佛教寺庙",
+      "description": "生产佛教僧侣并拥有独特的佛教科技。从城堡时代（III）开始，宗教单位可以拾取遗物并将其放置在此建筑中以生成黄金。"
+    },
+    "castle": {
+      "name": "城堡",
+      "description": "重型驻军和防御位置，配备强大的火箭，对单一目标造成高伤害。可以通过武器升级。驻守时增加额外攻击。"
+    },
+    "castle-of-the-crow": {
+      "name": "乌鸦城堡",
+      "description": "作为一个城堡。可以定期从选定的中立贸易站生成宝藏车队，当到达乌鸦城堡时提供大量的食物、木材、黄金和一些石头。"
+    },
+    "farmhouse": {
+      "name": "农舍",
+      "description": "增加你的最大人口，村民可以在此建筑中投放食物。包含改善食物收集的科技。"
+    },
+    "floating-gate": {
+      "name": "浮动门",
+      "description": "每2分钟生产一个携带依赖物的神道僧侣。第一个僧侣立即生成。可在建筑中存放最多4个依赖物以提供独特的加成。\n\n解锁神道神社，包含独特的神道科技并生产神道僧侣。"
+    },
+    "forge": {
+      "name": "铸造厂",
+      "description": "村民可以在此建筑中投放石头和黄金。拥有改善采矿和军事单位的科技。"
+    },
+    "koka-township": {
+      "name": "甲贺镇",
+      "description": "可以生产专门从事侦察、破坏和暗杀的忍者间谍单位。完成后排队生产一个免费的忍者。"
+    },
+    "kura-storehouse": {
+      "name": "仓库",
+      "description": "通用投放地点，每50秒在地标周围创建一个农场——当农田满时生成木材。"
+    },
+    "shinto-shrine": {
+      "name": "神道神社",
+      "description": "生产神道僧侣并拥有独特的神道科技。从城堡时代（III）开始，宗教单位可以拾取遗物并将其放置在此建筑中以生成黄金。"
+    },
+    "tanegashima-gunsmith": {
+      "name": "种子岛枪匠",
+      "description": "每30秒储存武器补给，可用于立即生产火药单位——配备2个储备。生产独特的重型远程火药步兵大筒，具有攻城伤害。允许访问里巴尔德金。"
+    },
+    "temple-of-equality": {
+      "name": "平等寺",
+      "description": "生产佛教僧侣并包含独特的佛教科技。佛教僧侣通过减少敌人伤害的僧侣经文和增强盟友伤害的佛教转化在战斗中提供支持。\n\n还允许建造4个额外的佛教寺庙。"
+    },
+    "tokugawa-shrine": {
+      "name": "德川神社",
+      "description": "建造并防御一个奇迹以确保胜利。对手文明将意识到其建设并寻求摧毁它。"
+    },
+    "cattle-ranch": {
+      "name": "牛场",
+      "description": "驻守在此牧场的牛每分钟生成 +25 食物。该值会因食物升级而增加。"
+    },
+    "farimba-garrison": {
+      "name": "法林巴驻军",
+      "description": "招募三种单位之一以增强你的阵容：曼萨·穆索法迪、曼萨·标枪手或自由出生战士。在帝国时代可以招募另一单位。"
+    },
+    "fort-of-the-huntress": {
+      "name": "猎手堡垒",
+      "description": "作为一个可以射击毒箭的堡垒。靠近地标的步兵单位进入隐身状态30秒。\n穆索法迪战士和穆索法迪枪手获得先发制人，在打破隐身时造成更多伤害。"
+    },
+    "grand-fulani-corral": {
+      "name": "大富拉尼圈",
+      "description": "附近的牛每分钟提供20食物。"
+    },
+    "great-mosque": {
+      "name": "大清真寺",
+      "description": "建造并防御一个奇迹以确保胜利。对手文明将意识到其建设并寻求摧毁它。"
+    },
+    "griot-bara": {
+      "name": "吉里奥特·巴拉",
+      "description": "花费300黄金开始一个节日，为食物收集速度、单位生产速度或火把和攻城攻击的伤害提供全球增强。一次只能有一个节日处于活动状态。"
+    },
+    "mansa-quarry": {
+      "name": "曼萨采石场",
+      "description": "每分钟生成75黄金。可以切换为生成石头。"
+    },
+    "pit-mine": {
+      "name": "坑矿",
+      "description": "必须建在金矿脉上。\n每分钟开采35黄金而不耗尽矿藏。如果矿藏已被耗尽，坑矿可以重新放置在枯竭的金矿脉上。"
+    },
+    "saharan-trade-network": {
+      "name": "撒哈拉贸易网络",
+      "description": "充当一个带有防御标枪布置的收费前哨。解锁前哨的标枪布置。\n所有被征税的商人和贸易舰船将在此地标生成与被征税黄金等量的食物。所有其他收费前哨将生成50%的被征税黄金作为食物。"
+    },
+    "toll-outpost": {
+      "name": "收费前哨",
+      "description": "提供广泛的视野并探测隐形或伪装的单位。可以用武器和防御工事进行升级。在驻守时进行攻击。\n经过的商人和贸易舰船会立即提供其携带黄金的额外8%。如果在另一个收费前哨的范围内建造收费前哨，则不会生成任何额外税收。"
+    },
+    "deer-stones": {
+      "name": "鹿石",
+      "description": "鹿石允许在弓箭场访问可汗的猎人。\n立即研究燕网络科技。"
+    },
+    "ger": {
+      "name": "游牧帐篷",
+      "description": "村民可以在此建筑投放食物、木材和黄金。包含改善资源采集的科技。\n石头通过神龛收集。"
+    },
+    "khaganate-palace": {
+      "name": "可汗国宫殿",
+      "description": "自动从蒙古帝国及其领地生成多样化的军队。"
+    },
+    "kurultai": {
+      "name": "库尔特大会",
+      "description": "附近单位在其光环内每秒恢复+1生命值并获得额外+20%的伤害。"
+    },
+    "monument-of-the-great-khan": {
+      "name": "大可汗纪念碑",
+      "description": "建造并防御一个奇迹以确保胜利。对手文明会注意到其建设并寻求摧毁它。"
+    },
+    "ovoo": {
+      "name": "神龛",
+      "description": "必须建在石头露头上。\n每个时代每分钟收集70/100/120/150石头。包含独特的蒙古科技。\n建造新的神龛会摧毁之前的神龛。"
+    },
+    "pasture": {
+      "name": "牧场",
+      "description": "每140秒自动生成一个可收集的羊。如果生产的羊过多且未被收集，最终将停止生产。"
+    },
+    "prayer-tent": {
+      "name": "祈祷帐篷",
+      "description": "生产宗教单位并包含宗教科技。从城堡时代（III）开始，宗教单位可以拾取遗物并将其放置在此建筑中以生成黄金。"
+    },
+    "steppe-redoubt": {
+      "name": "草原防御工事",
+      "description": "充当游牧帐篷。在此地标投放的黄金增加+50%。"
+    },
+    "the-silver-tree": {
+      "name": "银树",
+      "description": "充当市场。商人的生产速度增加+40%，黄金成本减少-40%。"
+    },
+    "the-white-stupa": {
+      "name": "白色佛塔",
+      "description": "充当神龛，每分钟生成240石头而不需要石头露头。"
+    },
+    "azure-mosque": {
+      "name": "蔚蓝清真寺",
+      "description": "建造并防御一个奇迹以确保胜利。对手文明会注意到其建设并寻求摧毁它。"
+    },
+    "istanbul-imperial-palace": {
+      "name": "伊斯坦布尔帝国宫殿",
+      "description": "在地标周围双倍帝国委员会经验，并将维齐尔点限制增加+3。"
+    },
+    "istanbul-observatory": {
+      "name": "伊斯坦布尔天文台",
+      "description": "充当大学。提高大学和铁匠提供的影响力以及大舰的生产速度至+100%。"
+    },
+    "mehmed-imperial-armory": {
+      "name": "梅赫梅德帝国军械库",
+      "description": "免费生产攻城器，但训练时间较长。"
+    },
+    "military-school": {
+      "name": "军事学校",
+      "description": "军事学校可以被指派持续生产一种单位而无需费用，但生产速度较慢。"
+    },
+    "sea-gate-castle": {
+      "name": "海门城堡",
+      "description": "充当一个带有免费大轰炸机布置的要塞。所有要塞获得一个光环，增加商人和贸易舰船的移动速度+30%和护甲+8。"
+    },
+    "sultanhani-trade-network": {
+      "name": "苏尔坦哈尼贸易网络",
+      "description": "充当市场。配备3名驻守商人，并为每个商人生成+24黄金每分钟。最多可驻守10名商人。"
+    },
+    "twin-minaret-medrese": {
+      "name": "双塔宗教学校",
+      "description": "作为一个磨坊。种植4个浆果灌木，可以收获得更快，速度提高50%。如果耗尽，浆果灌木在120秒后重新生长。"
+    },
+    "abbey-of-the-trinity": {
+      "name": "三位一体修道院",
+      "description": "作为一个修道院。将战士僧侣的成本降低50%，并包含独特的宗教科技。"
+    },
+    "cathedral-of-the-tsar": {
+      "name": "沙皇大教堂",
+      "description": "建造并防御一个奇迹以确保胜利。对手文明会注意到其建设并寻求摧毁它。"
+    },
+    "fortified-palisade-gate": {
+      "name": "加固木栅门",
+      "description": "相对坚固的防御门。必须建在加固木栅墙段上。"
+    },
+    "fortified-palisade-wall": {
+      "name": "加固木栅墙",
+      "description": "建造良好的防御墙以快速加固一个区域。\n最初成本为21木材，每增加一个部分成本为7木材。"
+    },
+    "high-armory": {
+      "name": "高级军械库",
+      "description": "减少附近攻城器械车间中攻城器械的成本20%。包含独特的攻城器械科技。"
+    },
+    "high-trade-house": {
+      "name": "高级贸易所",
+      "description": "像狩猎小屋一样生成黄金，价值提高400%，不占用任何树木。每60秒生成一只可狩猎的鹿。\n村民可以在这座建筑中投放食物。"
+    },
+    "hunting-cabin": {
+      "name": "狩猎小屋",
+      "description": "村民可以在这座建筑中投放食物。它包含改善食物采集的科技，并生产侦察兵。\n根据附近树木的数量生成黄金。重叠区域的树木只计算一次。"
+    },
+    "kremlin": {
+      "name": "克里姆林宫",
+      "description": "作为一个木制堡垒，配有箭孔、城堡炮塔和城堡观察科技。\n每80秒可以向首都市中心征募民兵。"
+    },
+    "spasskaya-tower": {
+      "name": "斯巴斯卡亚塔",
+      "description": "作为一个堡垒，配有所有武器位置和增加的生命值。\n解锁石墙、石门和石墙塔的建造。"
+    },
+    "the-golden-gate": {
+      "name": "金门",
+      "description": "以优惠的汇率进行资源交换。每50秒生成一次额外的交换。"
+    },
+    "wooden-fortress": {
+      "name": "木制堡垒",
+      "description": "坚固的木制防御工事，具有广泛的视野，可以探测隐身或伪装的单位。可以用武器升级。驻守时会攻击。"
+    },
+    "jiangnan-tower": {
+      "name": "江南塔",
+      "description": "作为帝国官员的税收投放点。\n每当兵营、弓箭场或马厩完成时，在塔内获得一个免费单位。每当市中心完成时，获得一个免费村民。"
+    },
+    "meditation-gardens": {
+      "name": "冥想花园",
+      "description": "根据附近资源的类型生成资源。\n附近的资源越多，生成的资源就越多。附近的敌方单位会打扰和平，减少生成的资源。"
+    },
+    "mount-lu-academy": {
+      "name": "庐山学院",
+      "description": "帝国官员收税的频率提高一倍，并且收集20%的税作为食物。\n包含独特的升级，大大提高帝国官员单位的能力。"
+    },
+    "shaolin-monastery": {
+      "name": "少林寺",
+      "description": "独特的修道院，能够生产少林僧侣。从元朝开始，少林僧侣也可以从宝塔中生产。"
+    },
+    "temple-of-the-sun": {
+      "name": "太阳神庙",
+      "description": "激活强大的能力，提高特定单位的速度、伤害、范围或再生。"
+    },
+    "zhu-xis-library": {
+      "name": "朱熹的图书馆",
+      "description": "拥有一系列高度独特的升级。\n可以解锁元朝突袭者和帝国卫兵。仅可研究2项科技。"
+    }
+  },
+  "upgrades": {
+    "elite-archers": {
+      "name": "升级为精英",
+      "description": "将老练的弓箭手升级为精英弓箭手。"
+    },
+    "elite-camel-archers": {
+      "name": "升级为精英",
+      "description": "将老练的骆驼弓箭手升级为精英骆驼弓箭手。"
+    },
+    "elite-camel-riders": {
+      "name": "升级为精英",
+      "description": "将骆驼骑士升级为精英骆驼骑士。"
+    },
+    "elite-crossbowmen": {
+      "name": "升级为精英",
+      "description": "将十字弓手升级为精英十字弓手。"
+    },
+    "elite-ghulam": {
+      "name": "升级为精英",
+      "description": "将古拉姆升级为精英古拉姆。"
+    },
+    "elite-horsemen": {
+      "name": "升级为精英",
+      "description": "将老练的骑士升级为精英骑士。"
+    },
+    "elite-knights-or-lancers": {
+      "name": "升级为精英",
+      "description": "将骑士或长矛兵升级为精英骑士或长矛兵。"
+    },
+    "elite-spearmen": {
+      "name": "升级为精英",
+      "description": "升级老练的步兵到精英步兵。"
+    },
+    "hardened-spearmen": {
+      "name": "升级到坚韧",
+      "description": "升级步兵到坚韧步兵。"
+    },
+    "veteran-archers": {
+      "name": "升级到老练",
+      "description": "升级弓箭手到老练弓箭手。"
+    },
+    "veteran-camel-archers": {
+      "name": "升级到老练",
+      "description": "升级骆驼弓箭手到老练骆驼弓箭手。"
+    },
+    "veteran-horsemen": {
+      "name": "升级到老练",
+      "description": "升级骑兵到老练骑兵。"
+    },
+    "veteran-spearmen": {
+      "name": "升级到老练",
+      "description": "升级坚韧步兵到老练步兵。"
+    },
+    "elite-camel-lancers": {
+      "name": "升级到精英",
+      "description": "升级骆驼长矛手到精英骆驼长矛手。"
+    },
+    "elite-desert-raiders": {
+      "name": "升级到精英",
+      "description": "升级老练的沙漠袭击者到精英沙漠袭击者。"
+    },
+    "veteran-desert-raiders": {
+      "name": "升级到老练",
+      "description": "升级沙漠袭击者到老练沙漠袭击者。"
+    },
+    "elite-cataphracts": {
+      "name": "升级到精英",
+      "description": "升级重装骑兵到精英重装骑兵。"
+    },
+    "elite-limitanei": {
+      "name": "升级到精英",
+      "description": "升级老练的边防兵到精英边防兵。"
+    },
+    "elite-varangian-guard": {
+      "name": "升级到精英",
+      "description": "升级瓦兰吉卫队到精英瓦兰吉卫队。"
+    },
+    "hardened-limitanei": {
+      "name": "升级到坚韧",
+      "description": "升级边防兵到坚韧边防兵。"
+    },
+    "veteran-limitanei": {
+      "name": "升级到老练",
+      "description": "升级坚韧边防兵到老练边防兵。"
+    },
+    "elite-fire-lancers": {
+      "name": "升级到精英火矛手",
+      "description": "升级火矛手到精英火矛手。"
+    },
+    "elite-palace-guards": {
+      "name": "升级到精英",
+      "description": "升级宫殿卫兵到精英宫殿卫兵。"
+    },
+    "elite-zhuge-nu": {
+      "name": "升级到精英",
+      "description": "升级老练的诸葛弩到精英诸葛弩。"
+    },
+    "veteran-zhuge-nu": {
+      "name": "升级到老练",
+      "description": "升级诸葛弩到老练诸葛弩。"
+    },
+    "elite-ghazi-raiders": {
+      "name": "升级到精英",
+      "description": "升级老练的雇佣兵到精英雇佣兵。"
+    },
+    "elite-men-at-arms": {
+      "name": "升级到精英",
+      "description": "升级武装士兵到精英武装士兵。"
+    },
+    "veteran-ghazi-raiders": {
+      "name": "升级到老练",
+      "description": "升级雇佣兵到老练雇佣兵。"
+    },
+    "early-men-at-arms": {
+      "name": "升级到早期",
+      "description": "升级先锋武装士兵到早期武装士兵。"
+    },
+    "elite-longbowmen": {
+      "name": "升级到精英",
+      "description": "升级老练的长弓手到精英长弓手。"
+    },
+    "men-at-arms": {
+      "name": "升级到武装士兵",
+      "description": "升级早期武装士兵到武装士兵。"
+    },
+    "veteran-longbowmen": {
+      "name": "升级到老练",
+      "description": "升级长弓手到老练长弓手。"
+    },
+    "elite-arbaletriers": {
+      "name": "升级到精英",
+      "description": "升级弩兵到精英弩兵。"
+    },
+    "elite-royal-knights": {
+      "name": "升级到精英",
+      "description": "升级老练的皇家骑士到精英皇家骑士。"
+    },
+    "veteran-royal-knights": {
+      "name": "升级到老练",
+      "description": "升级皇家骑士到老练的皇家骑士。"
+    },
+    "elite-landsknechte": {
+      "name": "升级到精英",
+      "description": "升级兰斯克内赫特到精英兰斯克内赫特。"
+    },
+    "elite-mounted-samurai": {
+      "name": "升级到精英",
+      "description": "升级骑马武士到精英骑马武士。"
+    },
+    "elite-onna-bugeisha": {
+      "name": "升级到精英",
+      "description": "升级老练的女武士到精英女武士。"
+    },
+    "elite-onna-musha": {
+      "name": "升级到精英",
+      "description": "升级女武士到精英女武士。"
+    },
+    "elite-samurai": {
+      "name": "升级到精英",
+      "description": "升级老练的武士到精英武士。"
+    },
+    "elite-yumi-ashigaru": {
+      "name": "升级到精英",
+      "description": "升级老练的弓箭步兵到精英弓箭步兵。"
+    },
+    "hardened-samurai": {
+      "name": "升级到坚韧",
+      "description": "升级武士到坚韧武士。"
+    },
+    "veteran-onna-bugeisha": {
+      "name": "升级到老练",
+      "description": "升级女武士到老练的女武士。"
+    },
+    "veteran-samurai": {
+      "name": "升级到老练",
+      "description": "升级坚韧武士到老练武士。"
+    },
+    "veteran-yumi-ashigaru": {
+      "name": "升级到老练",
+      "description": "升级弓箭步兵到老练的弓箭步兵。"
+    },
+    "elite-donso": {
+      "name": "升级到精英",
+      "description": "升级老练的多索到精英多索。"
+    },
+    "elite-javelin-thrower": {
+      "name": "升级到精英",
+      "description": "升级老练的标枪投掷手到精英标枪投掷手。"
+    },
+    "elite-musofadi": {
+      "name": "升级到精英",
+      "description": "升级老练的穆索法迪到精英穆索法迪。"
+    },
+    "elite-sofa": {
+      "name": "升级到精英",
+      "description": "升级老练的索法到精英索法。"
+    },
+    "elite-warrior-scout": {
+      "name": "精英战士侦察",
+      "description": "升级老练的战士侦察到精英战士侦察。"
+    },
+    "hardened-donso": {
+      "name": "升级到坚韧",
+      "description": "升级多索到坚韧多索。"
+    },
+    "upgrade-warrior-scout": {
+      "name": "战士侦察",
+      "description": "升级侦察到战士侦察。"
+    },
+    "veteran-donso": {
+      "name": "升级到老练",
+      "description": "升级坚韧的多索到老练多索。"
+    },
+    "veteran-javelin-thrower": {
+      "name": "升级到老练",
+      "description": "升级标枪投掷手到老练标枪投掷手。"
+    },
+    "veteran-musofadi": {
+      "name": "升级到老练",
+      "description": "升级穆索法迪到老练穆索法迪。"
+    },
+    "veteran-sofa": {
+      "name": "升级到老练",
+      "description": "升级索法到老练索法。"
+    },
+    "veteran-warrior-scout": {
+      "name": "老练战士侦察",
+      "description": "升级战士侦察到老练战士侦察。"
+    },
+    "elite-keshiks": {
+      "name": "升级到精英",
+      "description": "升级老练的可汗骑兵到精英可汗骑兵。"
+    },
+    "elite-mangudai": {
+      "name": "升级到精英",
+      "description": "升级老练的蒙古骑兵到精英蒙古骑兵。"
+    },
+    "horsemen": {
+      "name": "升级到骑兵",
+      "description": "升级早期骑兵到骑兵。"
+    },
+    "veteran-keshiks": {
+      "name": "升级到老练",
+      "description": "升级可汗骑兵到老练的可汗骑兵。"
+    },
+    "veteran-mangudai": {
+      "name": "升级到老练",
+      "description": "升级蒙古骑兵到老练的蒙古骑兵。"
+    },
+    "elite-gilded-archers": {
+      "name": "升级到精英",
+      "description": "升级老练的镀金弓箭手到精英镀金弓箭手。"
+    },
+    "elite-gilded-crossbowmen": {
+      "name": "升级到精英",
+      "description": "升级镀金十字弓手到精英镀金十字弓手。"
+    },
+    "elite-gilded-horsemen": {
+      "name": "升级到精英",
+      "description": "升级老练的镀金骑兵到精英镀金骑兵。"
+    },
+    "elite-gilded-knights": {
+      "name": "升级到精英",
+      "description": "升级镀金骑士到精英镀金骑士。"
+    },
+    "elite-gilded-landsknechte": {
+      "name": "升级到精英",
+      "description": "升级镀金雇佣兵到精英镀金雇佣兵。"
+    },
+    "elite-gilded-men-at-arms": {
+      "name": "升级到精英",
+      "description": "升级镀金重步兵到精英镀金重步兵。"
+    },
+    "elite-gilded-spearmen": {
+      "name": "升级到精英",
+      "description": "升级老练的镀金长矛兵到精英镀金长矛兵。"
+    },
+    "gilded-men-at-arms": {
+      "name": "升级到重步兵",
+      "description": "升级早期镀金重步兵到镀金重步兵。"
+    },
+    "hardened-gilded-spearmen": {
+      "name": "升级到坚固",
+      "description": "升级镀金长矛兵到坚固的镀金长矛兵。"
+    },
+    "veteran-gilded-archers": {
+      "name": "升级到老练",
+      "description": "升级镀金弓箭手到老练的镀金弓箭手。"
+    },
+    "veteran-gilded-horsemen": {
+      "name": "升级到老练",
+      "description": "升级镀金骑兵到老练的镀金骑兵。"
+    },
+    "veteran-gilded-spearmen": {
+      "name": "升级到老练",
+      "description": "升级坚固的镀金长矛兵到老练的镀金长矛兵。"
+    },
+    "elite-cavalry-archer": {
+      "name": "升级到精英",
+      "description": "升级老练的骑兵弓箭手到精英骑兵弓箭手。"
+    },
+    "elite-janissary": {
+      "name": "升级到精英",
+      "description": "升级禁卫军到精英禁卫军。"
+    },
+    "elite-sipahi": {
+      "name": "升级到精英",
+      "description": "升级老练的西帕希到精英西帕希。"
+    },
+    "veteran-cavalry-archer": {
+      "name": "升级到老练",
+      "description": "升级骑兵弓箭手到老练的骑兵弓箭手。"
+    },
+    "veteran-sipahi": {
+      "name": "升级到老练",
+      "description": "升级西帕希到老练的西帕希。"
+    },
+    "elite-horse-archers": {
+      "name": "升级到精英",
+      "description": "升级马弓手到精英马弓手。"
+    },
+    "elite-knights": {
+      "name": "升级到精英",
+      "description": "升级骑士到精英骑士。"
+    },
+    "knights": {
+      "name": "升级到骑士",
+      "description": "升级早期骑士到骑士。"
+    },
+    "grenadiers": {
+      "name": "升级到榴弹兵",
+      "description": "升级早期手榴弹兵到手榴弹兵。"
+    },
+    "palace-guards": {
+      "name": "升级到宫殿卫兵",
+      "description": "升级早期宫殿卫兵到宫殿卫兵。"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --map: #3A5D7E;
+  --unit: #824F34;
+  --unit-light: #C36B3C;
+  --upgrade: #32806B;
+  --tech: #32806B;
+  --technology: #32806B;
+  --upgrade-light: #08A67B;
+  --tech-light: #08A67B;
+  --technology-light: #08A67B;
+  --building: #345469;
+  --building-light: #477899;
+  --ability: #5C457B;
+  --ability-light: #6571A1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--background);
+  background: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}

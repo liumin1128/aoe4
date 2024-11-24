@@ -1,5 +1,5 @@
 import { CIVILIZATIONS } from "@data/lib/config/civs";
-import { CivConfig } from "@data/types/civs";
+import { CivConfig, CivInfo } from "@data/types/civs";
 import { civilizations } from "@data/sdk";
 
 export function getCivConfig(value: string, key: string) {
@@ -18,7 +18,13 @@ export function getCivConfig(value: string, key: string) {
   return result;
 }
 
+interface Civ extends CivInfo {
+  abbr?: string;
+}
+
 export function getCivBySlug(slug: string) {
   const civ = getCivConfig(slug, "slug");
-  return civilizations.Get(civ.abbr)
+  const data : Civ = civilizations.Get(civ.abbr) as unknown as CivInfo
+  data.abbr = civ.abbr
+  return data
 }

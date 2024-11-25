@@ -33,6 +33,22 @@ export default async function Layout(props: Props) {
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+
+        {/* 触发颜色渲染 */}
+        <div
+          className="
+bg-item-unit
+bg-item-technology 
+bg-item-building 
+
+bg-item-unit-light
+bg-item-technology-light 
+bg-item-building-light
+
+hover:bg-item-unit-light
+hover:bg-item-technology-light 
+hover:bg-item-building-light"
+        ></div>
       </body>
     </html>
   );

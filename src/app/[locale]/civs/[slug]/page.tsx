@@ -50,7 +50,7 @@ export default function Civ({ params }: Props) {
           {["units", "buildings", "technologies"].map((type) => {
             return (
               <div key={type} className="py-4">
-                <h2 className="text-sm   text-white/50 font-bold mt-2 mb-3 ">
+                <h2 className="text-sm   text-foreground/70 font-bold mt-2 mb-3 ">
                   {t("common.special")}
                   {t(`types.${type}`)}
                 </h2>
@@ -71,7 +71,7 @@ export default function Civ({ params }: Props) {
                           <div className="flex items-center">
                             <span
                               className={cls(
-                                `flex h-8 w-8 shrink-0 items-center justify-center rounded-sm text-[0.625rem] font-medium text-white  bg-item-${i.type}`
+                                `flex h-8 w-8 shrink-0 items-center justify-center rounded-sm text-[0.625rem] font-medium text-foreground  bg-item-${i.type}`
                               )}
                             >
                               <Image

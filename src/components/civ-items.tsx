@@ -34,7 +34,7 @@ export function CivItems(props: Props) {
                   if (groupData.length === 0) return;
                   return (
                     <div key={group}>
-                      <div className="pl-1 text-xs font-semibold leading-6 text-gray-500">
+                      <div className="pl-1 text-xs font-semibold leading-6 text-foreground/70">
                         {t(`types.${group}`)}
                       </div>
                       {groupData.map((i) => {

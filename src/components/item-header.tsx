@@ -15,7 +15,7 @@ export function ItemHeader(props: Props) {
   const icon = item?.icon?.split("/").at(-1);
 
   return (
-    <div className="flex items-center space-x-6 py-8 ">
+    <div className="flex items-center space-x-6">
       <Image
         className={cls(
           "rounded shadow-md cursor-pointer w-20 h-20 ",

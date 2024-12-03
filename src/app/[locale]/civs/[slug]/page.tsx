@@ -22,8 +22,8 @@ export default function Civ({ params }: Props) {
       <div className="flex items-center space-x-6 py-8 ">
         <Image
           className="rounded shadow-md cursor-pointer w-20 h-18"
-          src={"/assets/flags/" + civ.abbr + ".png"}
-          alt={civ.abbr as string}
+          src={"/assets/flags/" + civ.config.abbr + ".png"}
+          alt={civ.config.abbr as string}
           width={0}
           height={0}
           sizes="128vw"
@@ -52,7 +52,7 @@ export default function Civ({ params }: Props) {
                 </h2>
 
                 <div className="flex flex-wrap gap-2">
-                  {civ[type]
+                  {civ.data[type]
                     .order("hitpoints", "age")
                     .filter((i) => i.unique)
                     .map((i) => {

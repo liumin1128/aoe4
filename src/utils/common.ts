@@ -1,6 +1,19 @@
 import { CIVILIZATIONS } from "@data/lib/config/civs";
 import { CivConfig, CivInfo } from "@data/types/civs";
-import { civilizations } from "@data/sdk";
+import {
+  Ability,
+  Building,
+  Item,
+  Modifier,
+  PhysicalItem,
+} from "@data/types/items";
+import {
+  civilizations,
+  units,
+  buildings,
+  technologies,
+  abilities,
+} from "@data/sdk";
 
 import {
   GroupedBuildings,
@@ -10,7 +23,8 @@ import {
   Unit,
 } from "@/types/data";
 
-import { Building } from "@data/types/items";
+import { Building, ITEMS } from "@data/types/items";
+import { config } from "process";
 
 export function getCivConfig(value: string, key: string) {
   let result: CivConfig;
@@ -28,14 +42,20 @@ export function getCivConfig(value: string, key: string) {
   return result;
 }
 
-interface Civ extends CivInfo {
-  abbr?: string;
-}
-
 export function getCivBySlug(slug: string) {
   const civ = getCivConfig(slug, "slug");
   const data = civilizations.Get(civ.abbr) as unknown as CivInfo;
-  return { ...data, ...civ };
+  return { data, config: civ };
+}
+
+export function getUnit(id: string) {
+  return units.get(id);
+}
+
+export function getAbilities(civ: CivConfig, id: string) {
+  return abilities
+    .where({ civilization: civ.abbr, affects: `units/${id}` })
+    .order("age");
 }
 
 export function splitUnitsIntoGroups(units: UnifiedItem<Unit>[]) {
@@ -226,3 +246,136 @@ export async function getStructuredItems(civilization?: CivConfig) {
     technologies: splitTechnologiesIntroGroups(civ.technologies.order("age")),
   };
 }
+
+export function getMostAppropriateVariation<T extends Item = Item>(
+  item: UnifiedItem<T>,
+  civ: CivConfig
+): T {
+  if (!item) return null;
+  return (
+    (civ
+      ? item.variations.filter((v) => v.civs.includes(civ.abbr))
+      : item.variations
+    )
+      .sort((a, b) => b.costs.total - a.costs.total)
+      .sort((a, b) => a.id.length - b.id.length)
+      .sort((a, b) => b.civs.length - a.civs.length)[0] ?? item.variations[0]
+  );
+}
+
+export type {
+  Item,
+  Unit,
+  Building,
+  UnifiedItem,
+  Upgrade,
+  Technology,
+  Modifier,
+} from "@data/types/items";
+
+export const SIMILAIR_ITEMS = [
+  ["villager", "dragon-villager"],
+  ["archer", "longbowman", "gilded-archer", "yumi-ashigaru", "zhuge-nu"],
+  ["spearman", "donso", "gilded-spearman", "limitanei"],
+  [
+    "knight",
+    "lancer",
+    "royal-knight",
+    "keshik",
+    "sofa",
+    "gilded-knight",
+    "mounted-samurai",
+    "cataphract",
+    "camel-lancer",
+  ],
+  [
+    "monk",
+    "scholar",
+    "imam",
+    "dervish",
+    "warrior-monk",
+    "shaman",
+    "prelate",
+    "shinto-priest",
+    "buddhist-monk",
+    "shaolin-monk",
+  ],
+  ["atabeg", "prelate"],
+  ["desert-raider", "camel-rider"],
+  [
+    "horse-archer",
+    "mangudai",
+    "camel-archer",
+    "tower-elephant",
+    "onna-musha",
+    "desert-raider",
+  ],
+  ["horseman", "ghazi-raider", "sipahi", "gilded-horseman"],
+  ["jeannes-rider", "yuan-raider"],
+  ["crossbowman", "arbaletrier", "javelin-thrower", "gilded-crossbowman"],
+  ["cannon", "royal-cannon", "bombard", "great-bombard"],
+  ["culverin", "royal-culverin"],
+  ["mangonel", "nest-of-bees", "manjaniq"],
+  ["battering-ram", "cheirosiphon"],
+  ["siege-tower", "tower-of-the-sultan"],
+  [
+    "handcannoneer",
+    "streltsy",
+    "jannisary",
+    "musofadi-gunner",
+    "dragon-handcannoneer",
+  ],
+  ["traction-trebuchet", "trebuchet", "counterweight-trebuchet", "huihui-pao"],
+  [
+    "man-at-arms",
+    "palace-guard",
+    "musofadi-warrior",
+    "ghulam",
+    "samurai",
+    "gilded-man-at-arms",
+    "varangian-guard",
+  ],
+  ["onna-bugeisha", "landsknecht", "gilded-landsknecht"],
+  ["trade-ship", "lodya-trade-ship"],
+  ["transport-ship", "lodya-transport-ship"],
+  ["fishing-boat", "lodya-fishing-boat"],
+  ["galley", "dhow", "junk", "hunting-canoe", "light-junk", "lodya-galley"],
+  ["hulk", "baghlah", "war-cog", "war-canoe", "lodya-attack-ship", "war-junk"],
+  [
+    "demolition-ship",
+    "lodya-demolition-ship",
+    "explosive-junk",
+    "explosive-dhow",
+  ],
+  ["carrack", "baochuan", "xebec", "atakebune"],
+  ["farm", "olive-grove", "pasture"],
+  ["monastery", "mosque", "prayer-tent", "shinto-shrine", "buddhist-temple"],
+  ["hunting-cabin", "mill", "ger", "farmhouse"],
+  ["blacksmith", "forge", "mining-camp"],
+  ["palisade-gate", "fortified-palisade-gate"],
+  ["palisade-wall", "fortified-palisade-wall"],
+  ["outpost", "wooden-fortress", "toll-outpost"],
+  ["university", "madrasa"],
+  ["castle", "keep"],
+];
+
+export function findClosestMatch<T extends ITEMS>(
+  type: T,
+  id: string,
+  civ: CivConfig
+) {
+  const similair = SIMILAIR_ITEMS.find((units) => units.includes(id));
+
+  const data = {
+    units: units.where({ civilization: civ.abbr }),
+    buildings: buildings.where({ civilization: civ.abbr }),
+    technologies: technologies.where({ civilization: civ.abbr }),
+  } as Record<T, UnifiedItem<PhysicalItem>[]>;
+
+  const closestMatch =
+    similair && data[type].find((i) => similair.includes(i.id));
+
+  return closestMatch ?? null;
+}
+
+export { ITEMS } from "@data/types/items";

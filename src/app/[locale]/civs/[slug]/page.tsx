@@ -1,16 +1,8 @@
 import { useTranslations } from "next-intl";
 import { use } from "react";
 import Image from "next/image";
-
 import { getCivBySlug } from "@/utils/common";
 import cls from "classnames";
-import { Button } from "@/components/ui/button";
-
-// import dynamic from "next/dynamic";
-
-// const ModeToggle = dynamic(() => import("@/components/theme-toggle"), {
-//   ssr: false,
-// });
 
 interface Params {
   slug: string;

@@ -35,8 +35,7 @@ interface Civ extends CivInfo {
 export function getCivBySlug(slug: string) {
   const civ = getCivConfig(slug, "slug");
   const data = civilizations.Get(civ.abbr) as unknown as CivInfo;
-  data.abbr = civ.abbr;
-  return data;
+  return { ...data, ...civ };
 }
 
 export function splitUnitsIntoGroups(units: UnifiedItem<Unit>[]) {

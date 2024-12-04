@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { CivItems } from "@/components/civ-items";
 import ModeToggle from "@/components/theme-toggle";
 import LanguageSwitcher from "@/components/lang-toggle";
+import { CivSwitcher } from "@/components/civ-switcher";
 
 interface Params {
   locale: string;
@@ -19,8 +20,11 @@ export default function Page({ children, params }: Props) {
   return (
     <div className="flex min-h-full flex-col">
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-border">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          Aoe4
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 space-x-4">
+          <div>Aoe4</div>
+          <div className="flex-1">
+            <CivSwitcher />
+          </div>
           <div className="space-x-2">
             <ModeToggle />
             <LanguageSwitcher />

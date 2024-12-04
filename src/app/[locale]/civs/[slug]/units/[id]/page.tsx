@@ -59,7 +59,7 @@ export default function Civ({ params }: Props) {
       <h3 className=" font-bold text-lg ">{t("common.abilities")}</h3>
 
       <div className="mt-6 mb-10">
-        {/* <Abilities civ={civ.config} locale={locale} item={item} /> */}
+        <Abilities civ={civ.config} locale={locale} item={item} />
       </div>
     </div>
   );

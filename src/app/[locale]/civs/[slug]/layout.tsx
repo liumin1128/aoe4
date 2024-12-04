@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { CivItems } from "@/components/civ-items";
 import ModeToggle from "@/components/theme-toggle";
+import LanguageSwitcher from "@/components/lang-toggle";
 
 interface Params {
   locale: string;
@@ -15,14 +16,15 @@ interface Props {
 export default function Page({ children, params }: Props) {
   const { slug, locale } = use(params);
 
-  console.log("locale", locale);
-
   return (
     <div className="flex min-h-full flex-col">
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-border">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           Aoe4
-          <ModeToggle />
+          <div className="space-x-2">
+            <ModeToggle />
+            <LanguageSwitcher />
+          </div>
         </div>
       </header>
 

@@ -3,6 +3,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/theme-provider";
+import { LanguageProvider } from "@/components/lang-provider";
 import "../global.css";
 
 interface Params {
@@ -31,16 +32,18 @@ export default async function Layout(props: Props) {
   return (
     <html lang={locale} className="h-full" suppressHydrationWarning>
       <body>
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        <LanguageProvider>
+          <NextIntlClientProvider messages={messages}>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </NextIntlClientProvider>
+        </LanguageProvider>
 
         {/* 触发颜色渲染 */}
         <div

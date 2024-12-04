@@ -37,9 +37,6 @@ export const InlineItemLink = (props: Props) => {
   // @ts-ignore
   const item: UnifiedItem = civilizations.Get(civ).Get(id);
 
-  console.log("item.type");
-  console.log(item.type);
-
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const type = typeToPathMap[item.type];

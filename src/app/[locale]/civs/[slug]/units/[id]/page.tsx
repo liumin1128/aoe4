@@ -33,15 +33,6 @@ export default function Civ({ params }: Props) {
   const variation = getMostAppropriateVariation<Unit>(item, civ.config);
   const match = findClosestMatch(ITEMS.UNITS, id, civ.config);
 
-  // console.log("unit");
-  // console.log(unit);
-
-  // console.log("variation");
-  // console.log(variation);
-
-  console.log("match");
-  console.log(match);
-
   if (match && match?.id !== id) {
     redirect(`/${locale}/civs/${slug}/units/${match?.id}`);
   }

@@ -44,7 +44,7 @@ export function getCivConfig(value: string, key: string) {
 
 export function getCivBySlug(slug: string) {
   const civ = getCivConfig(slug, "slug");
-  const data = civilizations.Get(civ.abbr) as unknown as CivInfo;
+  const data = civilizations.Get(civ.abbr);
   return { data, config: civ };
 }
 

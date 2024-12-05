@@ -17,6 +17,8 @@ export default function Civ({ params }: Props) {
   const t = useTranslations();
   const civ = getCivBySlug(slug);
 
+  console.log(civ);
+
   return (
     <div>
       <div className="flex items-center space-x-6 py-8 ">
@@ -31,7 +33,7 @@ export default function Civ({ params }: Props) {
         />
         <div className="space-y-1">
           <h3 className="text-sm font-bold leading-none">
-            {t("civs.abbasid.name")}
+            {t(`civs.${civ.config.slug}.name`)}
           </h3>
           <p className="text-sm text-muted-foreground">
             {t("common.civilization")}
@@ -39,7 +41,7 @@ export default function Civ({ params }: Props) {
         </div>
       </div>
 
-      <p className="text-base">{t("civs.abbasid.description")}</p>
+      <p className="text-base">{t(`civs.${civ.config.slug}.description`)}</p>
 
       <div className="mt-8">
         <div>
@@ -92,6 +94,32 @@ export default function Civ({ params }: Props) {
             );
           })}
         </div>
+      </div>
+
+      <div className="md:columns-2 gap-16 space-y-6 leading-6 text-white/80">
+        {civ.data.info.overview.map((i) => {
+          return (
+            <div key={i.title} className="break-inside-avoid max-w-prose">
+              <h2 className="text-lg text-white/40 font-bold mt-2 mb-3">
+                {i.title}
+              </h2>
+              {i.description && (
+                <p className="whitespace-pre-wrap">{i.description}</p>
+              )}
+              {Array.isArray(i.list) && i.list.length > 0 && (
+                <ul className="list-disc list-inside marker:text-white/30">
+                  {i?.list?.map((j) => {
+                    return (
+                      <li key={j} className="-indent-5 pl-5">
+                        {j}
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -24,7 +24,6 @@ import {
 } from "@/types/data";
 
 import { Building, ITEMS } from "@data/types/items";
-import { config } from "process";
 
 export function getCivConfig(value: string, key: string) {
   let result: CivConfig;

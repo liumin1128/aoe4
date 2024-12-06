@@ -14,6 +14,7 @@ import { ItemHeader } from "@/components/item-header";
 import { HighlightedText } from "@/components/highlighted-text";
 import { Abilities } from "@/components/item-abilities";
 import { ProducedAt } from "@/components/item-produced-at";
+import { Patches } from "@/components/patches";
 
 interface Params {
   locale: string;
@@ -56,7 +57,7 @@ export default function Civ({ params }: Props) {
       <div className="pb-8">
         <HighlightedText text={`${t(`${item.type}s.${id}.description`)}`} />
       </div>
-
+      {/* 
       <h3 className=" font-bold text-lg ">{t("common.abilities")}</h3>
 
       <div className="mt-6 mb-10">
@@ -67,7 +68,9 @@ export default function Civ({ params }: Props) {
 
       <div className="mt-6 mb-10">
         <ProducedAt civ={civ.config} locale={locale} item={item} />
-      </div>
+      </div> */}
+
+      <Patches civ={civ.config} locale={locale} item={item} />
     </div>
   );
 }

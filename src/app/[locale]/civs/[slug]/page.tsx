@@ -1,7 +1,6 @@
 import { useTranslations } from "next-intl";
 import { use } from "react";
 import Link from "next/link";
-
 import Image from "next/image";
 import { getCivBySlug } from "@/utils/common";
 import cls from "classnames";

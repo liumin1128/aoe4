@@ -10,6 +10,7 @@ import { writeFile } from "./utils";
 import { CIVILIZATIONS } from "@data/lib/config/civs";
 import baseEN from "./baseEN.json";
 import baseCN from "./baseCN.json";
+import civCN from "./civs_CN.json";
 import names from "./names.json";
 
 interface Translation {
@@ -19,10 +20,13 @@ interface Translation {
 }
 
 const civs = Object.values(CIVILIZATIONS).map((civ) => {
+  console.log(civilizations.Get(civ.abbr).info);
+  const info = civilizations.Get(civ.abbr).info;
   return {
     id: civ.slug,
     name: civ.name,
-    description: civilizations.Get(civ.abbr).info.description,
+    description: info.description,
+    overview: info.overview,
   };
 });
 
@@ -60,7 +64,11 @@ const upgradesTrans: Translation[] = upgrades.map((unit) => {
 
 function getObj(list: Translation[]) {
   return list.reduce((acc, item) => {
-    acc[item.id as string] = { name: item.name, description: item.description };
+    acc[item.id as string] = {
+      name: item.name,
+      description: item.description,
+      overview: item.overview,
+    };
     return acc;
   }, {});
 }
@@ -95,7 +103,11 @@ function getObjCN(list: Translation[]) {
       console.log('"' + name + '": "",');
       missCount++;
     }
-    acc[item.id as string] = { name: name, description: item.description };
+    acc[item.id as string] = {
+      name: name,
+      description: item.description,
+      overview: item.overview,
+    };
     return acc;
   }, {});
 }
@@ -103,7 +115,7 @@ function getObjCN(list: Translation[]) {
 writeFile("../../messages/cn.json", {
   ...baseCN,
   units: getObjCN(unitsTrans),
-  civs: getObjCN(civs),
+  civs: civCN,
   technologies: getObjCN(techTrans),
   buildings: getObjCN(buildingsTrans),
   upgrades: getObjCN(upgradesTrans),

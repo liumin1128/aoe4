@@ -93,21 +93,25 @@ export default function Civ({ params }: Props) {
       </div>
 
       <div className="mt-8 md:columns-2 gap-12 space-y-6 leading-6 text-foreground ">
-        {civ.data.info.overview.map((i) => {
+        {civ.data.info.overview.map((i, idx) => {
           return (
             <div key={i.title} className="break-inside-avoid max-w-prose ">
               <h2 className="text-lg text-foreground/60 font-bold mt-2 mb-3">
-                {i.title}
+                {t(`civs.${civ.config.slug}.overview.${idx}.title`)}
               </h2>
               {i.description && (
-                <p className="whitespace-pre-wrap">{i.description}</p>
+                <p className="whitespace-pre-wrap">
+                  {t(`civs.${civ.config.slug}.overview.${idx}.description`)}
+                </p>
               )}
               {Array.isArray(i.list) && i.list.length > 0 && (
                 <ul className="list-disc list-inside marker:text-foreground/30">
-                  {i?.list?.map((j) => {
+                  {i?.list?.map((j, jdx) => {
                     return (
                       <li key={j} className="-indent-5 pl-5">
-                        {j}
+                        {t(
+                          `civs.${civ.config.slug}.overview.${idx}.list.${jdx}`
+                        )}
                       </li>
                     );
                   })}

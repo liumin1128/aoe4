@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npx ts-node -r tsconfig-paths/register index.ts",
-    "names": "npx ts-node -r tsconfig-paths/register names.ts"
+    "names": "npx ts-node -r tsconfig-paths/register names.ts",
+    "civs": "npx ts-node -r tsconfig-paths/register civs.ts"
   },
   "keywords": [],
   "author": "",

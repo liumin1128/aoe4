@@ -1,12 +1,36 @@
 import { Item, UnifiedItem } from "@data/types/items";
-import { use } from "react";
 // import { patches } from "./patches/patch";
 import { PatchLine, PatchNotes } from "@/types/patches";
 import { civAbbr, civConfig } from "@/types/data";
 import { CivConfig } from "@data/types/civs";
-import { Check, ChevronUp, ChevronDown, Minus } from "lucide-react";
+import { ChevronUp, ChevronDown, Minus } from "lucide-react";
 
 import patches from "./patches.json";
+
+// 生成 只带有必要信息的 patche_en.json 的代码
+// const sss = patches.map((p) => {
+//     return {
+//       name: p.name,
+//       id: p.id,
+//       season: 5,
+//       type: p.type,
+//       date: p.date,
+//       sections: p.sections.map((s) => {
+//         return {
+//           title: s.title,
+//           subtitle: s.subtitle,
+//           civs: s.civs,
+//           changes: s.changes.map((c) => {
+//             return {
+//               items: c.items,
+//               civs: c.civs,
+//               diff: c.diff,
+//             };
+//           }),
+//         };
+//       }),
+//     };
+//   });
 
 import { useTranslations } from "next-intl";
 
@@ -67,30 +91,6 @@ export function getPatchHistory(item: UnifiedItem, civs?: civConfig[]) {
   );
 }
 
-// const sss = patches.map((p) => {
-//     return {
-//       name: p.name,
-//       id: p.id,
-//       season: 5,
-//       type: p.type,
-//       date: p.date,
-//       sections: p.sections.map((s) => {
-//         return {
-//           title: s.title,
-//           subtitle: s.subtitle,
-//           civs: s.civs,
-//           changes: s.changes.map((c) => {
-//             return {
-//               items: c.items,
-//               civs: c.civs,
-//               diff: c.diff,
-//             };
-//           }),
-//         };
-//       }),
-//     };
-//   });
-
 interface Props {
   locale: string;
   civ: CivConfig;
@@ -112,7 +112,7 @@ export const Patches = ({ item, civ }: Props) => {
           <div className="mt-6" key={history.patch.name}>
             <p className="text-xs text-foreground/60">
               {t(`patches.${history.patchIndex}.name`)}
-              {/* {` ${history.patch.name} - ${history.patch.date}`} */}
+              {` - ${new Date(history.patch.date).toLocaleDateString()}`}
             </p>
 
             <div className="mt-2">

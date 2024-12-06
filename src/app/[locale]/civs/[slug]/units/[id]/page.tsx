@@ -38,8 +38,11 @@ export default function Civ({ params }: Props) {
     !item.civs.includes(civ.config.abbr)
   ) {
     const match = findClosestMatch(ITEMS.UNITS, id, civ.config);
+
     if (match) {
       redirect(`/${locale}/civs/${slug}/units/${match?.id}`);
+    } else {
+      redirect(`/${locale}/civs/${slug}`);
     }
   }
 

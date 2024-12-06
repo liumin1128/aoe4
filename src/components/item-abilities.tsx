@@ -43,11 +43,13 @@ export function Abilities(props: Props) {
         {list.map((i) => {
           const variation = i?.variations[0];
           const icon = "/assets/images/abilities/" + i?.icon?.split("/").at(-1);
+
+          console.log(i);
           return (
             <li key={i.id} className="flex gap-x-4">
               <div
                 className={cls(
-                  ` shadow-md flex w-10 h-10 shrink-0 items-center justify-center rounded-md text-[0.625rem] font-medium bg-item-${i.type} `,
+                  ` shadow-md flex w-10 h-10 shrink-0 items-center justify-center rounded-md text-[0.625rem] font-medium  `,
                   {
                     ["bg-gradient-to-b from-[#5C457B] to-[#4D366E] border border-[#493B65]"]:
                       variation.active == "manual",
@@ -69,7 +71,7 @@ export function Abilities(props: Props) {
                 <p className="text-base font-bold mb-1">
                   {t(`abilities.${i.id}.name`)}
                 </p>
-                <p className="text-sm text-white opacity-80">
+                <p className="text-sm text-foreground opacity-80">
                   {t(`abilities.${i.id}.description`)}
 
                   {variation.activatedOn?.length && (

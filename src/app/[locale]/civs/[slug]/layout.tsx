@@ -35,7 +35,7 @@ export default function Page({ children, params }: Props) {
       <div className=" mx-auto w-full max-w-7xl grow lg:flex xl:px-2">
         <div className="flex-1 xl:flex">
           <div
-            className=" h-full fixed px-4 py-6 sm:px-6 lg:pl-8 xl:w-64 xl:shrink-0  xl:pl-6 hidden lg:block border-r border-border/40 dark:border-border"
+            className=" h-full fixed top-0 pt-24 px-4 py-6 sm:px-6 lg:pl-8 xl:w-64 xl:shrink-0  xl:pl-6 hidden lg:block border-r border-border/40 dark:border-border"
             style={{
               overflowY: "auto",
             }}

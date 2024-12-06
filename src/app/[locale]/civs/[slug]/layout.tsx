@@ -32,18 +32,23 @@ export default function Page({ children, params }: Props) {
         </div>
       </header>
 
-      <div className=" mx-auto w-full max-w-7xl grow lg:flex xl:px-2">
+      <div className="mx-auto w-full max-w-screen-2xl grow lg:flex xl:px-2">
         <div className="flex-1 xl:flex">
-          <div
-            className=" h-full fixed top-0 pt-24 px-4 py-6 sm:px-6 lg:pl-8 xl:w-64 xl:shrink-0  xl:pl-6 hidden lg:block border-r border-border/40 dark:border-border"
-            style={{
-              overflowY: "auto",
-            }}
-          >
-            <CivItems id="" slug={slug} locale={locale} />
+          <div className="h-full hidden xl:block">
+            <div
+              className="sticky max-h-[calc(100vh)] top-20 py-4  px-4 sm:px-6 lg:pl-8 xl:w-64 xl:shrink-0 xl:pl-6"
+              style={{
+                scrollbarWidth: "none",
+                overflow: "auto",
+              }}
+            >
+              <CivItems id="" slug={slug} locale={locale} />
+            </div>
           </div>
-          <div className=" px-4 py-6 sm:px-6 lg:pl-72 xl:flex-1 xl:pl-72">
-            {children}
+          <div className="flex-auto">
+            <div className="max-w-screen-lg p-4 mx-auto gap-4 mb-4 mt-8">
+              {children}
+            </div>
           </div>
         </div>
         {/* <div className="shrink-0 border-t border-gray-200 px-4 py-6 sm:px-6 lg:w-96 lg:border-l lg:border-t-0 lg:pr-8 xl:pr-6"></div> */}

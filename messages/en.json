@@ -8,7 +8,8 @@
         "sec": "sec",
         "cooldown": "cooldown",
         "abilities": "Abilities and influences",
-        "producedAt": "Produced at"
+        "producedAt": "Produced at",
+        "patches": "Patch History"
     },
     "types": {
         "units": "units",

@@ -106,16 +106,16 @@ export const Patches = ({ item, civ }: Props) => {
   console.log(historyList);
 
   return (
-    <div className="">
+    <div className="space-y-4">
       {historyList.map((history, idx) => {
         return (
-          <div className="mt-6" key={history.patch.name}>
+          <div className="" key={history.patch.name}>
             <p className="text-xs text-foreground/60">
               {t(`patches.${history.patchIndex}.name`)}
               {` - ${new Date(history.patch.date).toLocaleDateString()}`}
             </p>
 
-            <div className="mt-2">
+            <div className="mt-1">
               {history.diff.map(([type, change, civs]) => {
                 return (
                   <p

@@ -8,7 +8,8 @@
     "sec": "秒",
     "cooldown": "冷却",
     "abilities": "能力和影响",
-    "producedAt": "生产建筑"
+    "producedAt": "生产建筑",
+    "patches": "版本更新"
   },
   "types": {
     "units": "单位",

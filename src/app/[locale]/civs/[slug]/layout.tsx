@@ -20,7 +20,7 @@ export default function Page({ children, params }: Props) {
   return (
     <div className="flex min-h-full flex-col">
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-border">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 space-x-4">
+        <div className="flex h-16 mx-auto w-full max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8 space-x-4">
           <div>Aoe4</div>
           <div className="flex-1">
             <CivSwitcher />
@@ -34,9 +34,9 @@ export default function Page({ children, params }: Props) {
 
       <div className="mx-auto w-full max-w-screen-2xl grow lg:flex xl:px-2">
         <div className="flex-1 xl:flex">
-          <div className="h-full hidden xl:block">
+          <div className="h-full w-full max-w-xs hidden xl:block">
             <div
-              className="sticky max-h-[calc(100vh)] top-20 py-4  px-4 sm:px-6 lg:pl-8 xl:w-64 xl:shrink-0 xl:pl-6"
+              className="sticky max-h-[calc(100vh)] top-20 py-4  pl-6 xl:shrink-0"
               style={{
                 scrollbarWidth: "none",
                 overflow: "auto",

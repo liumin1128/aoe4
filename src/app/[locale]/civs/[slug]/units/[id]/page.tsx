@@ -13,6 +13,7 @@ import {
 import { ItemHeader } from "@/components/item-header";
 import { HighlightedText } from "@/components/highlighted-text";
 import { Abilities } from "@/components/item-abilities";
+import { ProducedAt } from "@/components/item-produced-at";
 
 interface Params {
   locale: string;
@@ -60,6 +61,12 @@ export default function Civ({ params }: Props) {
 
       <div className="mt-6 mb-10">
         <Abilities civ={civ.config} locale={locale} item={item} />
+      </div>
+
+      <h3 className=" font-bold text-lg ">{t("common.producedAt")}</h3>
+
+      <div className="mt-6 mb-10">
+        <ProducedAt civ={civ.config} locale={locale} item={item} />
       </div>
     </div>
   );

@@ -31,10 +31,16 @@ export default function Civ({ params }: Props) {
   const item = getUnit(id)!;
   const abilities = getAbilities(civ.config, id);
   const variation = getMostAppropriateVariation<Unit>(item, civ.config);
-  const match = findClosestMatch(ITEMS.UNITS, id, civ.config);
 
-  if (match && match?.id !== id) {
-    redirect(`/${locale}/civs/${slug}/units/${match?.id}`);
+  if (
+    item &&
+    Array.isArray(item.civs) &&
+    !item.civs.includes(civ.config.abbr)
+  ) {
+    const match = findClosestMatch(ITEMS.UNITS, id, civ.config);
+    if (match) {
+      redirect(`/${locale}/civs/${slug}/units/${match?.id}`);
+    }
   }
 
   return (

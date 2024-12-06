@@ -1,11 +1,14 @@
 import { useTranslations } from "next-intl";
 import { use } from "react";
+import Link from "next/link";
+
 import Image from "next/image";
 import { getCivBySlug } from "@/utils/common";
 import cls from "classnames";
 
 interface Params {
   slug: string;
+  locale: string;
 }
 
 interface Props {
@@ -13,7 +16,7 @@ interface Props {
 }
 
 export default function Civ({ params }: Props) {
-  const { slug } = use(params);
+  const { locale, slug } = use(params);
   const t = useTranslations();
   const civ = getCivBySlug(slug);
 
@@ -62,26 +65,30 @@ export default function Civ({ params }: Props) {
                         "/" +
                         i.icon?.split("/").at(-1);
 
+                      const url = `/${locale}/civs/${slug}/${type}/${i.id}`;
+
                       return (
                         <div key={i.id} className="">
-                          <div className="flex items-center">
-                            <span
-                              className={cls(`rounded-sm bg-item-${i.type}`)}
-                            >
-                              <Image
-                                className="rounded shadow-md cursor-pointer h-8 w-8"
-                                src={icon}
-                                alt={i.name}
-                                width={36}
-                                height={36}
-                                sizes="36vw"
-                                priority
-                              />
-                            </span>
-                            <p className="ml-2 text-foreground">
-                              {t(`${type}.${i.id}.name`)}
-                            </p>
-                          </div>
+                          <Link href={url}>
+                            <div className="flex items-center">
+                              <span
+                                className={cls(`rounded-sm bg-item-${i.type}`)}
+                              >
+                                <Image
+                                  className="rounded shadow-md cursor-pointer"
+                                  src={icon}
+                                  alt={i.name}
+                                  width={28}
+                                  height={28}
+                                  sizes="28vw"
+                                  priority
+                                />
+                              </span>
+                              <p className="ml-2 text-sm text-foreground">
+                                {t(`${type}.${i.id}.name`)}
+                              </p>
+                            </div>
+                          </Link>
                         </div>
                       );
                     })}

@@ -15,6 +15,8 @@ import { HighlightedText } from "@/components/highlighted-text";
 import { Abilities } from "@/components/item-abilities";
 import { ProducedAt } from "@/components/item-produced-at";
 import { Patches } from "@/components/patches";
+import { Costs } from "@/components/item-costs";
+import { ItemStat } from "@/components/item-stat";
 
 interface Params {
   locale: string;
@@ -32,7 +34,7 @@ export default function Civ({ params }: Props) {
   const civ = getCivBySlug(slug);
   const item = getUnit(id)!;
   // const abilities = getAbilities(civ.config, id);
-  // const variation = getMostAppropriateVariation<Unit>(item, civ.config);
+  const variation = getMostAppropriateVariation<Unit>(item, civ.config);
 
   if (
     item &&
@@ -49,131 +51,39 @@ export default function Civ({ params }: Props) {
   }
 
   return (
-    <div className="space-y-10">
-      <ItemHeader item={item} civ={civ.config} />
+    <div className="flex flex-col md:flex-row gap-4">
+      <div className="basis-2/3 py-4 shrink-0 space-y-12">
+        <ItemHeader item={item} civ={civ.config} />
 
-      <HighlightedText text={`${t(`${item.type}s.${id}.description`)}`} />
+        <HighlightedText text={`${t(`${item.type}s.${id}.description`)}`} />
 
-      <div className="">
-        <h3 className="font-bold text-lg mb-4">{t("common.abilities")}</h3>
-        <Abilities civ={civ.config} locale={locale} item={item} />
-      </div>
+        <div className="">
+          <h3 className="font-bold text-lg mb-4">{t("common.abilities")}</h3>
+          <Abilities civ={civ.config} locale={locale} item={item} />
+        </div>
 
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.producedAt")}</h3>
-        <ProducedAt civ={civ.config} locale={locale} item={item} />
-      </div>
+        <div>
+          <h3 className=" font-bold text-lg  mb-4">{t("common.producedAt")}</h3>
+          <ProducedAt civ={civ.config} locale={locale} item={item} />
+        </div>
 
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
+        <div>
+          <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
+          <Patches civ={civ.config} locale={locale} item={item} />
+        </div>
       </div>
 
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
+      <div className="flex-auto flex flex-col gap-8">
+        <div className="bg-black/60 rounded-2xl p-6">
+          <div className="text-white/50 uppercase text-xs font-bold tracking-widest mb-2">
+            Costs
+          </div>
+          <Costs costs={variation.costs} />
+        </div>
 
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
-      </div>
-      <div>
-        <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-        <Patches civ={civ.config} locale={locale} item={item} />
+        <div className="bg-black/60 rounded-2xl p-6">
+          <ItemStat item={item} civ={civ.config} />
+        </div>
       </div>
     </div>
   );

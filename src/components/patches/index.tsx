@@ -102,9 +102,6 @@ export const Patches = ({ item, civ }: Props) => {
 
   const t = useTranslations();
 
-  console.log("historyList");
-  console.log(historyList);
-
   return (
     <div className="space-y-4">
       {historyList.map((history, idx) => {

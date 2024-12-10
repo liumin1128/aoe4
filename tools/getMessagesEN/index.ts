@@ -10,8 +10,6 @@ import { writeFile } from "./utils";
 import { CIVILIZATIONS } from "@data/lib/config/civs";
 import baseEN from "./baseEN.json";
 import baseCN from "./baseCN.json";
-import civCN from "./civs_CN.json";
-import names from "./names.json";
 
 interface Translation {
   id: string;
@@ -73,8 +71,18 @@ function getObj(list: Translation[]) {
   }, {});
 }
 
-writeFile("../../messages/en.json", {
-  ...baseEN,
+// writeFile("../../messages/en.json", {
+//   ...baseEN,
+//   units: getObj(unitsTrans),
+//   civs: getObj(civs),
+//   technologies: getObj(techTrans),
+//   buildings: getObj(buildingsTrans),
+//   upgrades: getObj(upgradesTrans),
+//   abilities: getObj(abilities),
+// });
+
+writeFile("../../messages/cn.json", {
+  ...baseCN,
   units: getObj(unitsTrans),
   civs: getObj(civs),
   technologies: getObj(techTrans),
@@ -82,44 +90,3 @@ writeFile("../../messages/en.json", {
   upgrades: getObj(upgradesTrans),
   abilities: getObj(abilities),
 });
-
-function convertToTitleCase(str) {
-  return str
-    .toLowerCase()
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-}
-
-let missCount = 0;
-
-function getObjCN(list: Translation[]) {
-  return list.reduce((acc, item) => {
-    let name = item.name;
-    if (names[name]) {
-      name = names[name];
-      // console.log("Found: ", name);
-    } else {
-      console.log('"' + name + '": "",');
-      missCount++;
-    }
-    acc[item.id as string] = {
-      name: name,
-      description: item.description,
-      overview: item.overview,
-    };
-    return acc;
-  }, {});
-}
-
-writeFile("../../messages/cn.json", {
-  ...baseCN,
-  units: getObjCN(unitsTrans),
-  civs: civCN,
-  technologies: getObjCN(techTrans),
-  buildings: getObjCN(buildingsTrans),
-  upgrades: getObjCN(upgradesTrans),
-  abilities: getObjCN(abilities),
-});
-
-console.log("Missing: ", missCount);

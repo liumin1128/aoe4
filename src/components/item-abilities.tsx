@@ -46,7 +46,6 @@ export function Abilities(props: Props) {
             const icon =
               "/assets/images/abilities/" + i?.icon?.split("/").at(-1);
 
-            console.log(i);
             return (
               <li key={i.id} className="flex gap-x-4">
                 <div

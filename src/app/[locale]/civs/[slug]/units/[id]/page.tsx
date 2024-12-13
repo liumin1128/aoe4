@@ -31,8 +31,10 @@ interface Props {
 export default function Civ({ params }: Props) {
   const { locale, id, slug } = use(params);
   const t = useTranslations();
+
   const civ = getCivBySlug(slug);
   const item = getUnit(id)!;
+
   // const abilities = getAbilities(civ.config, id);
   const variation = getMostAppropriateVariation<Unit>(item, civ.config);
 

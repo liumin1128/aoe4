@@ -115,7 +115,7 @@ export const StatBar = (props: Props) => {
   return (
     <div>
       <div
-        className="flex text-xs space-x-2 items-center mr-3 cursor-pointer"
+        className="flex text-sm space-x-2 items-center mr-3 cursor-pointer"
         onClick={() => {
           setShowMore(!showMore);
         }}
@@ -145,7 +145,7 @@ export const StatBar = (props: Props) => {
               style={{ width: `${i.value! * unit}px` }}
             >
               <div className={`value h-[12px] ${colorsMap[i.effectType]}`} />
-              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 hidden group-hover:block bg-background text-foreground text-xs rounded py-1 px-2 whitespace-nowrap border">
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 hidden group-hover:block bg-background text-foreground text-sm rounded py-1 px-2 whitespace-nowrap border">
                 {i.label}: +{i.value}
               </div>
             </div>
@@ -154,7 +154,7 @@ export const StatBar = (props: Props) => {
       </div>
 
       {showMore && (
-        <div className="text-xs border p-2 mt-2 mb-2 space-y-3 bg-muted rounded-sm">
+        <div className="text-sm border p-2 mt-2 mb-2 space-y-3 bg-muted rounded-sm">
           {sortedModifiers.map((i, idx) => {
             if (i.type === "technology") {
               return (

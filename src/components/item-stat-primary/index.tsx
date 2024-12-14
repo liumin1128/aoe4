@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { AgeTabs } from "@/components/age-tabs";
-import { StatBar } from "@/components/item-stat/stat-bar";
+import { StatBar } from "@/components/item-stat-primary/stat-bar";
 import { ModifyableProperty, UnifiedItem, Unit } from "@data/types/items";
 import { CivConfig } from "@data/types/civs";
 import { getItemTechnologies } from "@/utils/technologies";
@@ -29,7 +29,7 @@ type AgeTabsProps = {
   civ: CivConfig;
 };
 
-export const ItemStat = (props: AgeTabsProps) => {
+export const ItemStatPrimary = (props: AgeTabsProps) => {
   const t = useTranslations();
   const { item, civ } = props;
   const [age, setAge] = useState(4);

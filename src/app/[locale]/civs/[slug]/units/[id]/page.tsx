@@ -3,7 +3,6 @@ import { use } from "react";
 import { redirect } from "next/navigation";
 import {
   getCivBySlug,
-  getAbilities,
   getUnit,
   getMostAppropriateVariation,
   Unit,
@@ -16,7 +15,7 @@ import { Abilities } from "@/components/item-abilities";
 import { ProducedAt } from "@/components/item-produced-at";
 import { Patches } from "@/components/patches";
 import { Costs } from "@/components/item-costs";
-import { ItemStat } from "@/components/item-stat";
+import { ItemStatPrimary } from "@/components/item-stat-primary";
 import { ItemTechnologies } from "@/components/item-technologies";
 import { getItemTechnologies } from "@/utils/technologies";
 
@@ -91,7 +90,7 @@ export default function Civ({ params }: Props) {
           </div>
 
           <div className=" border rounded-2xl p-6">
-            <ItemStat item={item} civ={civ.config} />
+            <ItemStatPrimary item={item} civ={civ.config} />
           </div>
         </div>
       </div>

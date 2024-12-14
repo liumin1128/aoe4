@@ -18,7 +18,7 @@ export const ItemStatSecondary = ({ item }: Props) => {
         {
           label: "Attack Speed",
           value: stat.attackSpeed,
-          unit: "TILES",
+          unit: "S",
         },
         {
           label: "Range",

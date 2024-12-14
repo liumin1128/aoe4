@@ -37,6 +37,7 @@ export function ItemTechnologies({ technologies = [] }: Props) {
               <div className="w-full">
                 <div className="flex">
                   <h4 className="flex-1 font-bold text-md text-foreground">
+                    {/* {tech.baseId} */}
                     {t(`technologies.${tech.baseId}.name`)}
                   </h4>
 

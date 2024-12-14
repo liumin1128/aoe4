@@ -1,4 +1,5 @@
 import {
+  Building,
   ModifyableProperty,
   Selector,
   Technology,
@@ -41,7 +42,7 @@ export type StatItem = {
 
 export type StatMap = Partial<Record<ModifyableProperty, StatItem[]>>;
 
-export function getStat(v: Unit): UnitStat {
+export function getStat(v: Unit | Building): UnitStat {
   const stats: UnitStat = {
     hitpoints: v.hitpoints,
     lineOfSight: v.sight.line / 4.5,
@@ -89,7 +90,7 @@ export function getStat(v: Unit): UnitStat {
 }
 
 export function getStatMap(
-  variations: Unit[],
+  variations: (Unit | Building)[],
   technologies: Technology[],
   weapons: Weapon[]
 ) {

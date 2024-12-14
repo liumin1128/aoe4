@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  ChevronUp,
-  ChevronDown,
-  Minus,
-  Plus,
-  PlusCircle,
-  MinusCircle,
-} from "lucide-react";
+import { PlusCircle, MinusCircle } from "lucide-react";
 
 export const HighlightedText = ({ text }: { text: string }) => {
   const list = text.split("\n");
@@ -14,9 +7,15 @@ export const HighlightedText = ({ text }: { text: string }) => {
   return (
     <div>
       {list.map((item, index) => {
-        const hasPlus = item.includes("+");
-        const hasMinus = item.includes("-");
-        const text = item.replace("+", "").replace("-", "");
+        const hasPlus = item[0] === "+";
+        const hasMinus = item[0] === "-";
+        let text = item;
+        if (hasPlus) {
+          text = item.replace("+", "");
+        }
+        if (hasMinus) {
+          text = item.replace("-", "");
+        }
         return (
           <div key={index} className="flex items-center">
             {hasPlus && (

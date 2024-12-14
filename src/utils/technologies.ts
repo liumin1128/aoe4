@@ -30,12 +30,15 @@ export const getItemTechnologies = (
         if (j.select?.id?.includes(item.id)) {
           matchesId = true;
         }
+
         // 匹配class
         if (
           j.select?.class?.some((cl) =>
             cl?.every((c) => item.classes.includes(c))
           )
         ) {
+          // console.log("j.select?.class, item.classes");
+          // console.log(i.id, j.select?.class, item.classes);
           matchesClass = true;
         }
       });

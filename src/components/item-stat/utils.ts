@@ -41,7 +41,7 @@ export type StatItem = {
 
 export type StatMap = Partial<Record<ModifyableProperty, StatItem[]>>;
 
-function getStat(v: Unit): UnitStat {
+export function getStat(v: Unit): UnitStat {
   const stats: UnitStat = {
     hitpoints: v.hitpoints,
     lineOfSight: v.sight.line / 4.5,

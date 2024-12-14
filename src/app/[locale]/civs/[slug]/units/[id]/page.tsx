@@ -15,7 +15,8 @@ import { Abilities } from "@/components/item-abilities";
 import { ProducedAt } from "@/components/item-produced-at";
 import { Patches } from "@/components/patches";
 import { Costs } from "@/components/item-costs";
-import { ItemStatPrimary } from "@/components/item-stat-primary";
+import { ItemStatPrimary } from "@/components/item-stat";
+import { ItemStatSecondary } from "@/components/item-stat/item-stat-secondary";
 import { ItemTechnologies } from "@/components/item-technologies";
 import { getItemTechnologies } from "@/utils/technologies";
 
@@ -91,6 +92,10 @@ export default function Civ({ params }: Props) {
 
           <div className=" border rounded-2xl p-6">
             <ItemStatPrimary item={item} civ={civ.config} />
+          </div>
+
+          <div className=" border rounded-2xl p-6">
+            <ItemStatSecondary item={variation} />
           </div>
         </div>
       </div>

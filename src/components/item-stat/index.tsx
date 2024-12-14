@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { AgeTabs } from "@/components/age-tabs";
-import { StatBar } from "@/components/item-stat-primary/stat-bar";
+import { StatBar } from "@/components/item-stat/stat-bar";
 import { ModifyableProperty, UnifiedItem, Unit } from "@data/types/items";
 import { CivConfig } from "@data/types/civs";
 import { getItemTechnologies } from "@/utils/technologies";

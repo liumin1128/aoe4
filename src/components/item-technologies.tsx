@@ -11,8 +11,6 @@ type Props = {
 export function ItemTechnologies({ technologies = [] }: Props) {
   const t = useTranslations();
 
-  console.log("technologies", technologies);
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {technologies.map((tech) => {

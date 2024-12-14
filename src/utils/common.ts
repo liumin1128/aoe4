@@ -53,6 +53,24 @@ export function getUnit(id: string) {
   return units.get(id);
 }
 
+export function getBuilding(id: string) {
+  // let classes = [];
+  // [...buildings, ...units, ...abilities, ...technologies].map((building) => {
+  //   classes = classes.concat(building.classes);
+  // });
+
+  // const sss = uniq(classes);
+
+  // const ddd = {};
+  // sss.map((i) => {
+  //   ddd[i] = i.charAt(0).toUpperCase() + i.slice(1);
+  // });
+
+  // console.log(JSON.stringify(ddd));
+
+  return buildings.get(id);
+}
+
 export function getAbilities(civ: CivConfig, id: string) {
   return abilities
     .where({ civilization: civ.abbr, affects: `units/${id}` })

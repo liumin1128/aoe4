@@ -17,7 +17,7 @@ export function ItemTechnologies({ technologies = [] }: Props) {
         return (
           <div
             key={tech.baseId}
-            className="p-4 border border-item-technology-light/30 rounded-xl bg-item-technology-light/5 space-y-4 flex flex-col"
+            className="p-4 border border-item-technology-light/20 rounded-xl bg-item-technology-light/5 space-y-4 flex flex-col"
           >
             <div className="flex">
               <span
@@ -45,7 +45,7 @@ export function ItemTechnologies({ technologies = [] }: Props) {
                   </span>
                 </div>
                 <p className="text-sm text-item-technology-light">
-                  {tech.displayClasses.join(", ")}
+                  {tech.classes.map((i) => t(`classes.${i}`)).join(" ")}
                 </p>
               </div>
             </div>

@@ -64,12 +64,17 @@ export default function Civ({ params }: Props) {
   console.log(filterdtechs);
 
   return (
-    <div>
+    <div className="space-y-12">
       <div className="flex flex-col md:flex-row gap-4">
         <div className="basis-2/3 py-4 shrink-0 space-y-12">
-          <ItemHeader item={item} civ={civ.config} />
-
-          <HighlightedText text={`${t(`${item.type}s.${id}.description`)}`} />
+          <div>
+            <ItemHeader item={item} civ={civ.config} />
+            <div className="mt-4">
+              <HighlightedText
+                text={`${t(`${item.type}s.${id}.description`)}`}
+              />
+            </div>
+          </div>
 
           <div>
             <h3 className="font-bold text-lg mb-4">{t("common.abilities")}</h3>
@@ -119,6 +124,7 @@ export default function Civ({ params }: Props) {
           </div>
         </div>
       </div>
+
       <div>
         <h3 className=" font-bold text-lg  mb-4">{t("types.technologies")}</h3>
         <ItemTechnologies technologies={filterdtechs} />

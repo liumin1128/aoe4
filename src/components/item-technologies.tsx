@@ -19,7 +19,7 @@ export function ItemTechnologies({ technologies = [] }: Props) {
         return (
           <div
             key={tech.baseId}
-            className="p-4 rounded-xl bg-item-technology-light/5 space-y-4 flex flex-col"
+            className="p-4 border border-item-technology-light/30 rounded-xl bg-item-technology-light/5 space-y-4 flex flex-col"
           >
             <div className="flex">
               <span

@@ -5,6 +5,7 @@ import {
   Unit,
   Weapon,
 } from "@data/types/items";
+import uniqBy from "lodash/uniqBy";
 
 // const AgeUnitName = ["Veteran","Elite"]
 export const PRETTY_AGE_MAP_SHORT = ["", "I", "II", "III", "IV"];
@@ -50,7 +51,13 @@ function getStat(v: Unit): UnitStat {
     stats.moveSpeed = v.movement.speed;
   }
 
-  for (const w of v.weapons) {
+  // const melee = v.weapons.find((w) => w?.type == "melee" && w.modifiers);
+  // const weapons = v.weapons.filter((w) => w?.type != "melee" || w === melee);
+
+  // 拿第一把武器
+  const weapons = uniqBy(v.weapons, "type");
+
+  for (const w of weapons) {
     if (w.type === "melee") {
       stats.meleeAttack = w.damage;
     } else if (w.type === "ranged") {
@@ -69,6 +76,13 @@ function getStat(v: Unit): UnitStat {
       stats.maxRange = w?.range?.max;
       stats.minRange = w?.range?.min;
     }
+  }
+
+  for (const a of v.armor) {
+    // We assume there's only one armor type per variation, for now.
+    if (a.type == "melee") stats.meleeArmor = a.value;
+    else if (a.type == "ranged") stats.rangedArmor = a.value;
+    else if (a.type == "fire") stats.fireArmor = a.value;
   }
 
   return stats;

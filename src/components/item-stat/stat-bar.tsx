@@ -181,8 +181,6 @@ export const StatBar = (props: Props) => {
             }
 
             if (i.type === "bonus") {
-              console.log("i", i.target);
-
               return (
                 <div key={idx} className="">
                   <div className="flex">
@@ -213,18 +211,19 @@ export const StatBar = (props: Props) => {
 
       {!showMore && (
         <div
-          className="flex space-x-0.5 mt-1 max-w-[240px] cursor-pointer"
+          className="flex space-x-0.5 mt-1 max-w-[260px] cursor-pointer "
           onClick={() => {
             setShowMore(!showMore);
           }}
         >
           {sortedModifiers.map((i, idx) => {
             return (
-              <div key={idx} className="relative group">
-                <div
-                  className={`value h-[12px] ${colorsMap[i.effectType]}`}
-                  style={{ width: `${i.value! * unit}px` }}
-                />
+              <div
+                key={idx}
+                className="relative group "
+                style={{ width: `${i.value! * unit}px` }}
+              >
+                <div className={`value h-[12px] ${colorsMap[i.effectType]}`} />
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 hidden group-hover:block bg-muted text-white text-xs rounded py-1 px-2 whitespace-nowrap">
                   {i.label}: +{i.value}
                 </div>

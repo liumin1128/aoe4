@@ -3,6 +3,7 @@ import { CivConfig } from "@data/types/civs";
 import { UnifiedItem } from "@/types/data";
 import { useTranslations } from "next-intl";
 import cls from "classnames";
+import { typeToPath } from "@/utils/common";
 
 interface Props {
   item: UnifiedItem;
@@ -14,6 +15,8 @@ export function ItemHeader(props: Props) {
   const t = useTranslations();
   const icon = item?.icon?.split("/").at(-1);
 
+  const path = typeToPath(item.type);
+
   return (
     <div className="flex items-center space-x-6">
       <Image
@@ -21,7 +24,7 @@ export function ItemHeader(props: Props) {
           "rounded shadow-md cursor-pointer w-20 h-20 ",
           `bg-item-${item.type}`
         )}
-        src={"/assets/images/" + item.type + "s/" + icon}
+        src={"/assets/images/" + path + "/" + icon}
         alt={civ.abbr}
         width={0}
         height={0}
@@ -33,9 +36,7 @@ export function ItemHeader(props: Props) {
           {item.classes.map((i) => t(`classes.${i}`)).join(" ")}
         </p>
 
-        <h3 className="text-2xl font-bold">
-          {t(`${item.type}s.${item.id}.name`)}
-        </h3>
+        <h3 className="text-2xl font-bold">{t(`${path}.${item.id}.name`)}</h3>
 
         <div className="flex space-x-2 items-center">
           <Image

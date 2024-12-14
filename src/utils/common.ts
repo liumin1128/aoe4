@@ -13,6 +13,7 @@ import {
   buildings,
   technologies,
   abilities,
+  upgrades,
 } from "@data/sdk";
 
 import {
@@ -51,6 +52,10 @@ export function getCivBySlug(slug: string) {
 
 export function getUnit(id: string) {
   return units.get(id);
+}
+
+export function getTechnology(id: string) {
+  return technologies.get(id);
 }
 
 export function getBuilding(id: string) {
@@ -398,3 +403,15 @@ export function findClosestMatch<T extends ITEMS>(
 }
 
 export { ITEMS } from "@data/types/items";
+
+const typeToPathMap = {
+  building: "buildings",
+  unit: "units",
+  technology: "technologies",
+  upgrade: "upgrades",
+  ability: "abilities",
+};
+
+export function typeToPath(type: keyof typeof typeToPathMap) {
+  return typeToPathMap[type];
+}

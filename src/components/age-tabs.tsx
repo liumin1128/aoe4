@@ -18,7 +18,7 @@ export const AgeTabs = (props: AgeTabsProps) => {
   return (
     <Tabs
       defaultValue={`${age}`}
-      className=""
+      // className="border rounded-lg"
       onValueChange={(e) => {
         setAge(parseInt(e, 0));
       }}

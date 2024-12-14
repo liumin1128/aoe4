@@ -4,15 +4,7 @@ import { StatItem } from "./utils";
 import Image from "next/image";
 import cls from "classnames";
 import get from "lodash/get";
-import {
-  Target,
-  Heart,
-  Swords,
-  Flame,
-  Axe,
-  ChevronRight,
-  ChevronUp,
-} from "lucide-react";
+import { ChevronRight } from "lucide-react";
 type Props = {
   label: string;
   modifiers: StatItem[];
@@ -20,11 +12,11 @@ type Props = {
 };
 
 const colorsMap = {
-  base: "bg-slate-100",
+  base: "bg-foreground/50",
   upgrade: "bg-item-unit-light",
-  influence: "bg-item-technology",
-  passive: "bg-item-technology",
-  bonus: "bg-slate-100/10",
+  influence: "bg-item-technology-light",
+  passive: "bg-item-technology-light",
+  bonus: "bg-foreground/10",
 };
 
 const sortIndex = ["base", "upgrade", "influence", "passive", "bonus"];
@@ -139,22 +131,42 @@ export const StatBar = (props: Props) => {
         />
       </div>
 
+      <div
+        className="flex space-x-0.5 mt-1 max-w-[260px] cursor-pointer "
+        onClick={() => {
+          setShowMore(!showMore);
+        }}
+      >
+        {sortedModifiers.map((i, idx) => {
+          return (
+            <div
+              key={idx}
+              className="relative group "
+              style={{ width: `${i.value! * unit}px` }}
+            >
+              <div className={`value h-[12px] ${colorsMap[i.effectType]}`} />
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 hidden group-hover:block bg-background text-foreground text-xs rounded py-1 px-2 whitespace-nowrap border">
+                {i.label}: +{i.value}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
       {showMore && (
-        <div className="text-xs border p-2 mt-2 mb-2 space-y-3 bg-muted rounded-lg">
+        <div className="text-xs border p-2 mt-2 mb-2 space-y-3 bg-muted rounded-sm">
           {sortedModifiers.map((i, idx) => {
             if (i.type === "technology") {
-              const icon = i?.item?.icon?.split("/").at(-1);
-
               return (
                 <div key={idx} className="flex">
                   <span
                     className={cls(
-                      `flex h-[28px] w-[28px] shrink-0 items-center justify-center rounded-sm text-[0.625rem] font-medium text-white  bg-item-${i.type} mr-2`
+                      `flex h-[28px] w-[28px] shrink-0 items-center justify-center rounded-sm text-[0.625rem] font-medium text-foreground  bg-item-${i.type} mr-2`
                     )}
                   >
                     <Image
                       className="rounded shadow-md cursor-pointer w-8 h-auto"
-                      src={"/assets/images/technologies/" + icon}
+                      src={"/assets/images/technologies/" + i.id + ".png"}
                       alt={i?.item?.name + ""}
                       width={28}
                       height={28}
@@ -202,30 +214,6 @@ export const StatBar = (props: Props) => {
                 <div className="flex">
                   <span className="flex-1">{i.label}</span>
                   <span>+{i.value}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
-
-      {!showMore && (
-        <div
-          className="flex space-x-0.5 mt-1 max-w-[260px] cursor-pointer "
-          onClick={() => {
-            setShowMore(!showMore);
-          }}
-        >
-          {sortedModifiers.map((i, idx) => {
-            return (
-              <div
-                key={idx}
-                className="relative group "
-                style={{ width: `${i.value! * unit}px` }}
-              >
-                <div className={`value h-[12px] ${colorsMap[i.effectType]}`} />
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 hidden group-hover:block bg-muted text-white text-xs rounded py-1 px-2 whitespace-nowrap">
-                  {i.label}: +{i.value}
                 </div>
               </div>
             );

@@ -17,6 +17,8 @@ import { ProducedAt } from "@/components/item-produced-at";
 import { Patches } from "@/components/patches";
 import { Costs } from "@/components/item-costs";
 import { ItemStat } from "@/components/item-stat";
+import { ItemTechnologies } from "@/components/item-technologies";
+import { getItemTechnologies } from "@/utils/technologies";
 
 interface Params {
   locale: string;
@@ -52,40 +54,50 @@ export default function Civ({ params }: Props) {
     }
   }
 
+  const filterdtechs = getItemTechnologies(civ.config, item);
+
   return (
-    <div className="flex flex-col md:flex-row gap-4">
-      <div className="basis-2/3 py-4 shrink-0 space-y-12">
-        <ItemHeader item={item} civ={civ.config} />
+    <div>
+      <div className="flex flex-col md:flex-row gap-4">
+        <div className="basis-2/3 py-4 shrink-0 space-y-12">
+          <ItemHeader item={item} civ={civ.config} />
 
-        <HighlightedText text={`${t(`${item.type}s.${id}.description`)}`} />
+          <HighlightedText text={`${t(`${item.type}s.${id}.description`)}`} />
 
-        <div className="">
-          <h3 className="font-bold text-lg mb-4">{t("common.abilities")}</h3>
-          <Abilities civ={civ.config} locale={locale} item={item} />
+          <div className="">
+            <h3 className="font-bold text-lg mb-4">{t("common.abilities")}</h3>
+            <Abilities civ={civ.config} locale={locale} item={item} />
+          </div>
+
+          <div>
+            <h3 className=" font-bold text-lg  mb-4">
+              {t("common.producedAt")}
+            </h3>
+            <ProducedAt civ={civ.config} locale={locale} item={item} />
+          </div>
+
+          <div>
+            <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
+            <Patches civ={civ.config} locale={locale} item={item} />
+          </div>
         </div>
 
-        <div>
-          <h3 className=" font-bold text-lg  mb-4">{t("common.producedAt")}</h3>
-          <ProducedAt civ={civ.config} locale={locale} item={item} />
-        </div>
+        <div className="flex-auto flex flex-col gap-8">
+          <div className=" border rounded-2xl p-6">
+            <div className="text-foreground/50 uppercase text-xs font-bold tracking-widest mb-2">
+              Costs
+            </div>
+            <Costs costs={variation.costs} />
+          </div>
 
-        <div>
-          <h3 className=" font-bold text-lg  mb-4">{t("common.patches")}</h3>
-          <Patches civ={civ.config} locale={locale} item={item} />
+          <div className=" border rounded-2xl p-6">
+            <ItemStat item={item} civ={civ.config} />
+          </div>
         </div>
       </div>
-
-      <div className="flex-auto flex flex-col gap-8">
-        <div className="bg-black/60 rounded-2xl p-6">
-          <div className="text-white/50 uppercase text-xs font-bold tracking-widest mb-2">
-            Costs
-          </div>
-          <Costs costs={variation.costs} />
-        </div>
-
-        <div className="bg-black/60 rounded-2xl p-6">
-          <ItemStat item={item} civ={civ.config} />
-        </div>
+      <div>
+        <h3 className=" font-bold text-lg  mb-4">{t("types.technologies")}</h3>
+        <ItemTechnologies technologies={filterdtechs} />
       </div>
     </div>
   );

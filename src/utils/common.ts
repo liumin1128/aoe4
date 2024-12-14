@@ -23,7 +23,9 @@ import {
   Unit,
 } from "@/types/data";
 
-import { Building, ITEMS } from "@data/types/items";
+import { ITEMS } from "@data/types/items";
+
+export const PRETTY_AGE_MAP_SHORT = ["", "I", "II", "III", "IV"];
 
 export function getCivConfig(value: string, key: string) {
   let result: CivConfig;

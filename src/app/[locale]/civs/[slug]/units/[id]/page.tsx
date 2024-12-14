@@ -10,7 +10,7 @@ import {
   ITEMS,
 } from "@/utils/common";
 import { ItemHeader } from "@/components/item-header";
-import { HighlightedText } from "@/components/highlighted-text";
+import { HighlightedText } from "@/components/highlighted-text-2";
 import { Abilities } from "@/components/item-abilities";
 import { ProducedAt } from "@/components/item-produced-at";
 import { Patches } from "@/components/patches";

@@ -37,6 +37,10 @@ export function Abilities(props: Props) {
   const t = useTranslations();
   const list = getData(item, civ);
 
+  if (!list.length) {
+    return null;
+  }
+
   return (
     <>
       <div className="">

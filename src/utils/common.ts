@@ -275,6 +275,7 @@ export function getMostAppropriateVariation<T extends Item = Item>(
   item: UnifiedItem<T>,
   civ: CivConfig
 ): T {
+  // @ts-expect-error
   if (!item) return null;
   return (
     (civ

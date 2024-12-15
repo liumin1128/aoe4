@@ -36,16 +36,16 @@ export function ResearchAt({ item, civ }: Props) {
         const icon = "/assets/images/buildings/" + i?.icon?.split("/").at(-1);
 
         return (
-          <li key={i.id} className="flex gap-x-4 items-center">
+          <li key={i?.id} className="flex gap-x-4 items-center">
             <div
               className={cls(
-                `shadow-md flex w-10 h-10 shrink-0 items-center justify-center rounded-sm text-[0.625rem] font-medium bg-item-${i.type} `
+                `shadow-md flex w-10 h-10 shrink-0 items-center justify-center rounded-sm text-[0.625rem] font-medium bg-item-${i?.type} `
               )}
             >
               <Image
                 className="rounded shadow-md cursor-pointer w-10 h-10"
                 src={icon}
-                alt={i.name}
+                alt={i?.name + ""}
                 width={0}
                 height={0}
                 sizes="100vw"
@@ -54,7 +54,7 @@ export function ResearchAt({ item, civ }: Props) {
             </div>
 
             <p className="text-base font-bold mb-1">
-              {t(`buildings.${i.id}.name`)}
+              {t(`buildings.${i?.id}.name`)}
             </p>
           </li>
         );

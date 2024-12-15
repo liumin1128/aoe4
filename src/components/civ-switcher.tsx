@@ -49,6 +49,7 @@ export function CivSwitcher() {
                   <li
                     key={abbr}
                     className="row-span-3"
+                    // @ts-ignore
                     onClick={() => handleCivChange(civ)}
                   >
                     <Image

@@ -1,4 +1,3 @@
-import { JSX } from "solid-js/jsx-runtime";
 import { civAbbr } from "./data";
 export type PatchNotes = {
   id: string;

@@ -1,8 +1,8 @@
-import { Unit } from "@data/types/items";
+import { Unit, Building } from "@data/types/items";
 import { getStat } from "./utils";
 
 interface Props {
-  item: Unit;
+  item: Unit | Building;
 }
 
 export const ItemStatSecondary = ({ item }: Props) => {

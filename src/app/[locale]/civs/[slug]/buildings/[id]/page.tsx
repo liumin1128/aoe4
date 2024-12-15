@@ -8,6 +8,7 @@ import {
   Unit,
   findClosestMatch,
   ITEMS,
+  Building,
 } from "@/utils/common";
 import { ItemHeader } from "@/components/item-header";
 import { HighlightedText } from "@/components/highlighted-text-2";
@@ -39,7 +40,10 @@ export default function Civ({ params }: Props) {
   const item = getBuilding(id)!;
 
   // const abilities = getAbilities(civ.config, id);
-  const variation = getMostAppropriateVariation<Unit>(item, civ.config);
+  const variation = getMostAppropriateVariation<Unit | Building>(
+    item,
+    civ.config
+  );
 
   if (
     item &&

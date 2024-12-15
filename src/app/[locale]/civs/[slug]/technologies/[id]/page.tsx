@@ -6,8 +6,10 @@ import {
   getTechnology,
   getMostAppropriateVariation,
   Unit,
+  Building,
   findClosestMatch,
   ITEMS,
+  Technology,
 } from "@/utils/common";
 import { ItemHeader } from "@/components/item-header";
 import { HighlightedText } from "@/components/highlighted-text-2";
@@ -39,7 +41,10 @@ export default function Civ({ params }: Props) {
   const item = getTechnology(id)!;
 
   // const abilities = getAbilities(civ.config, id);
-  const variation = getMostAppropriateVariation<Unit>(item, civ.config);
+  const variation = getMostAppropriateVariation<Unit | Building | Technology>(
+    item,
+    civ.config
+  );
 
   if (
     item &&

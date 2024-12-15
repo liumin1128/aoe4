@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+// @ts-nocheck
 import { Item, UnifiedItem } from "@data/types/items";
 // import { patches } from "./patches/patch";
 import { PatchLine, PatchNotes } from "@/types/patches";

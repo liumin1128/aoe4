@@ -4,6 +4,7 @@ import { UnifiedItem } from "@data/types/items";
 import { units } from "@data/sdk";
 import cls from "classnames";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   locale: string;
@@ -16,7 +17,7 @@ function getProduces(item: UnifiedItem, civ: CivConfig) {
   return list;
 }
 
-export function Produces({ item, civ }: Props) {
+export function Produces({ item, civ, locale }: Props) {
   const t = useTranslations();
   const list = getProduces(item, civ);
 
@@ -27,25 +28,30 @@ export function Produces({ item, civ }: Props) {
 
         return (
           <li key={i.id} className="flex gap-x-4 items-center">
-            <div
-              className={cls(
-                `shadow-md flex w-10 h-10 shrink-0 items-center justify-center rounded-sm text-[0.625rem] font-medium bg-item-${i.type} `
-              )}
+            <Link
+              href={`/${locale}/civs/${civ.slug}/units/${i.id}`}
+              className="flex gap-x-2 items-center"
             >
-              <Image
-                className="rounded shadow-md cursor-pointer w-10 h-10"
-                src={icon}
-                alt={i.name}
-                width={0}
-                height={0}
-                sizes="100vw"
-                priority
-              />
-            </div>
+              <div
+                className={cls(
+                  `shadow-md flex w-10 h-10 shrink-0 items-center justify-center rounded-sm text-[0.625rem] font-medium bg-item-${i.type} `
+                )}
+              >
+                <Image
+                  className="rounded shadow-md cursor-pointer w-10 h-10"
+                  src={icon}
+                  alt={i.name}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  priority
+                />
+              </div>
 
-            <p className="text-base font-bold mb-1">
-              {t(`units.${i.id}.name`)}
-            </p>
+              <p className="text-base font-bold mb-1">
+                {t(`units.${i.id}.name`)}
+              </p>
+            </Link>
           </li>
         );
       })}

@@ -3,6 +3,14 @@ import { CivItems } from "@/components/civ-items";
 import ModeToggle from "@/components/theme-toggle";
 import LanguageSwitcher from "@/components/lang-toggle";
 import { CivSwitcher } from "@/components/civ-switcher";
+import { Button } from "@/components/ui/button";
+import { AppDrawer } from "@/components/app-drawer";
+import { Menu } from "lucide-react";
+import {
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 
 interface Params {
   locale: string;
@@ -23,7 +31,35 @@ export default function Page({ children, params }: Props) {
         <div className="flex h-16 mx-auto w-full max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8 space-x-4">
           <div>Aoe4</div>
           <div className="flex-1">
-            <CivSwitcher />
+            <div className="flex items-center ">
+              <CivSwitcher />
+              <div className="block lg:hidden">
+                <AppDrawer
+                  trigger={
+                    <Button variant="outline">
+                      <Menu />
+                    </Button>
+                  }
+                >
+                  <div
+                    className="sticky w-full max-h-[calc(100vh)] xl:shrink-0"
+                    style={{
+                      scrollbarWidth: "none",
+                      overflow: "auto",
+                    }}
+                  >
+                    <SheetHeader>
+                      <SheetTitle>帝国时代4助手</SheetTitle>
+                      <SheetDescription>
+                        资料库，攻略，工具，助手
+                      </SheetDescription>
+                    </SheetHeader>
+                    <br />
+                    <CivItems id="" slug={slug} locale={locale} />
+                  </div>
+                </AppDrawer>
+              </div>
+            </div>
           </div>
           <div className="space-x-2">
             <ModeToggle />

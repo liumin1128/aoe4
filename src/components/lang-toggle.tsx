@@ -49,7 +49,7 @@ export default function LanguageSwitcher() {
           className=" cursor-pointer"
           onClick={() => handleLanguageChange("zh-CN")}
         >
-          Chinese
+          中文
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

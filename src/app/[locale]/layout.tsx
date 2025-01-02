@@ -46,9 +46,9 @@ export default async function Layout(props: Props) {
           <NextIntlClientProvider messages={messages}>
             <ThemeProvider
               attribute="class"
-              defaultTheme="system"
+              defaultTheme="dark"
               enableSystem
-              disableTransitionOnChange
+              // disableTransitionOnChange
             >
               {children}
             </ThemeProvider>

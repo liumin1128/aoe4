@@ -5,6 +5,7 @@ import { buildings } from "@data/sdk";
 import uniq from "lodash/uniq";
 import cls from "classnames";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   locale: string;
@@ -41,7 +42,7 @@ function getProducedBy(item: UnifiedItem, civ: CivConfig) {
   }
 }
 
-export function ProducedAt({ item, civ }: Props) {
+export function ProducedAt({ item, civ, locale }: Props) {
   const t = useTranslations();
   const list = getProducedBy(item, civ);
 
@@ -49,28 +50,31 @@ export function ProducedAt({ item, civ }: Props) {
     <ul role="list" className=" flex gap-8 flex-wrap">
       {list.map((i) => {
         const icon = "/assets/images/buildings/" + i?.icon?.split("/").at(-1);
-
         return (
           <li key={i?.id} className="flex gap-x-4 items-center">
-            <div
-              className={cls(
-                `shadow-md flex w-10 h-10 shrink-0 items-center justify-center rounded-sm text-[0.625rem] font-medium bg-item-${i?.type} `
-              )}
+            <Link
+              href={`/${locale}/civs/${civ.slug}/buildings/${i?.id}`}
+              className="flex gap-x-2 items-center"
             >
-              <Image
-                className="rounded shadow-md cursor-pointer w-10 h-10"
-                src={icon}
-                alt={i?.name + ""}
-                width={0}
-                height={0}
-                sizes="100vw"
-                priority
-              />
-            </div>
-
-            <p className="text-base font-bold mb-1">
-              {t(`buildings.${i?.id}.name`)}
-            </p>
+              <div
+                className={cls(
+                  `shadow-md flex w-10 h-10 shrink-0 items-center justify-center rounded-sm text-[0.625rem] font-medium bg-item-${i?.type} `
+                )}
+              >
+                <Image
+                  className="rounded shadow-md cursor-pointer w-10 h-10"
+                  src={icon}
+                  alt={i?.name + ""}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  priority
+                />
+              </div>
+              <p className="text-base font-bold mb-1">
+                {t(`buildings.${i?.id}.name`)}
+              </p>
+            </Link>
           </li>
         );
       })}

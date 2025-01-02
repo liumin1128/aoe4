@@ -21,6 +21,10 @@ export function Produces({ item, civ, locale }: Props) {
   const t = useTranslations();
   const list = getProduces(item, civ);
 
+  if (!list.length) {
+    return "-";
+  }
+
   return (
     <ul role="list" className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {list.map((i) => {

@@ -38,7 +38,7 @@ export function Abilities(props: Props) {
   const list = getData(item, civ);
 
   if (!list.length) {
-    return null;
+    return "-";
   }
 
   return (

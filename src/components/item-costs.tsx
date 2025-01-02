@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { Item } from "@data/types/items";
 
-const list = [
+const resources = [
   "food",
   "wood",
   "gold",
@@ -31,16 +31,32 @@ interface Props {
 
 export function Costs({ costs }: Props) {
   const t = useTranslations();
+
+  const list: any = [];
+
+  resources.map((i) => {
+    if (costs[i]) {
+      list.push({
+        value: costs[i],
+        icon: imgUrls[i],
+        key: i,
+      });
+    }
+  });
+
+  if (!list.length) {
+    return "-";
+  }
+
   return (
     <div className="flex items-center gap-4">
       {list.map((i) => {
-        if (!costs[i]) return null;
         return (
           <div key={i} className="flex items-center text-sm">
-            <span>{costs[i]}</span>
+            <span>{i.value}</span>
             <Image
               className="h-4 object-contain w-5"
-              src={imgUrls[i]}
+              src={i.icon}
               alt={i}
               width={0}
               height={0}

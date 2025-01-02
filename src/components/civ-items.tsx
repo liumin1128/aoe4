@@ -32,10 +32,10 @@ export function CivItems(props: Props) {
         {Object.entries(pick(data, list)).map(([type, typeData]) => {
           return (
             <li key={type} className="">
-              <div className="mb-2 text-lg font-semibold leading-6 ">
+              <div className="ml-1 mb-2 text-lg font-semibold leading-6 ">
                 {t(`types.${type}`)}
               </div>
-              <ul role="list" className="-mx-1 space-y-2">
+              <ul role="list" className=" space-y-2">
                 {Object.entries(typeData).map(
                   // @ts-ignore
                   ([group, groupData]: [

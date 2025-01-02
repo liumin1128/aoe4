@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/components/lang-provider";
 import "../global.css";
@@ -15,6 +16,14 @@ interface Props {
   params: Promise<Params>;
   children: React.ReactNode;
 }
+
+export const metadata: Metadata = {
+  title: "帝国时代4资料库",
+  description:
+    "帝国时代4资料库是一个专注于帝国时代4游戏资料、攻略、新闻和交流的综合性网站。我们致力于为玩家提供最新、最全面的游戏信息，帮助玩家更好地掌握游戏和提升游戏体验。",
+  keywords:
+    "帝国时代，帝国时代4、游戏攻略、游戏资料、游戏新闻、玩家交流、游戏宝典、中世纪战争、历史策略游戏",
+};
 
 export default async function Layout(props: Props) {
   const { params, children } = props;

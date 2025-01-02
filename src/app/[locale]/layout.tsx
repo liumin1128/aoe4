@@ -1,4 +1,5 @@
 import { NextIntlClientProvider } from "next-intl";
+import { Analytics } from "@vercel/analytics/react";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
@@ -44,6 +45,8 @@ export default async function Layout(props: Props) {
             </ThemeProvider>
           </NextIntlClientProvider>
         </LanguageProvider>
+
+        <Analytics />
 
         {/* 触发颜色渲染 */}
         <div

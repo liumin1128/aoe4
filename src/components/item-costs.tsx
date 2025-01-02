@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
@@ -32,6 +33,8 @@ interface Props {
 export function Costs({ costs }: Props) {
   const t = useTranslations();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // @ts-ignore
   const list: any = [];
 
   resources.map((i) => {
